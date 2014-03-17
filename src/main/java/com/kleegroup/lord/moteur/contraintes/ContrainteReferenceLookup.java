@@ -60,7 +60,7 @@ public class ContrainteReferenceLookup extends ContrainteUniCol {
 
 	/**Il est inutile de copier cette contrainte. <br>Elle sera automatiquement crée lors 
 	 * de l'ajout de la référence en utilisant la fonction 
-	 * {@link spark.reprise.outil.moteur.Fichier#addReference(String, spark.reprise.outil.moteur.Colonne)}
+	 * {@link com.kleegroup.lord.moteur.Fichier#addReference(String, com.kleegroup.lord.moteur.Colonne)}
 	 * @return une contrainte de type {@link ContrainteTRUE}
 	 * */
 	@Override

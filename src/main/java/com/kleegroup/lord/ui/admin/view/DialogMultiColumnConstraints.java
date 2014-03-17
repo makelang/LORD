@@ -134,7 +134,7 @@ public class DialogMultiColumnConstraints extends JDialog {
     }
 
     private void setText() {
-	jlblListeVerif.setText("Liste des verifications");
+	jlblListeVerif.setText("Liste des vérifications");
 	jbtnAddContrainte.setText("+");
 	jbtnDelContrainte.setText("-");
 	jbtnOk.setText("OK");
@@ -230,7 +230,7 @@ public class DialogMultiColumnConstraints extends JDialog {
 	jtblContraintes = new MyJTable();
 	jtblContraintes.setModel(controller.getTableModel());
 	jtblContraintes.getColumnModel().getColumn(1).setCellEditor(
-		new DefaultCellEditor(new JComboBox(new DefaultComboBoxModel(
+		new DefaultCellEditor(new JComboBox<String>(new DefaultComboBoxModel<String>(
 			controller.getPossibleMethodNames()))));
 
 	jtblContraintes.getColumnModel().getColumn(2).setCellEditor(

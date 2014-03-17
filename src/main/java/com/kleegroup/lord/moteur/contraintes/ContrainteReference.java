@@ -21,9 +21,9 @@ public class ContrainteReference extends ContrainteUniCol {
 	 * Construit la contrainte de référence en utilisant une contrainte auxiliaire 
 	 * de référence dict de type ContrainteReferenceLookup.<br><br>
 	 * 
-	 * Il vaut mieux évite de créer cette contrainte à la main.Il est préférable de passer par
+	 * Il vaut mieux éviter de créer cette contrainte à la main.Il est préférable de passer par
 	 * la méthode
-	 * {@link spark.reprise.outil.moteur.Fichier#addReference(String, spark.reprise.outil.moteur.Colonne)}
+	 * {@link com.kleegroup.lord.moteur.Fichier#addReference(String, com.kleegroup.lord.moteur.Colonne)}
 	 * 
 	 * @param dict  contrainte auxiliaire de référence
 	 */
