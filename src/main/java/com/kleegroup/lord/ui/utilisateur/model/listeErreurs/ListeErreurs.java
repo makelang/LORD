@@ -8,7 +8,6 @@ import java.util.ResourceBundle;
 
 import com.kleegroup.lord.moteur.IErreur;
 
-
 /**
  *Classe publique qui sert à afficher la liste des erreurs dans le FrameLogErreur.
  *
