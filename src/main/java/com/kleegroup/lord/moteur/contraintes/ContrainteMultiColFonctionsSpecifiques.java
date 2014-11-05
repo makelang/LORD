@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur.contraintes;
+﻿package com.kleegroup.lord.moteur.contraintes;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -11,7 +11,8 @@ import com.kleegroup.lord.moteur.ContrainteMultiCol;
  * Cette classe est responsable d'implémenter les vérifications spécifiques.
  */
 public class ContrainteMultiColFonctionsSpecifiques extends ContrainteMultiCol {
-	private Method method = null;//la méthode qu'appelera la contrainte pour effectuer la verification
+	//la méthode qu'appelera la contrainte pour effectuer la verification
+	private Method method = null;
 
 	/**
 	 * @param id l'identifiant de la contrainte
@@ -41,7 +42,7 @@ public class ContrainteMultiColFonctionsSpecifiques extends ContrainteMultiCol {
 	 * ses paramètres sont de type String et si le nombre de colonnes désignés paramètres
 	 * est égale au nombre des paramètres de la fonction.
 	 * @param nomFonction le nom de la fonction
-	 * @param cols les colonnes désignés paramètre de la fonction
+	 * @param cols les colonnes désignées paramètres de la fonction
 	 * @return True si la fonction est valide, false sinon.
 	 */
 	public static boolean isValide(String nomFonction, String... cols) {
@@ -89,7 +90,8 @@ public class ContrainteMultiColFonctionsSpecifiques extends ContrainteMultiCol {
 	public static Collection<String> getMethods() {
 		Collection<String> f = new ArrayList<>();
 		for (Method m : FonctionsSpecifiques.class.getMethods()) {
-			if (Modifier.isStatic(m.getModifiers()) && Modifier.isPublic(m.getModifiers()) && isAllParmsString(m)) {//les fonstions doivent ête statiques et publiques
+			if (Modifier.isStatic(m.getModifiers()) && Modifier.isPublic(m.getModifiers()) && isAllParmsString(m)) {
+				//les fonctions doivent ête statiques et publiques
 				f.add(m.getName());
 			}
 		}

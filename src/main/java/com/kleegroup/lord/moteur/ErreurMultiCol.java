@@ -1,13 +1,13 @@
-package com.kleegroup.lord.moteur;
+﻿package com.kleegroup.lord.moteur;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Représentre une erreur rencntrée. Contient toutes les informations nécessaires sous 
+ * Représente une erreur rencontrée. Contient toutes les informations nécessaires sous
  * forme de string.
  * 
- * Cet objet est crée par une des classes contraintes, quand une erreur est detectée.
+ * Cet objet est créé par une des classes contraintes, quand une erreur est detectée.
  */
 public class ErreurMultiCol extends Erreur {
 	/**
@@ -41,7 +41,13 @@ public class ErreurMultiCol extends Erreur {
 	public String getErrValeur() {
 		StringBuilder msg = new StringBuilder("'" + errValeurs[getContrainteParent().getIndiceParam()[0]] + "'");
 		for (int i = 1; i < getContrainteParent().getIndiceParam().length; i++) {
-			msg.append(", >" + errValeurs[getContrainteParent().getIndiceParam()[i]] + "<");
+			int indiceParam = getContrainteParent().getIndiceParam()[i];
+			// FIXED : cas d'une contrainte multicolonne dont la dernière est facultative
+			if (indiceParam < errValeurs.length) {
+				msg.append(", >" + errValeurs[indiceParam] + "<");
+			} else {
+				msg.append(", >null< (ou colonne #"+ indiceParam +" facultative)");
+			}
 		}
 		return msg.toString();
 	}

@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur;
+﻿package com.kleegroup.lord.moteur;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public abstract class Erreur implements IErreur {
 	/**
 	 * Renvoie un objet "Constante" qui représente un état sans erreur.
 	 * Utilisé pour tester si une erreur est levée ou pas.
-	 * @return l'erreur Constante qui reprsésente l'état pas d'erreur
+	 * @return l'erreur Constante qui représente l'état pas d'erreur
 	 */
 	public static ErreurUniCol pasDErreur() {
 		return NOERR;

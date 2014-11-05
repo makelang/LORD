@@ -31,7 +31,7 @@ public abstract class UILauncher {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
-			/**Ne fais rien*/
+			/** Ne fait rien */
 			e.getMessage();
 		}
 
@@ -60,8 +60,8 @@ public abstract class UILauncher {
 	protected File getExecDir() {
 		/**
 		 * http://weblogs.java.net/blog/kohsuke/archive/2007/04/how_to_convert.html  
-		 * Pour corriger un bug. LE programme ne marchait pas 
-		 * si le repertoire contenanit un espace (%20) dans son chemin.
+		 * Pour corriger un bug. Le programme ne marchait pas 
+		 * si le repertoire contenait un espace (%20) dans son chemin.
 		 * */
 
 		final URL location = getClass().getProtectionDomain().getCodeSource().getLocation();
@@ -74,3 +74,4 @@ public abstract class UILauncher {
 		return parent.getParentFile();
 	}
 }
+

@@ -1,4 +1,4 @@
-package com.kleegroup.lord.ui.admin.model;
+﻿package com.kleegroup.lord.ui.admin.model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -42,7 +42,7 @@ public class FenetrePrincipaleAdminModel {
 		 */
 		private static final long serialVersionUID = 4157087119873576473L;
 
-		private final String nomColonne[] = new String[] { "Colonne", "Description", "O/F", "Ref", "Unique", "Type", "Format", "Taille Max", "Valeurs permises", "Champ de contr�le", };
+		private final String nomColonne[] = new String[] { "Colonne", "Description", "O/F", "Ref", "Unique", "Type", "Format", "Taille Max", "Valeurs permises", "Champ de contrôle", };
 
 		private Fichier f = new Fichier("", "");
 
@@ -85,7 +85,7 @@ public class FenetrePrincipaleAdminModel {
 		/**{@inheritDoc}*/
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
-			//separé en 2 methode pour eviter FanOutComplecity de CheckStyle
+			//separé en 2 methode pour éviter FanOutComplecity de CheckStyle
 			final Colonne c = f.getColonne(rowIndex);
 			switch (columnIndex) {
 				case 0://nom
@@ -106,7 +106,7 @@ public class FenetrePrincipaleAdminModel {
 		}
 
 		private Object returnPart2(int rowIndex, int columnIndex) {
-			//separé en 2 methode pour eviter FanOutComplecity de CheckStyle
+			//separé en 2 methode pour éviter FanOutComplecity de CheckStyle
 			final Colonne c = f.getColonne(rowIndex);
 
 			switch (columnIndex) {
@@ -208,6 +208,7 @@ public class FenetrePrincipaleAdminModel {
 
 		}
 
+		@SuppressWarnings("unchecked")
 		private void setValueAtPart2(Object value, int row, int colType) {
 			final Colonne c = f.getColonne(row);
 			switch (colType) {

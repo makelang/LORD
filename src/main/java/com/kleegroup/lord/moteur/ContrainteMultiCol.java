@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur;
+﻿package com.kleegroup.lord.moteur;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,12 +9,13 @@ import org.apache.log4j.Logger;
 import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiques;
 
 /**
- * Crée une contrainte sur plusieurs colonnes.
- *
+ * Défini une contrainte sur plusieurs colonnes.
+ * 
  */
 public abstract class ContrainteMultiCol implements IContrainte {
 
-	protected static final org.apache.log4j.Logger LOGAPPLI = Logger.getLogger(ContrainteMultiColFonctionsSpecifiques.class);
+	protected static final org.apache.log4j.Logger LOGAPPLI = Logger
+			.getLogger(ContrainteMultiColFonctionsSpecifiques.class);
 
 	protected Fichier fichierParent;
 	protected Interprete interpreteMsg = null;
@@ -46,7 +47,8 @@ public abstract class ContrainteMultiCol implements IContrainte {
 		int nbreArgs = colonnes.length;
 		indiceParam = new int[nbreArgs];
 		for (int i = 0; i < nbreArgs; i++) {
-			indiceParam[i] = fichierParent.getColonne(colonnes[i]).getPosition();
+			indiceParam[i] = fichierParent.getColonne(colonnes[i])
+					.getPosition();
 		}
 	}
 
@@ -55,19 +57,28 @@ public abstract class ContrainteMultiCol implements IContrainte {
 			construitIndiceColonnes(cols);
 		}
 
-		//contruction du tableau de parametre
+		// Contruction du tableau de paramètres
 		String[] param = new String[indiceParam.length];
 		for (int i = 0; i < indiceParam.length; i++) {
-			param[i] = valeurs[indiceParam[i]];
+			// FIXED : cas des dernières colonnes facultatives.
+			// La valeur "null" est transmise (valeur non définie).
+			// Il est de la responsabilité de la fonction de conformité de
+			// définir son comportement vis-à-vis des valeurs nulles.
+			if (indiceParam[i] >= valeurs.length) {
+				param[i] = null;
+			} else {
+				param[i] = valeurs[indiceParam[i]];
+			}
 		}
-
 		return estConforme(param);
 	}
 
 	/**
 	 * 
-	 * @param numLigne le numéro de la ligne à vérifier
-	 * @param valeurs les valeurs à vérifier
+	 * @param numLigne
+	 *            le numéro de la ligne à vérifier
+	 * @param valeurs
+	 *            les valeurs à vérifier
 	 * @return un objet Erreur contenant les informations nécessaires
 	 */
 	@Override
@@ -78,12 +89,10 @@ public abstract class ContrainteMultiCol implements IContrainte {
 
 		if (interpreteMsg == null) {
 			construitInterprete();
-
 		}
 		errMessage = interpreteMsg.bind(numLigne, valeurs);
 
 		ErreurMultiCol e = new ErreurMultiCol(this, numLigne, valeurs);
-
 		return e;
 	}
 
@@ -109,8 +118,9 @@ public abstract class ContrainteMultiCol implements IContrainte {
 	}
 
 	/**
-	 * renvoit l'identifiant de la contrainte. L'identifiant est 
-	 * une chaîne de caractère determinée par l'utilisateur. 
+	 * renvoit l'identifiant de la contrainte. L'identifiant est une chaîne de
+	 * caractère determinée par l'utilisateur.
+	 * 
 	 * @return l'identifiant de la contrainte
 	 */
 	@Override
@@ -126,13 +136,14 @@ public abstract class ContrainteMultiCol implements IContrainte {
 	}
 
 	/**
-	 * @param fichierParent désigne le fichier parent de la contrainte
+	 * @param fichierParent
+	 *            désigne le fichier parent de la contrainte
 	 */
 	public void setFichierParent(Fichier fichierParent) {
 		this.fichierParent = fichierParent;
 	}
 
-	/**{@inheritDoc}*/
+	/** {@inheritDoc} */
 	@Override
 	public String getNomFichier() {
 		return fichierParent.getNom();
@@ -140,6 +151,7 @@ public abstract class ContrainteMultiCol implements IContrainte {
 
 	/**
 	 * renvoie la liste des nom des colonnes de la contrainte.
+	 * 
 	 * @return la liste des nom des colonnes de la contrainte
 	 */
 	public List<String> getNomColonnes() {
@@ -154,8 +166,9 @@ public abstract class ContrainteMultiCol implements IContrainte {
 	}
 
 	/**
-	 * renvoie le template d'erreur utilisé pour generer le message d'erreur.
-	 * @return le template d'erreur utilisé pour generer le message d'erreur
+	 * renvoie le template d'erreur utilisé pour générer le message d'erreur.
+	 * 
+	 * @return le template d'erreur utilisé pour générer le message d'erreur
 	 */
 	public String getErrTemplate() {
 		return errTemplate;
@@ -169,27 +182,29 @@ public abstract class ContrainteMultiCol implements IContrainte {
 	}
 
 	/**
-	 * @param errTemplate le template du message d'erreur
+	 * @param errTemplate
+	 *            le template du message d'erreur
 	 */
 	public void setErrTemplate(String errTemplate) {
 		this.errTemplate = errTemplate;
 	}
 
-	/**{@inheritDoc}*/
+	/** {@inheritDoc} */
 	@Override
 	public Fichier getFichier() {
 		return fichierParent;
 	}
 
-	/**{@inheritDoc}*/
+	/** {@inheritDoc} */
 	@Override
 	public String interprete(String balise, int indice) {
 		return balise;
 	}
 
-	/**nettoie l'objet.
-	 * Remet à zero les données spécifique utilisée lors de la dernière vérification
-	 * pour pouvoir  réutiliser cet objet pour une nouvelle vérification 
+	/**
+	 * nettoie l'objet. Remet à zero les données spécifiques utilisées
+	 * lors de la dernière vérification pour pouvoir réutiliser cet objet
+	 * pour une nouvelle vérification
 	 * */
 	@Override
 	public void clean() {

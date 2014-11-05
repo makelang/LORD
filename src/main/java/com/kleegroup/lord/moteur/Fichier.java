@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur;
+﻿package com.kleegroup.lord.moteur;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,8 +9,6 @@ import java.util.ResourceBundle;
 import org.apache.log4j.Logger;
 
 import com.kleegroup.lord.moteur.Categories.Categorie;
-import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiques;
-import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColUnique;
 import com.kleegroup.lord.moteur.contraintes.ContrainteReference;
 import com.kleegroup.lord.moteur.contraintes.ContrainteReferenceLookup;
 import com.kleegroup.lord.moteur.exceptions.AbandonUtilisateur;
@@ -24,7 +22,7 @@ import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 import com.kleegroup.lord.moteur.util.INotifiable;
 
 /**
- * Represente un fichier à verifier.
+ * Représente un fichier à vérifier.
  */
 public class Fichier implements IHierarchieSchema {
 
@@ -136,7 +134,7 @@ public class Fichier implements IHierarchieSchema {
 		},
 
 		/**
-		 * L'utilisateur a désactivé la véirifcation de ce fichier.
+		 * L'utilisateur a désactivé la vérification de ce fichier.
 		 * */
 		DESACTIVE_UTILISATEUR {
 			/**{@inheritDoc}*/
@@ -146,7 +144,7 @@ public class Fichier implements IHierarchieSchema {
 			}
 		},
 		/**
-		 * Le fichier a été désactivé car il dépend sur un fichier désactivé par
+		 * Le fichier a été désactivé car il dépend d'un fichier désactivé par
 		 * l'utilisateur.
 		 */
 		DESACTIVE_DEPENDANCE {
@@ -158,7 +156,7 @@ public class Fichier implements IHierarchieSchema {
 		},
 
 		/**
-		 * le fichier a été vérifié.Il contient des erreurs.
+		 * le fichier a été vérifié. Il ne contient pas d'erreur.
 		 */
 		VERIFIE_SANS_ERREUR {
 			/**{@inheritDoc}*/
@@ -169,7 +167,7 @@ public class Fichier implements IHierarchieSchema {
 			}
 		},
 		/**
-		 * le fichier a été vérifié.Il ne contient pas d'erreur.
+		 * le fichier a été vérifié. Il contient des erreurs.
 		 */
 		VERIFIE_AVEC_ERREUR {
 			/**{@inheritDoc}*/
@@ -181,8 +179,8 @@ public class Fichier implements IHierarchieSchema {
 		},
 
 		/**
-		 * La vérificationde ce fichier a été abandonné. des fichiers dont il
-		 * depend ou bien de groupe inférieurs n'ont pas été vérifiés.
+		 * La vérification de ce fichier a été abandonné. des fichiers dont il
+		 * dépend ou bien de groupe inférieurs n'ont pas été vérifiés.
 		 */
 
 		ABANDONNE_DEPENDANCE {
@@ -193,7 +191,7 @@ public class Fichier implements IHierarchieSchema {
 			}
 		},
 		/**
-		 * Dépassemnt du seuil toléré d'erreurs dans le fichier.
+		 * Dépassement du seuil toléré d'erreurs dans le fichier.
 		 */
 		ABANDON_TROP_D_ERREUR {
 			/**{@inheritDoc}*/
@@ -220,31 +218,23 @@ public class Fichier implements IHierarchieSchema {
 	/**
 	 * Contruit un fichier .
 	 *
-	 * @param nom
-	 *                nom du fichier
-	 * @param chemin
-	 *                le chemin d'acces du fichier
-	 * @param source
-	 *                source des lignes du fichier
-	 * @param log
-	 *                Objet responsable de loggue rles erreurs
+	 * @param nom     nom du fichier
+	 * @param chemin  le chemin d'acces du fichier
+	 * @param source  source des lignes du fichier
+	 * @param log     Objet responsable de logguer les erreurs
 	 */
 	public Fichier(String nom, String chemin, ICSVDataSource source, ILogger log) {
 		this(nom, chemin);
 		this.logger = log;
 		this.source = source;
 		logAppli.trace(">" + nom + "<.loggueur!=null ? =" + Boolean.toString(log != null) + "\n" + ">" + nom + "<.source!=null ? =" + Boolean.toString(source != null));
-
 	}
 
 	/**
 	 * Construit un fichier.<br>
 	 *
-	 * @param nom
-	 *                nom du fichier
-	 * @param prefixNom
-	 *                le début du nom du fichier (pour le retrouver
-	 *                automatiquement)
+	 * @param nom     		nom du fichier
+	 * @param prefixNom		le début du nom du fichier (pour le retrouver automatiquement)
 	 */
 	public Fichier(String nom, String prefixNom) {
 		logAppli.trace("Crétion d'un fichier. nom = " + nom);
@@ -253,21 +243,16 @@ public class Fichier implements IHierarchieSchema {
 		cancel = false;
 		synchronized (this) {
 			pause = false;
-
 		}
 	}
 
 	/**
 	 * Rajoute une contrainte multicolonne au fichier.
 	 *
-	 * @param id
-	 *                l'identifiant de l'erreur multicolonne
-	 * @param errTemplate
-	 *                le template du message d'erreur
-	 * @param nomFonction
-	 *                le nom de la fonction de vérification de la contrainte
-	 * @param cols
-	 *                les colonnes à vérifier
+	 * @param id			l'identifiant de l'erreur multicolonne
+	 * @param errTemplate	le template du message d'erreur
+	 * @param nomFonction	le nom de la fonction de vérification de la contrainte
+	 * @param cols    		les colonnes à vérifier
 	 */
 	public void addContrainteMultiCol(String id, String errTemplate, String nomFonction, String... cols) {
 		logAppli.trace("Ajout d'une contrainte MultiColonne \n" + "id=>" + id + "< . " + "\n" + "errTemplate=>" + errTemplate + "<");
@@ -276,12 +261,7 @@ public class Fichier implements IHierarchieSchema {
 			msg += "," + cols[i];
 		}
 		logAppli.trace(nomFonction + "(" + msg + ")");
-		if ("Unique".equals(nomFonction)) {
-			addContrainteMultiCol(new ContrainteMultiColUnique(id, errTemplate, cols));
-		} else {
-			addContrainteMultiCol(new ContrainteMultiColFonctionsSpecifiques(id, errTemplate, nomFonction, cols));
-		}
-
+		addContrainteMultiCol(ContrainteRegistry.ContrainteMulticolEnum.getInstance(id, errTemplate, nomFonction, cols));
 	}
 
 	/**
@@ -396,8 +376,10 @@ public class Fichier implements IHierarchieSchema {
 			logAppli.info(e);
 			erreurs.add(ErreurConstante.errExceptionMoteur(source.getPosition(), e.getMessage(), nom));
 			return;
-		} catch (final Throwable t) {//exception non prevue, generalement erreur dans le moteur
+		} catch (final Throwable t) {
+			//exception non prevue, generalement erreur dans le moteur
 			etatFichier = ETAT.ABANDON_ERREUR_MOTEUR;
+			t.printStackTrace();
 			logAppli.error(t);
 			erreurs.add(ErreurConstante.errExceptionMoteur(source.getPosition(), t.getMessage(), nom));
 			return;

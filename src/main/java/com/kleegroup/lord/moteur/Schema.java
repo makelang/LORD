@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur;
+﻿package com.kleegroup.lord.moteur;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -348,7 +348,7 @@ public class Schema implements INotifiable {
 	 *            sert a lire le fichier
 	 * @return le schema XML
 	 * @throws JAXBException
-	 *             si la conversion à partir de l'XML echoue
+	 *             si la conversion à partir du XML échoue
 	 */
 	public static Schema fromXML(InputStream inputStream) throws JAXBException {
 

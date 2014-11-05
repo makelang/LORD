@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur;
+﻿package com.kleegroup.lord.moteur;
 
 import java.util.List;
 import java.util.ResourceBundle;
@@ -25,7 +25,7 @@ import com.kleegroup.lord.moteur.util.IHierarchieSchema;
  * fait dans la méthode estConforme. Si la valeur est correcte, la valeur de retour
  * doit être <code>true</code>. Dans le cas contraire, un objet Erreur est crée, et 
  * l'erreur est remontée vers l'objet appelant (normalement un instance de 
- * {@link spark.reprise.outil.moteur.Colonne}).   
+ * {@link com.kleegroup.lord.moteur.Colonne}).   
  *   
  * @author maazreibi
  *

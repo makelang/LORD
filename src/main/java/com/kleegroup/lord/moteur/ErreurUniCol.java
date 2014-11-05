@@ -1,13 +1,13 @@
-package com.kleegroup.lord.moteur;
+﻿package com.kleegroup.lord.moteur;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Représentre une erreur rencntrée. Contient toutes les informations nécessaires sous 
+ * Représente une erreur rencontrée. Contient toutes les informations nécessaires sous 
  * forme de string.
  * 
- * Cet objet est crée par une des classes contraintes, quand une erreur est detectée.
+ * Cet objet est créé par une des classes contraintes, quand une erreur est detectée.
  */
 public class ErreurUniCol extends Erreur {
 

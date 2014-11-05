@@ -1,10 +1,12 @@
-package com.kleegroup.lord.ui.admin.model;
+﻿package com.kleegroup.lord.ui.admin.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.kleegroup.lord.moteur.Colonne;
 import com.kleegroup.lord.moteur.ContrainteMultiCol;
+import com.kleegroup.lord.moteur.ContrainteRegistry;
+import com.kleegroup.lord.moteur.ContrainteRegistry.ContrainteMulticolEnum;
 import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiques;
 
@@ -38,7 +40,6 @@ public class DialogMultiColumnConstraintsModel {
 				return test;
 			}
 			return test && ContrainteMultiColFonctionsSpecifiques.isValide(method, cols.toArray(new String[cols.size()]));
-
 		}
 	}
 
@@ -250,8 +251,10 @@ public class DialogMultiColumnConstraintsModel {
 	 * @return la liste des noms de méthode disponibles.
 	 */
 	public String[] getPossibleMethodNames() {
-		final List<String> pmn = new ArrayList<>(ContrainteMultiColFonctionsSpecifiques.getMethods());
-		pmn.add("Unique");
+		final List<String> pmn = new ArrayList<String>();
+		for (ContrainteMulticolEnum c : ContrainteRegistry.ContrainteMulticolEnum.values()) {
+			pmn.add(c.getFonction());
+		}
 		return pmn.toArray(new String[pmn.size()]);
 	}
 

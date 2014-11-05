@@ -1,4 +1,4 @@
-package com.kleegroup.lord.ui.common.model;
+﻿package com.kleegroup.lord.ui.common.model;
 
 import java.util.ArrayList;
 import java.util.List;
