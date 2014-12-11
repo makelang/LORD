@@ -32,10 +32,9 @@ import com.kleegroup.lord.moteur.util.IHierarchieSchema;
  */
 public abstract class ContrainteUniCol  implements IContrainte,IHierarchieSchema {
 
-    	protected final ResourceBundle resourceMap = ResourceBundle
-    		.getBundle("resources.ContraintesMessagesErreur");
+    protected final ResourceBundle resourceMap = ResourceBundle.getBundle("resources.ContraintesMessagesErreur");
     	
-    	private Colonne colonneParent;
+    private Colonne colonneParent;
 
 	private Interprete interpreteMsg=null;
 	

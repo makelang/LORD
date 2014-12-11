@@ -4,8 +4,8 @@ import com.kleegroup.lord.moteur.exceptions.ExceptionMoteur;
 
 
 /**
- *Implémenté par  tout objet qui effectue des vérifications.
- *Elle contient des fonctions qui permettent de lancer la vérification sur sun String,
+ *Implémentée par  tout objet qui effectue des vérifications.
+ *Elle contient des fonctions qui permettent de lancer la vérification sur un String,
  *des fonctions qui récupèrent les messages d'erreurs.<br>
  *Elle définit aussi des constantes à utiliser pour identifier les erreurs	
  *
@@ -19,9 +19,9 @@ public interface IContrainte  {
 	 * Vérifie que la valeur est valide selon les contraintes prédéfinies.
 	 * @param numLigne le numero de la ligne a verifier
 	 * @param valeurs les valeurs à vérifier
-	 * @return NO_ERR si aucune erreur n'est détéctée <br>
+	 * @return NO_ERR si aucune erreur n'est détectée <br>
 	 * Sinon, un objet Erreur contenant les informations nécessaires.
-	 * @throws ExceptionMoteur si la verification detecte une anomalie 
+	 * @throws ExceptionMoteur si la vérification detecte une anomalie 
 	 * bloquante(caractere interdit, trop d'erreurs,...)
 	 * 
 	 */
@@ -49,7 +49,7 @@ public interface IContrainte  {
 	Fichier getFichier();
 
 	/**
-	 * renvoie une interpretation de la balise. voir {@link spark.reprise.outil.moteur.Interprete}
+	 * renvoie une interpretation de la balise. voir {@link com.kleegroup.lord.moteur.Interprete}
 	 * @param balise la balise à interpreter 
 	 * @param indice l'indice (ignoré dans ce cas)
 	 * @return balise
@@ -61,6 +61,5 @@ public interface IContrainte  {
 	 * pour pouvoir  réutiliser cet objet pour une nouvelle vérification 
 	 * */
 	void clean();
-	
 	
 }

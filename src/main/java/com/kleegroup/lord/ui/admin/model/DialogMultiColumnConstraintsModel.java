@@ -8,7 +8,6 @@ import com.kleegroup.lord.moteur.ContrainteMultiCol;
 import com.kleegroup.lord.moteur.ContrainteRegistry;
 import com.kleegroup.lord.moteur.ContrainteRegistry.ContrainteMulticolEnum;
 import com.kleegroup.lord.moteur.Fichier;
-import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiques;
 
 /**
  * Cette classe sert à représenter, construire et détruire les contraintes d'un fichier.<br>
@@ -35,11 +34,13 @@ public class DialogMultiColumnConstraintsModel {
 		}
 
 		boolean isValide() {
-			final boolean test = id != null && !("".equals(id)) && method != null && errorMessage != null && cols != null && cols.size() > 0;
-			if ("Unique".equals(method)) {
-				return test;
-			}
-			return test && ContrainteMultiColFonctionsSpecifiques.isValide(method, cols.toArray(new String[cols.size()]));
+			final boolean test = id != null
+					             && !("".equals(id))
+					             && method != null
+					             && errorMessage != null
+					             && cols != null
+					             && cols.size() > 0;
+			return test && ContrainteRegistry.ContrainteMulticolEnum.isValide(method, cols.toArray(new String[cols.size()]));
 		}
 	}
 

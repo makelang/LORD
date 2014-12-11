@@ -176,7 +176,7 @@ public class Interprete {
 		logAppli.trace("template interprete =" + template);
 		Interprete inft = new Interprete();
 		inft.separerExpression(template);
-		logAppli.trace("interprete généré \n" + inft);
+		logAppli.trace("interprète généré \n" + inft);
 
 		return inft;
 	}
