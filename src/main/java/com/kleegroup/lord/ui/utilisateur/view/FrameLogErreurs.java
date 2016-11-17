@@ -16,6 +16,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
+import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeSelectionEvent;
@@ -72,7 +73,7 @@ public class FrameLogErreurs extends javax.swing.JPanel implements
 
     private void initComponents() {
 	jSplitPane = new javax.swing.JSplitPane();
-	jScrollPaneTreeFileList = new javax.swing.JScrollPane();
+	jScrollPaneTreeFileList = new javax.swing.JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	jTreeFileList = new javax.swing.JTree();
 	jTreeFileList.setModel(new FileTreeModel(new Schema()));
 	
@@ -80,7 +81,7 @@ public class FrameLogErreurs extends javax.swing.JPanel implements
 	
 	
 	jTreeFileList.setCellRenderer(new MyDefaultTreeCellRenderer());
-	jScrollPaneTblErrorList = new javax.swing.JScrollPane();
+	jScrollPaneTblErrorList = new javax.swing.JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	jTblErrorList = new javax.swing.JTable();
 //	jTblErrorList.setAutoCreateRowSorter(true); // a remettre pour java 1.6
 
