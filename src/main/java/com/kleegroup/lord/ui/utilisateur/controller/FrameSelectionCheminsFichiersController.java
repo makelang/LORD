@@ -1,4 +1,4 @@
-package com.kleegroup.lord.ui.utilisateur.controller;
+﻿package com.kleegroup.lord.ui.utilisateur.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -82,7 +82,7 @@ public class FrameSelectionCheminsFichiersController extends FrameController<Fra
 			temp.addCategorie(nomCategorie);
 			for (final Fichier f : model.getFichiers(nomCategorie)) {
 				final String nom = f.getNom();
-				temp.addFichier(nom, model.getExtension(nom));
+				temp.addFichier(nom, model.getExtension(nom), nomCategorie);
 				temp.setChemin(nom, model.getChemin(nom));
 			}
 		}
@@ -92,7 +92,7 @@ public class FrameSelectionCheminsFichiersController extends FrameController<Fra
 		for (final String nomCategorie : model.getNomsCategories()) {
 			for (final Fichier f : model.getFichiers(nomCategorie)) {
 				final String nom = f.getNom();
-				temp.addFichier(nom, model.getExtension(nom));
+				temp.addFichier(nom, model.getExtension(nom), nomCategorie);
 				temp.setChemin(nom, model.getChemin(nom));
 			}
 		}
