@@ -19,6 +19,7 @@ import com.kleegroup.lord.moteur.Schema;
 import com.kleegroup.lord.moteur.contraintes.ContrainteReference;
 import com.kleegroup.lord.moteur.contraintes.ContrainteTypeChaineDeCaractere;
 import com.kleegroup.lord.moteur.util.IHierarchieSchema;
+import com.kleegroup.lord.moteur.util.SeparateurChamps;
 import com.kleegroup.lord.moteur.util.SeparateurDecimales;
 import com.kleegroup.lord.ui.common.model.FileTreeModel;
 
@@ -657,9 +658,9 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return le separateur des champs.
+	 * @return le séparateur des champs.
 	 */
-	public char getSchemaSeparateurChamp() {
+	public SeparateurChamps getSchemaSeparateurChamp() {
 		return schema.getSeparateurChamp();
 	}
 
@@ -674,13 +675,13 @@ public class FenetrePrincipaleAdminModel {
 	/**
 	 * @param separateurChamp le separateur des champs.
 	 */
-	public void setSchemaSeparateurChamp(char separateurChamp) {
+	public void setSchemaSeparateurChamp(SeparateurChamps sep) {
 		setModified();
-		schema.setSeparateurChamp(separateurChamp);
+		schema.setSeparateurChamp(sep);
 	}
 
 	/**
-	 * @return le fichier selectionné, dont on affiche les ddétails.
+	 * @return le fichier selectionné, dont on affiche les détails.
 	 */
 	public Fichier getCurrentFichier() {
 		return currentFile.getFichier();
@@ -821,12 +822,11 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * doit être un toString() des enums de la classe {@link SeparateurDecimales}.
+	 * Doit être un toString() des enums de la classe {@link SeparateurDecimales}.
 	 * @param text un String qui définit le séparateur de décimales
 	 */
-	public void setSchemaSeparateurDecimales(String text) {
-		schema.setSeparateurDecimales(text);
-
+	public void setSchemaSeparateurDecimales(SeparateurDecimales sep) {
+		schema.setSeparateurDecimales(sep);
 	}
 
 	/**

@@ -21,14 +21,14 @@ public interface ICSVDataSource  {
 	 */
 	long getNbCharactersRead();
 	/**
-	 * définit le séprateur de champ de la source.
-	 * @param separator le séprateur de champ de la source.
+	 * Définit le séparateur de champ de la source.
+	 * @param separator le séparateur de champ de la source.
 	 */
 	void setFieldSeparator(char separator);
 	/**
-	 * @return true si la source conteint encore des données , false sinon.
+	 * @return true si la source contient encore des données , false sinon.
 	 * @throws IOException si la source est illisible.
-	 * @throws CaractereInterdit si un caractere interdit est rencontre
+	 * @throws CaractereInterdit si un caractère interdit est rencontré
 	 */
 	boolean hasNext() throws IOException,CaractereInterdit;
 	/**
@@ -38,7 +38,7 @@ public interface ICSVDataSource  {
 	/**
 	 * @return les données de la source 
 	 * @throws IOException si la source est illisible.
-	 * @throws CaractereInterdit si la source contient un caractere interdit
+	 * @throws CaractereInterdit si la source contient un caractère interdit
 	 */
 	String[] next() throws IOException, CaractereInterdit;
 }

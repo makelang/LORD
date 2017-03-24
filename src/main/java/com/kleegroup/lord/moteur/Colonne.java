@@ -27,14 +27,13 @@ import com.kleegroup.lord.moteur.util.SeparateurDecimales;
  * Une colonne possède une liste de contraintes. Ces contraintes seront
  * vérifiées en série sur chaque valeur de la colonne. <br>
  * <br>
- * Certaines erreurs peuvent déclancher l'abandon de la vérification d'une
+ * Certaines erreurs peuvent déclencher l'abandon de la vérification d'une
  * valeur. Ces contraintes "existentielle" déclenchent l'abandon si la valeur
  * est vide. Les contraintes existentielles sont:<br>
  * ContrainteVide, ContrainteObligatoire et ContrainteFacultatif.<br>
- * La contrainte ContrainteTypeChaineDeCaractere peut aussi déclancher l'abondon
- * de la vérification du fichier si une chaine contient une valeur interdite
- * <code>'"'
- * </code> et <code> '\n'</code>.
+ * La contrainte ContrainteTypeChaineDeCaractere peut aussi déclencher l'abondon
+ * de la vérification du fichier si une chaîne contient une valeur interdite
+ * <code>'"'</code> et <code> '\n'</code>.
  * 
  */
 public class Colonne implements IHierarchieSchema {
