@@ -1,4 +1,5 @@
-﻿package com.kleegroup.lord.ui.utilisateur.model;
+﻿
+package com.kleegroup.lord.ui.utilisateur.model;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -26,8 +27,8 @@ public class FrameSelectionCheminsFichiersModel extends Model {
 	}
 
 	/**
-	 * Active/desactive le fichier.
-	 * @param nom lle nom du fichier à désactiver.
+	 * Active/désactive le fichier.
+	 * @param nom le nom du fichier à désactiver.
 	 * @param etat true s'il faut l'activer.
 	 */
 	public void setEnabled(String nom, boolean etat) {
@@ -47,7 +48,7 @@ public class FrameSelectionCheminsFichiersModel extends Model {
 	}
 
 	/**
-	 * @return null si les chemins donnés à chaque fichiers sont valide,
+	 * @return null si les chemins donnés à chaque fichiers sont valides,
 	 * sinon renvoie le nom du premier fichier invalide.
 	 */
 	public String isValide() {
