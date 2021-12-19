@@ -1,4 +1,4 @@
-﻿package com.kleegroup.lord.moteur.exceptions;
+package com.kleegroup.lord.moteur.exceptions;
 
 /**
  * Exception lancée si la création du repertoire et fichiers de logs echoue.
