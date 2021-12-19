@@ -70,7 +70,7 @@ public class XmlObjTransformer {
 
 		// Autres paramètres globaux
 		schemaEquiv.setEncoding(schemaOriginal.getEncodage());
-		schemaEquiv.setAfficherExportLogs(schemaOriginal.getAfficherExportLogs());
+		schemaEquiv.setAfficherExportLogs(schemaOriginal.isAfficherExportLogs());
 		for (TypeFichier fichierOriginal : schemaOriginal.getFichier()) {
 			schemaEquiv.addFichier(transform(fichierOriginal));
 		}
