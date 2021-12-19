@@ -47,8 +47,6 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 
 	private javax.swing.JButton jBtnBack;
 
-	private javax.swing.JLabel jLblLogoKLEE;
-
 	private javax.swing.JLabel jLblLogoSPARK;
 
 	private javax.swing.JPanel jPnlBottom;
@@ -197,9 +195,6 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 		jPnlTop.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 		jPnlTop.setName("jPnlTop");
 
-		jLblLogoKLEE.setIcon(new javax.swing.ImageIcon(ClassLoader.getSystemClassLoader().getResource("resources/images/logo_klee.png")));
-		jLblLogoKLEE.setName("jLabel5");
-
 		jLblLogoSPARK.setIcon(new javax.swing.ImageIcon(ClassLoader.getSystemClassLoader().getResource("resources/images/logo_lord.png")));
 		jLblLogoSPARK.setName("jLabel6");
 
@@ -251,7 +246,6 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.PAGE_AXIS));
 
 		jPnlTop.setLayout(new BoxLayout(jPnlTop, BoxLayout.LINE_AXIS));
-		jPnlTop.add(jLblLogoKLEE);
 		jPnlTop.add(Box.createHorizontalGlue());
 		jPnlTop.add(jLblLogoSPARK);
 
@@ -292,7 +286,6 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 	private void createComponents() {
 		jPnlLeft = new javax.swing.JPanel();
 		jPnlTop = new javax.swing.JPanel();
-		jLblLogoKLEE = new javax.swing.JLabel();
 		jLblLogoSPARK = new javax.swing.JLabel();
 		jPnlBottom = new javax.swing.JPanel();
 		jBtnMisc = new javax.swing.JButton();
