@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kleegroup</groupId>
 	<artifactId>LORD</artifactId>
@@ -11,22 +10,18 @@
 
 	<properties>
 		<!-- Target JDK version -->
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
+		<maven.compiler.source>${jdk.version}</maven.compiler.source>
+		<maven.compiler.target>${jdk.version}</maven.compiler.target>
+
 		<!-- User interface for end-user (file testing only) -->
 		<mainClass>com.kleegroup.lord.ui.utilisateur.UserUI</mainClass>
 		<!-- User interface for administrator (exclusive with previous) -->
 		<!-- <mainClass>com.kleegroup.lord.ui.admin.AdminUI</mainClass> -->
-		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<build>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<targetPath>resources</targetPath>
-			</resource>
-		</resources>
-
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -36,38 +31,9 @@
 				</plugin>
 
 				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>1.8</version>
-					<executions>
-						<execution>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>add-source</goal>
-							</goals>
-							<configuration>
-								<sources>
-									<source>target/generated-sources/jaxb</source>
-								</sources>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-
-				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-shade-plugin</artifactId>
 					<version>2.2</version>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.1</version>
-					<configuration>
-						<source>${jdk.version}</source>
-						<target>${jdk.version}</target>
-					</configuration>
 				</plugin>
 
 				<plugin>
@@ -108,6 +74,7 @@
 						<goals>
 							<goal>xjc</goal>
 						</goals>
+						<phase>generate-sources</phase>
 						<configuration>
 							<!-- The schemaDirectory or schemaFiles. -->
 							<schemaFiles>schemaFichierConfig.xsd</schemaFiles>
@@ -116,6 +83,25 @@
 							<packageName>com.kleegroup.lord.config.xml</packageName>
 							<!-- The working directory to create the generated java source files. -->
 							<outputDirectory>${project.build.directory}/generated-sources/jaxb</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>target/generated-sources/jaxb</source>
+							</sources>
 						</configuration>
 					</execution>
 				</executions>
@@ -133,8 +119,7 @@
 						<configuration>
 							<createDependencyReducedPom>false</createDependencyReducedPom>
 							<transformers>
-								<transformer
-									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>${mainClass}</mainClass>
 								</transformer>
 							</transformers>
@@ -148,24 +133,17 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
-			<exclusions>
-				<exclusion>
-					<groupId>com.sun.jmx</groupId>
-					<artifactId>jmxri</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jdmk</groupId>
-					<artifactId>jmxtools</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+			<version>1.7.32</version>
 		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.9</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
