@@ -7,7 +7,7 @@ import java.util.List;
 import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 
 /**
- * Repr�sente les cat�gories du sch�ma. <br>
+ * Représente les catégories du schéma. <br>
  * <br>
  * 
  * 
@@ -15,10 +15,10 @@ import com.kleegroup.lord.moteur.util.IHierarchieSchema;
  */
 public class Categories implements IHierarchieSchema {
 
-	private static final String ROOT = "Cat�gorie non d�finie";
+	private static final String ROOT = "Catégorie non définie";
 
 	/**
-	     * Une cat�gorie de fichier.
+	     * Une catégorie de fichier.
 	     */
 	public static class Categorie implements IHierarchieSchema {
 		protected List<Fichier> fichiers = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Categories implements IHierarchieSchema {
 
 		/**
 		     * @param nom
-		     *                le nom de la cat�gorie.
+		     *                le nom de la catégorie.
 		 * @param position la position de la categorie
 		 * @param parent le parent de la categorie.
 		     */
@@ -40,22 +40,22 @@ public class Categories implements IHierarchieSchema {
 		}
 
 		/**
-		     * Ajoute un fichier � la cat�gorie. Si un fichier du m�me nom y existe
-		     * d�j�, le fichier est d�placer � la position finale.
+		     * Ajoute un fichier à la catégorie. Si un fichier du même nom y existe
+		     * déjà, le fichier est déplacer à la position finale.
 		     * 
 		     * @param e
-		     *                le fichier � ajouter.
+		     *                le fichier à ajouter.
 		     */
 		public void add(Fichier e) {
 			add(e, fichiers.size());
 		}
 
 		/**
-		     * Ajoute un fichier � la cat�gorie � la position pos. Si un fichier du
-		     * m�me nom y existe d�j�, le fichier est d�placer � la position pos.
+		     * Ajoute un fichier à la catégorie à la position pos. Si un fichier du
+		     * même nom y existe déjà, le fichier est déplacer à la position pos.
 		     * 
 		     * @param e
-		     *                le fichier � ajouter.
+		     *                le fichier à ajouter.
 		     * @param pos
 		     *                la position du fichier.
 		     */
@@ -95,11 +95,11 @@ public class Categories implements IHierarchieSchema {
 		}
 
 		/**
-		     * Renvoie le fichier � la position index.
+		     * Renvoie le fichier à la position index.
 		     * 
 		     * @param index
-		     *                la position du fichier demand�.
-		     * @return le fichier demand�.
+		     *                la position du fichier demandé.
+		     * @return le fichier demandé.
 		     */
 		public Fichier get(int index) {
 			int posReelle = index;
@@ -114,11 +114,11 @@ public class Categories implements IHierarchieSchema {
 
 		/**
 		     * Rencoie le fichier dont le nom est nomFichier. Si le fihier n'est pas
-		     * trouv�, renvoie null.
+		     * trouvé, renvoie null.
 		     * 
 		     * @param nomFichier
-		     *                le nom du fichier demand�.
-		     * @return le fichier si trouv�, ou null sinon.
+		     *                le nom du fichier demandé.
+		     * @return le fichier si trouvé, ou null sinon.
 		     */
 		public Fichier get(String nomFichier) {
 			for (Fichier f : fichiers) {
@@ -130,11 +130,11 @@ public class Categories implements IHierarchieSchema {
 		}
 
 		/**
-		     * Renvoie la position du fichier dans la cat�gorie.
+		     * Renvoie la position du fichier dans la catégorie.
 		     * 
 		     * @param nomFichier
 		     *                le nom du fichier.
-		     * @return la position du fichier dans la cat�gorie.
+		     * @return la position du fichier dans la catégorie.
 		     */
 		public int getPosFichier(String nomFichier) {
 			for (int i = 0; i < fichiers.size(); i++) {
@@ -146,14 +146,14 @@ public class Categories implements IHierarchieSchema {
 		}
 
 		/**
-		     * @return le nombre de fichiers dans la cat�gorie.
+		     * @return le nombre de fichiers dans la catégorie.
 		     */
 		public int size() {
 			return fichiers.size();
 		}
 
 		/**
-		     * @return le nom de la cat�gorie.
+		     * @return le nom de la catégorie.
 		     */
 		public String getNom() {
 			return nom;
@@ -164,11 +164,11 @@ public class Categories implements IHierarchieSchema {
 		     * 
 		     * <br>
 		     * <br>
-		     * Attention de ne pas choisir un nom existant, sinon les cat�gories
-		     * seront m�lang�es au prochain chargement.
+		     * Attention de ne pas choisir un nom existant, sinon les catégories
+		     * seront mélangées au prochain chargement.
 		     * 
 		     * @param nom
-		     *                le nom de la cat�gorie.
+		     *                le nom de la catégorie.
 		     */
 		public void setNom(String nom) {
 			this.nom = nom;
@@ -194,7 +194,7 @@ public class Categories implements IHierarchieSchema {
 		     * Deplace le fichier vers le bas.
 		     * 
 		     * @param f
-		     *                le fichier � d�placer
+		     *                le fichier à déplacer
 		     */
 		public void moveDn(Fichier f) {
 			int pos = this.getPosFichier(f.getNom());
@@ -208,7 +208,7 @@ public class Categories implements IHierarchieSchema {
 
 		/**
 		     * @param f
-		     *                retire le fichier de la cat�gorie.
+		     *                retire le fichier de la catégorie.
 		     */
 		public void remove(Fichier f) {
 			fichiers.remove(f);
@@ -219,7 +219,7 @@ public class Categories implements IHierarchieSchema {
 		     * Deplace le fichier vers le haut.
 		     * 
 		     * @param f
-		     *                le fichier � d�placer
+		     *                le fichier à déplacer
 		     */
 		public void moveUp(Fichier f) {
 			int pos = this.getPosFichier(f.getNom());
@@ -319,12 +319,12 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	     * Cr�e une cat�gorie. Si une cat�gorie du m�me nom existe d�j�, renvoie
-	     * cette derni�re.
+	     * Crée une catégorie. Si une catégorie du même nom existe déjà, renvoie
+	     * cette dernière.
 	     * 
 	     * @param nom
-	     *                le nom de la cat�gorie.
-	     * @return la cat�gorie demand�e.
+	     *                le nom de la catégorie.
+	     * @return la catégorie demandée.
 	     */
 	public Categorie createCategorie(String nom) {
 		Categorie res = getCategorie(nom);
@@ -336,12 +336,12 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	     * Renomme la cat�gorie.
+	     * Renomme la catégorie.
 	     * 
 	     * @param oldName
 	     *                l'ancien nom.
 	     * @param newName
-	     *                le nouveau nom de la cat�gorie.
+	     *                le nouveau nom de la catégorie.
 	     */
 	public void renameCategorie(String oldName, String newName) {
 		Categorie c = getCategorie(oldName);
@@ -352,7 +352,7 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	     * @return la liste des cat�gories.
+	     * @return la liste des catégories.
 	     */
 	public List<String> getCategories() {
 		List<String> listeNom = new ArrayList<>(categories.size());
@@ -363,20 +363,20 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	     * Tout sch�ma contient forc�ment une cat�gorie, la cat�gorie root.Les
-	     * fichiers qui ne sont pas rattach�s � une cat�gorie particuli�re sont
-	     * rajout� � cette cat�gorie. La cat�gorie Root est trait� sp�cialement lors
-	     * de l'affichage. Ses fichiers sont affich�s sans cat�gorie m�re.
+	     * Tout schéma contient forcément une catégorie, la catégorie root.Les
+	     * fichiers qui ne sont pas rattachés à une catégorie particulière sont
+	     * rajouté à cette catégorie. La catégorie Root est traité spécialement lors
+	     * de l'affichage. Ses fichiers sont affichés sans catégorie mère.
 	     * 
-	     * @return la cat�gorie root.
+	     * @return la catégorie root.
 	     */
 	public Categorie getRootCategorie() {
 		return root;
 	}
 
 	/**
-	 * Supprime la cat�gorie. Les fichiers de la cat�gorie seront rattach�s � root.
-	 * @param nom le nom de la cat�gorie � supprimer.
+	 * Supprime la catégorie. Les fichiers de la catégorie seront rattachés à root.
+	 * @param nom le nom de la catégorie à supprimer.
 	 */
 	public void deleteCat(String nom) {
 		List<Fichier> liste = getFileList(nom);
@@ -399,9 +399,9 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * Renvoie la position du fichier dans sa cat�gorie.
+	 * Renvoie la position du fichier dans sa catégorie.
 	 * @param nomFichier le nom du fichier.
-	 * @return sa position dans la cat�gorie.
+	 * @return sa position dans la catégorie.
 	 */
 	public int getPosFichier(String nomFichier) {
 		for (Categorie c : categories) {
@@ -414,9 +414,9 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * Renvoie la position de la cat�gorie parmi les autres cat�gories.
-	 * @param nomCategorie le nom de la cat�gorie.
-	 * @return la position parmi les autres cat�gories.
+	 * Renvoie la position de la catégorie parmi les autres catégories.
+	 * @param nomCategorie le nom de la catégorie.
+	 * @return la position parmi les autres catégories.
 	 */
 	public int getPosCategorie(String nomCategorie) {
 		for (int i = 0; i < categories.size(); i++) {// on evite le root
@@ -428,8 +428,8 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * Renvoie la cat�gorie auquel appartient le fichier f.
-	 * @param f le fichier dont on cherche la cat�gorie. 
+	 * Renvoie la catégorie auquel appartient le fichier f.
+	 * @param f le fichier dont on cherche la catégorie. 
 	 * @return la position du fichier.
 	 */
 	public String getCategorieFichier(Fichier f) {
@@ -443,9 +443,9 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 *Renvoie la liste des fichiers d'une cat�gorie.
-	 * @param categorie la cat�gorie demand�e
-	 * @return la liste des fichiers de la cat�gorie. 
+	 *Renvoie la liste des fichiers d'une catégorie.
+	 * @param categorie la catégorie demandée
+	 * @return la liste des fichiers de la catégorie. 
 	 */
 	public List<Fichier> getFileList(String categorie) {
 		return getCategorie(categorie).getFiles();
@@ -469,33 +469,33 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * Rajoute le fichier f dans la cat�gorie categorie.
-	 * @param f le fichier � rajouter.
-	 * @param categorie la cat�gorie auquel il faut el rajouter.
+	 * Rajoute le fichier f dans la catégorie categorie.
+	 * @param f le fichier à rajouter.
+	 * @param categorie la catégorie auquel il faut el rajouter.
 	 */
 	public void put(Fichier f, String categorie) {
 		put(f, categorie, Integer.MAX_VALUE);
 	}
 
 	/**
-	 * @return le nombre des cat�gories (root n'est pas compt�).
+	 * @return le nombre des catégories (root n'est pas compté).
 	 */
 	public int getNbCategories() {
 		return categories.size();
 	}
 
 	/**
-	 * Renvoie la cat�gorie ) la position index.
-	 * @param index la position de la cat�gorie.
-	 * @return la cat�gorie demand�e.
+	 * Renvoie la catégorie ) la position index.
+	 * @param index la position de la catégorie.
+	 * @return la catégorie demandée.
 	 */
 	public Categorie getCategorie(int index) {
 		return categories.get(index);
 	}
 
 	/**
-	 * D�place le fichier f vers le bas dans la cat�gorie.
-	 * @param f le fichier � d�placer.
+	 * Déplace le fichier f vers le bas dans la catégorie.
+	 * @param f le fichier à déplacer.
 	 */
 	public void moveDn(Fichier f) {
 		f.getCategorie().moveDn(f);
@@ -503,8 +503,8 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * D�place la Cat�gorie cat�gorie vers le bas dans le sch�ma.
-	 * @param categorie la Cat�gorie � d�placer.
+	 * Déplace la Catégorie catégorie vers le bas dans le schéma.
+	 * @param categorie la Catégorie à déplacer.
 	 */
 	public void moveDn(Categorie categorie) {
 		int pos = getPosCategorie(categorie.getNom());
@@ -518,8 +518,8 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * D�place le fichier f vers le haut dans la cat�gorie.
-	 * @param f le fichier � d�placer.
+	 * Déplace le fichier f vers le haut dans la catégorie.
+	 * @param f le fichier à déplacer.
 	 */
 	public void moveUp(Fichier f) {
 		f.getCategorie().moveUp(f);
@@ -527,8 +527,8 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * D�place la Cat�gorie cat�gorie vers le haut dans le sch�ma.
-	 * @param categorie la Cat�gorie � d�placer.
+	 * Déplace la Catégorie catégorie vers le haut dans le schéma.
+	 * @param categorie la Catégorie à déplacer.
 	 */
 	public void moveUp(Categorie categorie) {
 		int pos = getPosCategorie(categorie.getNom());
@@ -541,7 +541,7 @@ public class Categories implements IHierarchieSchema {
 	}
 
 	/**
-	 * @return la liste des cat�gories du sch�ma (autre que root)
+	 * @return la liste des catégories du schéma (autre que root)
 	 */
 	public List<Categorie> getListCategories() {
 		return categories;

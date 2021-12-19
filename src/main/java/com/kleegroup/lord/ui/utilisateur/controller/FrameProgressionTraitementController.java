@@ -26,23 +26,23 @@ public class FrameProgressionTraitementController extends FrameController<FrameP
     protected Task tacheVerifSchema;
     
     /**
-     * L'etat de la v�rification.
+     * L'etat de la vérification.
      */
     public enum Etat{
 	/**
-	 * V�rification du fichier n'a pas encore commenc�.
+	 * Vérification du fichier n'a pas encore commencé.
 	 */
 	AVANT_VERIFICATION,
 	/**
-	 * V�rification du fichier en cours.
+	 * Vérification du fichier en cours.
 	 */
 	VERIFICATION_EN_COURS,
 	/**
-	 * V�rification du fichier abandonn�e.
+	 * Vérification du fichier abandonnée.
 	 */
 	VERIFICATION_ABANDONNEE,
 	/**
-	 * V�rification du fichier achev�e.
+	 * Vérification du fichier achevée.
 	 */
 	VERIFICATION_ACHEVEE,
 		
@@ -232,7 +232,7 @@ public class FrameProgressionTraitementController extends FrameController<FrameP
     }
 
     /**
-     * Raffraichit le mod�le ainsi que l'affichage.
+     * Raffraichit le modèle ainsi que l'affichage.
      */
     public void refreshView() {
 	model.refresh();

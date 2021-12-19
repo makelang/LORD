@@ -22,8 +22,8 @@ public class LoggueurConsole extends AbstractLoggueur {
 		this(System.out);
 	}
 	/**
-	 * Cree un loggueur console, sortie sur le PrintStream sp�cifi�.
-	 * @param out le printStream utilis� pour logger les erreurs
+	 * Cree un loggueur console, sortie sur le PrintStream spécifié.
+	 * @param out le printStream utilisé pour logger les erreurs
 	 */
 	public LoggueurConsole(PrintStream out){
 		super();

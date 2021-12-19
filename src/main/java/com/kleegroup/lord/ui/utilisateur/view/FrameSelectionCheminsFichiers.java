@@ -25,7 +25,7 @@ import com.kleegroup.lord.ui.utilisateur.controller.FrameSelectionCheminsFichier
 
 /**
  * Frame qui permet de selectionner les chemins des fichier , aisni que les
- * activer/d�scativer.
+ * activer/déscativer.
  */
 public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 
@@ -58,7 +58,7 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 
 	private javax.swing.JPanel jpnlListeFichiers;
 
-	/** Cr�e une nouvelle fenetre.
+	/** Crée une nouvelle fenetre.
 	 * @param controller controlleur de la frame. */
 	public FrameSelectionCheminsFichiers(FrameSelectionCheminsFichiersController controller) {
 		super();
@@ -68,7 +68,7 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 	}
 
 	/**
-	 * Rajoute des contr�les pour modifier les propri�t�s d'un fichier.
+	 * Rajoute des contrôles pour modifier les propriétés d'un fichier.
 	 * @param nom le nom du fichier.
 	 * @param extension l'extension du fichier.
 	 */
@@ -114,8 +114,8 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 	}
 
 	/**
-	 * Ajoute une zone qui indique le d�but d'une cat�gorie.
-	 * @param nom le nom de la cat�gorie.
+	 * Ajoute une zone qui indique le début d'une catégorie.
+	 * @param nom le nom de la catégorie.
 	 */
 	public void addCategorie(String nom) {
 		final JLabel lblCat = new JLabel("      " + nom);
@@ -149,7 +149,7 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 	/**
 	 * Affiche la valeur chemin dans la case chemin du fichier.
 	 * @param nom le nom du fichier
-	 * @param chemin le chemin � afficher
+	 * @param chemin le chemin à afficher
 	 */
 	public void setChemin(String nom, String chemin) {
 		getEditor(nom).setChemin(chemin);
@@ -300,7 +300,7 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 	}
 
 	/**
-	 * Rajoute un label � la fin de la lsite des fichiers pour pousser les controles vers le
+	 * Rajoute un label à la fin de la lsite des fichiers pour pousser les controles vers le
 	 * haut.
 	 */
 	public void fin() {
@@ -321,14 +321,14 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 	}
 
 	/**
-	 * @param path le r�pertoire du LogDir � afficher.
+	 * @param path le répertoire du LogDir à afficher.
 	 */
 	public void setLogDir(String path) {
 		jtxtLogDir.setText(path);
 	}
 
 	/**
-	 * @param path le r�pertoire des donn�es.
+	 * @param path le répertoire des données.
 	 */
 	public void setDataDir(String path) {
 		jtxtDataDir.setText(path);

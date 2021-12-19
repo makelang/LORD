@@ -14,7 +14,7 @@ public class LoggueurMultiple extends AbstractLoggueur {
 	protected List<ILogger> loggers = new ArrayList<>();
 
 	/**
-	 * Construit un logger qui distribue les erreurs � plusieurs loggeurs.
+	 * Construit un logger qui distribue les erreurs à plusieurs loggeurs.
 	 */
 	public LoggueurMultiple() {
 		super();
@@ -38,8 +38,8 @@ public class LoggueurMultiple extends AbstractLoggueur {
 	}
 
 	/**
-	 * Rajoute un loggueur � la liste des loggueurs � notifier.
-	 * @param logger le loggueur � rajouter.
+	 * Rajoute un loggueur à la liste des loggueurs à notifier.
+	 * @param logger le loggueur à rajouter.
 	*/
 	public void addLogger(ILogger logger) {
 		loggers.add(logger);

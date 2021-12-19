@@ -103,7 +103,7 @@ public class DialogMultiColumnConstraints extends JDialog {
     }
 
     /**
-     * Cree une fenetre d'�dition des contrainte MultiColonne.
+     * Cree une fenetre d'édition des contrainte MultiColonne.
      * @param controller controlleur de la fenetre
      */
     public DialogMultiColumnConstraints(
@@ -127,7 +127,7 @@ public class DialogMultiColumnConstraints extends JDialog {
 	jbtnAddContrainte.setAction(new ActnAddConstraint());
 	jbtnDelContrainte.setAction(new ActnDeleteConstraint());
 
-	setTitle("V�rifications Sp�cifiques");
+	setTitle("Vérifications Spécifiques");
 	createLayout();
 	pack();
 	setLocationRelativeTo(null);
@@ -242,7 +242,7 @@ public class DialogMultiColumnConstraints extends JDialog {
 
     private void adjustTableColumnSize() {
 	//Calcul des tailles optimales des colonnes
-	//on utilise unqiuement les donn�es du premier fichier (selectionn� par defaut)
+	//on utilise unqiuement les données du premier fichier (selectionné par defaut)
 	for (int i = 0; i < jtblContraintes.getColumnCount(); i++) {
 	    final TableColumn column = jtblContraintes.getColumnModel().getColumn(i);
 

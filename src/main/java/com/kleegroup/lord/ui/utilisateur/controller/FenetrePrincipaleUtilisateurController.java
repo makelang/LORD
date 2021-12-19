@@ -12,7 +12,7 @@ import com.kleegroup.lord.ui.utilisateur.view.FenetrePrincipaleUtilisateur;
 
 /**
  * Controlleur de la fenetre principale.<br>
- * S'occupe de r�aliser les demandes de l'utilisateur. Dans la majorit� des cas,
+ * S'occupe de réaliser les demandes de l'utilisateur. Dans la majorité des cas,
  * transmet les action de l'utilisateur au FrameController actuel.
  * 
  */
@@ -36,7 +36,7 @@ public class FenetrePrincipaleUtilisateurController extends Controller<FenetrePr
 	 * Charge le fichier de conf.
 	 * 
 	 * @throws FileNotFoundException
-	 *             si le fichier n'est pas trouv�.
+	 *             si le fichier n'est pas trouvé.
 	 * @throws JAXBException Exception JAXB
 	 */
 	public void chargerFichierConf() throws FileNotFoundException, JAXBException {
@@ -54,8 +54,8 @@ public class FenetrePrincipaleUtilisateurController extends Controller<FenetrePr
 	}
 
 	/**
-	 * Action quand l'utilisateur a cliqu� sur annul�. d�l�gu�e au controlleur
-	 * de la frame actuellement affich�e.
+	 * Action quand l'utilisateur a cliqué sur annulé. déléguée au controlleur
+	 * de la frame actuellement affichée.
 	 */
 	public void annuler() {
 		controlleurActuel.annuler();
@@ -78,7 +78,7 @@ public class FenetrePrincipaleUtilisateurController extends Controller<FenetrePr
 	 * demande la permission du controlleur actuel de changer de frame (
 	 * {@link FrameController#canGoBack()} si autorise, appelle la methode
 	 * {@link FrameController#precedent()}, et donne la main au controlleur
-	 * pr�cedent.
+	 * précedent.
 	 */
 	public void precedent() {
 		if (controlleurActuel.canGoBack()) {
@@ -94,8 +94,8 @@ public class FenetrePrincipaleUtilisateurController extends Controller<FenetrePr
 	}
 
 	/**
-	 * Action quand l'utilisateur a cliqu� sur le bouton Misc(exporter les
-	 * logs). d�l�gu�e au controlleur de la frame actuellement affich�e.
+	 * Action quand l'utilisateur a cliqué sur le bouton Misc(exporter les
+	 * logs). déléguée au controlleur de la frame actuellement affichée.
 	 */
 	public void executeMiscAction() {
 		controlleurActuel.executeMiscAction();

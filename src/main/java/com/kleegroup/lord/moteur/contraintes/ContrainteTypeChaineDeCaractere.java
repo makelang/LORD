@@ -6,8 +6,8 @@ import java.util.List;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
- * Effectue des v�rifications simple sur une chaine de caract�res. Notamment, la 
- * chaine ne doit pas contenir les caract�res '"' ou '\n'
+ * Effectue des vérifications simple sur une chaine de caractères. Notamment, la 
+ * chaine ne doit pas contenir les caractères '"' ou '\n'
  * @author maazreibi
  *
  */

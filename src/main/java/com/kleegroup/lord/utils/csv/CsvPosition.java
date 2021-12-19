@@ -47,7 +47,7 @@ public class CsvPosition {
 	}
 
 	/**
-	 * Ajoute une ligne. Le nombre de colonne est repris à 1.
+	 * Ajoute une ligne. Le nombre de colonne est repis à 1.
 	 */
 	void nouvelleLigne() {
 		++ligne;

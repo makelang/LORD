@@ -17,14 +17,14 @@ import com.kleegroup.lord.ui.admin.view.DialogSelectColumn;
  * Controlleur pour {@link DialogSelectColumn}
  * 
  * Cette classe ainsi que l'interface utilisateur correspondante {@link DialogSelectColumn}
- * , aident l'utilisateur � choisir
- * une (ou plusieurs) colonne(s) parmi une liste propos�e.
+ * , aident l'utilisateur à choisir
+ * une (ou plusieurs) colonne(s) parmi une liste proposée.
  * 
- * Cette classe poss�de deux modes:
+ * Cette classe possède deux modes:
  * -mode schema: 
  * 	sert pour choisir la colonne de reference , <br>
  * 	affiche tout les fichiers du schema 
- * (sauf un en particulier pour �viter les r�f�rences circulaires)
+ * (sauf un en particulier pour éviter les références circulaires)
  *  ainsi que les colonnes de ces fichiers. <br>
  *  	permet de selectionner une seul colonne.
  *  
@@ -63,7 +63,7 @@ public class DialogSelectColumnController {
 	view = new DialogSelectColumn(this, true);
     }
     /**
-     * @param value la liste ou colonne initial selection�e
+     * @param value la liste ou colonne initial selectionée
      */
     public void setInitialValue(List<?> value){
 	clear();
@@ -72,7 +72,7 @@ public class DialogSelectColumnController {
     }
 
     /**
-     * la liste des colonnes d�pend du modele. c'est lui 
+     * la liste des colonnes dépend du modele. c'est lui 
      * @return la liste des colonne
      */
     public TreeModel getTreeModel() {
@@ -110,7 +110,7 @@ public class DialogSelectColumnController {
     }
 
     /**
-     * appel� par la fenetre quand l'utilisateur clique sur OK.
+     * appelé par la fenetre quand l'utilisateur clique sur OK.
      */
     public void ok() {
 	userClickedCancel = false;
@@ -118,7 +118,7 @@ public class DialogSelectColumnController {
     }
 
     /**
-     * appel� par la fenetre quand l'utilisateur clique sur CANCEL.
+     * appelé par la fenetre quand l'utilisateur clique sur CANCEL.
      */
     public void cancel() {
 	model.getSelectedEltsList().clear();
@@ -126,21 +126,21 @@ public class DialogSelectColumnController {
     }
 
     /**
-     * @return une liste des elements selectionn�s
+     * @return une liste des elements selectionnés
      */
     public List<Colonne> getSelectElements() {
 	return model.getSelectedEltsList();
     }
 
     /**
-     * @return true si l'utilisateur a cliqu� sur CANCEL.
+     * @return true si l'utilisateur a cliqué sur CANCEL.
      */
     public boolean isUserClickedCancel() {
 	return userClickedCancel;
     }
 
     /**
-     * efface la s�lection de l'utilisateur.
+     * efface la sélection de l'utilisateur.
      */
     public void clear() {
 	model.clear();

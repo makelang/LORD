@@ -14,7 +14,7 @@ import com.kleegroup.lord.moteur.Categories.Categorie;
 import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 
 /**
- * Constuit un mod�le d'un sch�ma utilisable par un {@link javax.swing.JTree}.
+ * Constuit un modèle d'un schéma utilisable par un {@link javax.swing.JTree}.
  */
 public class FileTreeModel implements javax.swing.tree.TreeModel {
 
@@ -27,22 +27,22 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 	private int numCatAjoutee = 0;
 
 	/**
-	     * Constuit un mod�le d'un sch�ma utilisable par un
+	     * Constuit un modèle d'un schéma utilisable par un
 	     * {@link javax.swing.JTree}.
 	     * 
 	     * @param s
-	     *                le sch�ma affich�.
+	     *                le schéma affiché.
 	     */
 	public FileTreeModel(Schema s) {
 		this(s, false);
 	}
 
 	/**
-	 * Constuit un mod�le d'un sch�ma utilisable par un
+	 * Constuit un modèle d'un schéma utilisable par un
 	 * {@link javax.swing.JTree}.
 	 * 
 	 * @param s
-	 *                le sch�ma affich�.
+	 *                le schéma affiché.
 	 * @param fichiersErronesUniquement  true s'il faut afficher uniquement les 
 	 * fichiers qui contiennent des erreurs.
 	 */
@@ -106,8 +106,8 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 
 	/**
 	     * @param node
-	     *                l'objet test�
-	     * @return true s'il faut affich� l'objet node d'une mani�re sp�ciale.
+	     *                l'objet testé
+	     * @return true s'il faut affiché l'objet node d'une manière spéciale.
 	     */
 	public boolean isBold(Object node) {
 		return isLeaf(node) && (((Fichier) node).getNbErreurs() > 0);
@@ -133,25 +133,25 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 	}
 
 	/**
-	     * d�place le fichier vers le haut.
+	     * déplace le fichier vers le haut.
 	     * 
 	     * @param f
-	     *                le fichier � d�placer.
+	     *                le fichier à déplacer.
 	     */
 
 	/**
-	     * d�place le fichier vers le bas.
+	     * déplace le fichier vers le bas.
 	     * 
 	     * @param f
-	     *                le fichier � d�placer.
+	     *                le fichier à déplacer.
 	     */
 
 	/**
-	     * supprime le fichier du sch�ma.
+	     * supprime le fichier du schéma.
 	     * 
 	     * @param selectedElement
-	     *                le path du fichier � supprimer.
-	 * 	@return le nouveau path � s�l�ctionner. 
+	     *                le path du fichier à supprimer.
+	 * 	@return le nouveau path à séléctionner. 
 	     */
 	public TreePath removeFile(TreePath selectedElement) {
 		Fichier f = (Fichier) selectedElement.getLastPathComponent();
@@ -183,10 +183,10 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 	}
 
 	/**
-	     * ajoute un fichier au sch�ma.
+	     * ajoute un fichier au schéma.
 	 * @param position la position du fichier.
 	     * 
-	     * @param f le fichier � ajouter
+	     * @param f le fichier à ajouter
 	     */
 	public void addFichier(TreePath position, Fichier f) {
 		if (position != null) {
@@ -226,9 +226,9 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 	}
 
 	/**
-	 * D�place un �l�ment(fichier ou cat�gorie) vers le bas.
-	 * @param selectionPath le path de l'�l�ment.
-	 * @return le nouveau path de l'�l�ment.
+	 * Déplace un élément(fichier ou catégorie) vers le bas.
+	 * @param selectionPath le path de l'élément.
+	 * @return le nouveau path de l'élément.
 	 */
 	public TreePath moveDn(TreePath selectionPath) {
 		IHierarchieSchema toMove = (IHierarchieSchema) selectionPath.getLastPathComponent();
@@ -282,7 +282,7 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 			//	    parentPaths = new Object[] { root, f };
 			//	    if ((f.getCategorie() == dest)
 			//		    && root.getPosFichier(f.getNom()) == root.size() - 1) {
-			//		// arriv� � la fin de la liste , on ne d�place plus le fichier
+			//		// arrivé à la fin de la liste , on ne déplace plus le fichier
 			//                // en bas
 			//		return selectionPath;
 			//	    }
@@ -295,9 +295,9 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 	}
 
 	/**
-	 * D�place un �l�ment(fichier ou cat�gorie) vers le haut.
-	 * @param selectionPath le path de l'�l�ment.
-	 * @return le nouveau path de l'�l�ment.
+	 * Déplace un élément(fichier ou catégorie) vers le haut.
+	 * @param selectionPath le path de l'élément.
+	 * @return le nouveau path de l'élément.
 	 */
 	public TreePath moveUp(TreePath selectionPath) {
 		IHierarchieSchema toMove = (IHierarchieSchema) selectionPath.getLastPathComponent();
@@ -333,7 +333,7 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 		Categorie dest;// la categorie de destination
 
 		if (posCat == 0) {
-			// arriv� au debut de la 1ere categorie , on ne d�place plus le
+			// arrivé au debut de la 1ere categorie , on ne déplace plus le
 			// fichier
 			notifyListeners();
 			return selectionPath;
@@ -346,10 +346,10 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 	}
 
 	/**
-	 * Supprime une cat�gorie.
-	 * @param selection le path de la cat�gorie.
+	 * Supprime une catégorie.
+	 * @param selection le path de la catégorie.
 	 * @param conserverLesFichier true s'il faut conserver les fichiers.
-	 * @return le nouveau path � s�l�ctionner.
+	 * @return le nouveau path à séléctionner.
 	 */
 	public TreePath deleteCat(TreePath selection, boolean conserverLesFichier) {
 		String nomCategorie = ((Categorie) (selection.getLastPathComponent())).getNom();
@@ -363,7 +363,7 @@ public class FileTreeModel implements javax.swing.tree.TreeModel {
 	}
 
 	/**
-	 * Ajoute une nouvelle cat�gorie au sch�ma.
+	 * Ajoute une nouvelle catégorie au schéma.
 	 */
 	public void addCategorie() {
 		categories.createCategorie("Nouvelle Categorie" + numCatAjoutee);

@@ -18,7 +18,7 @@ public class AdminUI extends UILauncher {
 	}
 
 	/**
-	 *Point d'entr�e du programme en mode utilisateur.
+	 *Point d'entrée du programme en mode utilisateur.
 	 * @param args parametres du programme
 	 */
 	public static void main(String[] args) {

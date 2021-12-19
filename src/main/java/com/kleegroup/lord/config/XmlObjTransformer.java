@@ -57,7 +57,7 @@ public class XmlObjTransformer {
 		}
 
 		schemaEquiv.setEncoding(schemaOriginal.getEncodage());
-		schemaEquiv.setAfficherExportLogs(schemaOriginal.getAfficherExportLogs());
+		schemaEquiv.setAfficherExportLogs(schemaOriginal.isAfficherExportLogs());
 		char sep = schemaOriginal.getSeparateurChamps().charAt(0);
 		schemaEquiv.setSeparateurChamp(sep);
 
@@ -104,7 +104,7 @@ public class XmlObjTransformer {
 		colonneEquiv.setDescription(desc);
 		String presence = colonneOriginale.getPresenceValeur();
 
-		colonneEquiv.setColonneReference(colonneOriginale.getColonneDeReference());
+		colonneEquiv.setColonneReference(colonneOriginale.isColonneDeReference());
 
 		if ("INTERDITE".equals(presence)) {
 			colonneEquiv.setPresenceValeur(PRESENCE.INTERDITE);

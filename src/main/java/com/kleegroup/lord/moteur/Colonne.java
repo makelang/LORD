@@ -24,15 +24,15 @@ import com.kleegroup.lord.moteur.util.SeparateurDecimales;
 
 /**
  * Represente une colonne du fichier.<br>
- * Une colonne poss�de une liste de contraintes. Ces contraintes seront
- * v�rifi�es en s�rie sur chaque valeur de la colonne. <br>
+ * Une colonne possède une liste de contraintes. Ces contraintes seront
+ * vérifiées en série sur chaque valeur de la colonne. <br>
  * <br>
- * Certaines erreurs peuvent d�clancher l'abandon de la v�rification d'une
- * valeur. Ces contraintes "existentielle" d�clenchent l'abandon si la valeur
+ * Certaines erreurs peuvent déclancher l'abandon de la vérification d'une
+ * valeur. Ces contraintes "existentielle" déclenchent l'abandon si la valeur
  * est vide. Les contraintes existentielles sont:<br>
  * ContrainteVide, ContrainteObligatoire et ContrainteFacultatif.<br>
- * La contrainte ContrainteTypeChaineDeCaractere peut aussi d�clancher l'abondon
- * de la v�rification du fichier si une chaine contient une valeur interdite
+ * La contrainte ContrainteTypeChaineDeCaractere peut aussi déclancher l'abondon
+ * de la vérification du fichier si une chaine contient une valeur interdite
  * <code>'"'
  * </code> et <code> '\n'</code>.
  * 
@@ -59,7 +59,7 @@ public class Colonne implements IHierarchieSchema {
 	private boolean colonneReference = false;
 
 	/**
-	 * Un type qui sert � indiquer si la valeur d'un champ est obligatoire. *
+	 * Un type qui sert à indiquer si la valeur d'un champ est obligatoire. *
 	 */
 	public enum PRESENCE {
 		/**
@@ -67,7 +67,7 @@ public class Colonne implements IHierarchieSchema {
 		 */
 		OBLIGATOIRE,
 		/**
-		 * Indique que la valeur de la colonne peut etre renseign�e ou pas.
+		 * Indique que la valeur de la colonne peut etre renseignée ou pas.
 		 */
 		FACULTATIVE,
 		/**
@@ -77,7 +77,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * COnstructeur qui permet de pr�ciser le nom de la colonne.
+	 * COnstructeur qui permet de préciser le nom de la colonne.
 	 * 
 	 * @param nom :
 	 *            nom de la colonne
@@ -89,14 +89,14 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * V�rifie la valeur selon les contraintes d�finies sur la colonne, et
+	 * Vérifie la valeur selon les contraintes définies sur la colonne, et
 	 * renvoie une liste d'erreur.
 	 * 
 	 * @param numLigne
 	 *            le numero de ligne a verifier
 	 * @param valeur
-	 *            la ligne � v�rifier
-	 * @return renvoie une liste des erreurs retrouv�es
+	 *            la ligne à vérifier
+	 * @return renvoie une liste des erreurs retrouvées
 	 * @throws ExceptionMoteur
 	 *             En cas d'echec de verification
 	 */
@@ -160,16 +160,16 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * Ajoute une contrainte � la colonne.<br>
-	 * Toutes les contraintes doivent poss�der des noms diff�rents.Les noms des
-	 * contraintes d�riv�es de ContrainteUniCol est le nom de la classe. Ce qui
+	 * Ajoute une contrainte à la colonne.<br>
+	 * Toutes les contraintes doivent posséder des noms différents.Les noms des
+	 * contraintes dérivées de ContrainteUniCol est le nom de la classe. Ce qui
 	 * implique qu'une colonne doit avoir au plus une seul contrainte par classe
-	 * d�riv�es.<br>
-	 * Pour les contraintes de type ContrainteMultiCol, le nom est determin� par
+	 * dérivées.<br>
+	 * Pour les contraintes de type ContrainteMultiCol, le nom est determiné par
 	 * l'utilisateur.
 	 * 
 	 * @param c
-	 *            la contrainte � rajouter
+	 *            la contrainte à rajouter
 	 */
 	public void addContrainte(ContrainteUniCol c) {
 		String id = c.getClass().getSimpleName();
@@ -209,52 +209,52 @@ public class Colonne implements IHierarchieSchema {
 	 * Renvoie la ieme contrainte de la colonne.
 	 * 
 	 * @param i
-	 *            ordre de v�rification de la contrainte (d�but � 0)
-	 * @return la contrainte � la position i
+	 *            ordre de vérification de la contrainte (début à 0)
+	 * @return la contrainte à la position i
 	 */
 	public IContrainte getContrainte(int i) {
 		return contraintes.get(i);
 	}
 
 	/**
-	 * Renvoie la contrainte qui poss�de le nom nom_contrainte.<br>
-	 * Les noms des contraintes doivent �tre uniques pour chaque colonne.
+	 * Renvoie la contrainte qui possède le nom nom_contrainte.<br>
+	 * Les noms des contraintes doivent être uniques pour chaque colonne.
 	 * 
 	 * @param nomContrainte
-	 *            le nom de la contrainte recherch�e
-	 * @return la contrainte qui poss�de le nom nom_contrainte
+	 *            le nom de la contrainte recherchée
+	 * @return la contrainte qui possède le nom nom_contrainte
 	 */
 	public IContrainte getContrainte(String nomContrainte) {
 		return refContraintes.get(nomContrainte);
 	}
 
 	/**
-	 * Rajoute la contrainte c � la position i. Si une contrainte existe d�j� �
-	 * cette position , elle est remplac�e.
+	 * Rajoute la contrainte c à la position i. Si une contrainte existe déjà à
+	 * cette position , elle est remplacée.
 	 * 
 	 * @param i
 	 *            la position de la contrainte
 	 * @param c
-	 *            la contrainte � rajouter
+	 *            la contrainte à rajouter
 	 */
 	public void setContrainte(int i, ContrainteUniCol c) {
 		contraintes.set(i, c);
 	}
 
 	/**
-	 * Renvoie le fichier auquel est rattach�e la contrainte.
+	 * Renvoie le fichier auquel est rattachée la contrainte.
 	 * 
-	 * @return le fichier auquel est rattach�e la contrainte
+	 * @return le fichier auquel est rattachée la contrainte
 	 */
 	public Fichier getFichierParent() {
 		return fichierParent;
 	}
 
 	/**
-	 * D�finit le fichier auquel est rattach�e la contrainte.
+	 * Définit le fichier auquel est rattachée la contrainte.
 	 * 
 	 * @param fichierParent
-	 *            fichier auquel est rattach�e la contrainte
+	 *            fichier auquel est rattachée la contrainte
 	 */
 	public void setFichierParent(Fichier fichierParent) {
 		this.fichierParent = fichierParent;
@@ -269,7 +269,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * d�finit la position de la colonne.
+	 * définit la position de la colonne.
 	 * 
 	 * @param postion
 	 *            la position du fichier parmi les colonnes du fichier parent
@@ -286,7 +286,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * d�finit l'�tat de la colonne.
+	 * définit l'état de la colonne.
 	 * 
 	 * @param etat
 	 *            l'etat de la colonne
@@ -296,8 +296,8 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**nettoie l'objet.
-	 * Remet � zero les donn�es sp�cifique utilis�e lors de la derni�re v�rification
-	 * pour pouvoir  r�utiliser cet objet pour une nouvelle v�rification
+	 * Remet à zero les données spécifique utilisée lors de la dernière vérification
+	 * pour pouvoir  réutiliser cet objet pour une nouvelle vérification
 	 * */
 	public void clean() {
 		for (final IContrainte c : contraintes) {
@@ -314,7 +314,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * d�finit la description de la colonne.
+	 * définit la description de la colonne.
 	 * @param description description de la colonne
 	 */
 	public void setDescription(String description) {
@@ -324,7 +324,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * d�finit le nom de colonne.
+	 * définit le nom de colonne.
 	 * @param nom le nom de colonne.
 	 */
 	public void setNom(String nom) {
@@ -340,10 +340,10 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * Renvoie une contrainte type qui repr�sente le type de la colonne, null si auccune
-	 * n'a �t� trouv�e.
-	 * @return une contrainte type qui repr�sente le type de la colonne, null si auccune
-	 * n'a �t� trouv�
+	 * Renvoie une contrainte type qui représente le type de la colonne, null si auccune
+	 * n'a été trouvée.
+	 * @return une contrainte type qui représente le type de la colonne, null si auccune
+	 * n'a été trouvé
 	 */
 	public ContrainteUniCol getContrainteType() {
 		for (final ContrainteUniCol cuc : contraintes) {
@@ -357,7 +357,7 @@ public class Colonne implements IHierarchieSchema {
 
 	/**
 	 * 
-	 * @return si une contrainte de taille a �t� d�fini,
+	 * @return si une contrainte de taille a été défini,
 	 * renvoie la taille max, Integer.MAX_VALUE sinon
 	 */
 	public int getTaille() {
@@ -401,8 +401,8 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * Renvoie la contrainte de r�f�rence d�finie sur cette colonne. null si auccune n'est d�finie.
-	 * @return la contrainte de r�frence.
+	 * Renvoie la contrainte de référence définie sur cette colonne. null si auccune n'est définie.
+	 * @return la contrainte de réfrence.
 	 */
 	public ContrainteReference getContrainteReference() {
 		for (final ContrainteUniCol cont : contraintes) {
@@ -427,7 +427,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * @return true si les valeurs de cette colonne doivent �tre uniques.
+	 * @return true si les valeurs de cette colonne doivent être uniques.
 	 */
 	public boolean isValeursUniques() {
 		for (final ContrainteUniCol cont : contraintes) {
@@ -455,8 +455,8 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * Cr�e une contrainte de format sur la colonne.<br>
-	 * Le format doit �tre compatible avec le type de la colonne.
+	 * Crée une contrainte de format sur la colonne.<br>
+	 * Le format doit être compatible avec le type de la colonne.
 	 * 
 	 * @param format le format de la colonne.
 	 */
@@ -479,7 +479,7 @@ public class Colonne implements IHierarchieSchema {
 
 	private boolean checkFormatDateValide(String string) {
 		try {
-			//On v�rifie la validit� du pattern de date
+			//On vérifie la validité du pattern de date
 			new SimpleDateFormat().applyPattern(string);
 			return true;
 		} catch (final Exception e) {
@@ -489,7 +489,7 @@ public class Colonne implements IHierarchieSchema {
 
 	/**
 	 * Supprimer les contraintes de type typeContrainte du fichier.
-	 * @param typeContrainte le type des contrainte � supprimer.
+	 * @param typeContrainte le type des contrainte à supprimer.
 	 */
 	public void removeContraintes(Class<?> typeContrainte) {
 		for (int i = 0; i < getContraintes().size(); i++) {
@@ -518,7 +518,7 @@ public class Colonne implements IHierarchieSchema {
 
 	/**
 	 * 
-	 * @param value la liste des valeurs permise, s�par�es par une virgule.
+	 * @param value la liste des valeurs permise, séparées par une virgule.
 	 */
 	public void setListeValeursPermises(String value) {
 		removeContraintes(ContrainteListeValeursPermises.class);
@@ -533,7 +533,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * Si la taille est n�gative,la contrainte de taille sera supprim�e.
+	 * Si la taille est négative,la contrainte de taille sera supprimée.
 	 * @param val la taille maximale de la colonne.
 	 */
 	public void setTaille(String val) {
@@ -553,7 +553,7 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * @param value d�finit le type de la colonne.
+	 * @param value définit le type de la colonne.
 	 */
 	public void setType(String value) {
 		removeContraintes(ContrainteTypeChaineDeCaractere.class);
@@ -581,8 +581,8 @@ public class Colonne implements IHierarchieSchema {
 	}
 
 	/**
-	 * D�termine si les valeurs de cette colonne doivent �tre unqiues.
-	 * @param value true s'il doivent l'�tre.
+	 * Détermine si les valeurs de cette colonne doivent être unqiues.
+	 * @param value true s'il doivent l'être.
 	 */
 	public void setUnique(boolean value) {
 		removeContraintes(ContrainteUnique.class);
@@ -601,7 +601,7 @@ public class Colonne implements IHierarchieSchema {
 
 	/**
 	 * Definit cette colonne comme faisant partie des colonne de reference.
-	 * @param b true pour rajouter � l'ensemble, false sinon.
+	 * @param b true pour rajouter à l'ensemble, false sinon.
 	 */
 	public void setColonneReference(boolean b) {
 		colonneReference = b;

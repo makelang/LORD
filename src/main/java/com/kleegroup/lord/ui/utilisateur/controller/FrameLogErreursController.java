@@ -56,10 +56,10 @@ public class FrameLogErreursController extends FrameController<FrameLogErreurs, 
 	}
 
 	/**
-	 * Affiche les erreurs du fichier selectionn�.
+	 * Affiche les erreurs du fichier selectionné.
 	 * 
 	 * @param nodeInfo
-	 *            le fichier selectionn�.
+	 *            le fichier selectionné.
 	 */
 	public void select(Fichier nodeInfo) {
 		view.setTableModel(model.getErreurs(nodeInfo));

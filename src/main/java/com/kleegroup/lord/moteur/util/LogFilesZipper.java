@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
 import com.kleegroup.lord.utils.csv.CsvReaderAdapter;
 
 /**
- *Zip les fichier de log dauns un fichier d�sign�.
+ *Zip les fichier de log dauns un fichier désigné.
  *
  *voir < a href=http://www.java-tips.org/java-se-tips/java.util.zip/how-to-create-a-zip-file.html>
  *source du code </a> 
@@ -24,8 +24,8 @@ public class LogFilesZipper {
 	private static org.apache.log4j.Logger logAppli = Logger.getLogger(CsvReaderAdapter.class);
 
 	/**
-	 * @param zipFilePath le path d�sir� du fichier de log
-	 * @param filenames les fichiers � zipper
+	 * @param zipFilePath le path désiré du fichier de log
+	 * @param filenames les fichiers à zipper
 	 * @throws IOException si une erreur de lecture a lieu
 	 */
 	public static void zip(String zipFilePath, List<String> filenames) throws IOException {
@@ -33,8 +33,8 @@ public class LogFilesZipper {
 	}
 
 	/**
-	 * @param outputZip le File qui repr�sente le fichier de zip
-	 * @param filenames les fichiers � zipper
+	 * @param outputZip le File qui représente le fichier de zip
+	 * @param filenames les fichiers à zipper
 	 * @throws IOException si une erreur de lecture a lieu
 	 */
 	public static void zip(File outputZip, List<String> filenames) throws IOException {

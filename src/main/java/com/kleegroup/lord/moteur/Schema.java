@@ -91,7 +91,7 @@ public class Schema implements INotifiable {
 	private Date dateDebut = null;
 
 	/**
-	 * Ajoute le fichier f au schema, � la fin de liste des fichiers.
+	 * Ajoute le fichier f au schema, à la fin de liste des fichiers.
 	 * 
 	 * @param f
 	 *            fichier a rajouter au schema
@@ -101,7 +101,7 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * Ajoute le fichier f au schema � la position pos.
+	 * Ajoute le fichier f au schema à la position pos.
 	 * 
 	 * @param f
 	 *            fichier a rajouter au schema
@@ -114,7 +114,7 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * pause la v�rification du fichier actuel. La v�rification peut continuer
+	 * pause la vérification du fichier actuel. La vérification peut continuer
 	 * en appelant {@link #resume()}
 	 */
 	public void pause() {
@@ -169,9 +169,9 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * nettoie l'objet. Remet � zero les donn�es sp�cifique utilis�e lors de la
-	 * derni�re v�rification pour pouvoir r�utiliser cet objet pour une nouvelle
-	 * v�rification
+	 * nettoie l'objet. Remet à zero les données spécifique utilisée lors de la
+	 * dernière vérification pour pouvoir réutiliser cet objet pour une nouvelle
+	 * vérification
 	 * */
 	public void clean() {
 		niveauActuel = 0;
@@ -296,7 +296,7 @@ public class Schema implements INotifiable {
 		/* voir Fichier#getNiveauTopo */
 		Collections.sort(fichiers, new FichierComparteurOrdreTopo());
 
-		// trier les fichiers par ordre de groupe(d�fini dans les specs)
+		// trier les fichiers par ordre de groupe(défini dans les specs)
 		Collections.sort(fichiers, new FichierComparteurGroupe());
 		niveauActuel = fichiers.get(0).getGroupe();
 	}
@@ -348,7 +348,7 @@ public class Schema implements INotifiable {
 	 *            sert a lire le fichier
 	 * @return le schema XML
 	 * @throws JAXBException
-	 *             si la conversion � partir de l'XML echoue
+	 *             si la conversion à partir de l'XML echoue
 	 */
 	public static Schema fromXML(InputStream inputStream) throws JAXBException {
 
@@ -400,11 +400,11 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * d�signe l'objet � notifier lorsque certains �venements (voir
+	 * désigne l'objet à notifier lorsque certains évenements (voir
 	 * {@link INotifiable}) ont lieu.
 	 * 
 	 * @param eltANotifier
-	 *            l'objet � notifier
+	 *            l'objet à notifier
 	 */
 	public void setEltANotifier(INotifiable eltANotifier) {
 		this.eltANotifier = eltANotifier;
@@ -414,14 +414,14 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * Reprend la v�rification si elle est en pause. voir {@link #pause()}.
+	 * Reprend la vérification si elle est en pause. voir {@link #pause()}.
 	 */
 	public void resume() {
 		fichierEnCours.resume();
 	}
 
 	/**
-	 * Annule la v�rification du fichier en cours.
+	 * Annule la vérification du fichier en cours.
 	 */
 	public void cancel() {
 		fichierEnCours.cancel();
@@ -429,7 +429,7 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * @return le repertoire o� seront sauvegard�s les fichiers de logs.
+	 * @return le repertoire où seront sauvegardés les fichiers de logs.
 	 */
 	public String getEmplacementFichiersLogs() {
 		return emplacementFichiersLogs;
@@ -437,14 +437,14 @@ public class Schema implements INotifiable {
 
 	/**
 	 * @param emplacementFichiersLogs
-	 *            repertoire o� seront sauvegard�s les fichiers de logs.
+	 *            repertoire où seront sauvegardés les fichiers de logs.
 	 */
 	public void setEmplacementFichiersLogs(String emplacementFichiersLogs) {
 		this.emplacementFichiersLogs = emplacementFichiersLogs;
 	}
 
 	/**
-	 * active ou d�sactive un fichier.
+	 * active ou désactive un fichier.
 	 * 
 	 * @param nom
 	 *            le nom du fichier a activer
@@ -482,7 +482,7 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * @return le nombre de fichier non-desactiv�s dans le schema
+	 * @return le nombre de fichier non-desactivés dans le schema
 	 */
 	public int getNbFichiersActifs() {
 		int nb = 0;
@@ -502,10 +502,10 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * d�signe le'encodage des fichier.
+	 * désigne le'encodage des fichier.
 	 * 
 	 * @param encoding
-	 *            string qui d�signe l'encodage des fichiers. voir
+	 *            string qui désigne l'encodage des fichiers. voir
 	 *            {@link Charset}.
 	 */
 	public void setEncoding(String encoding) {
@@ -513,7 +513,7 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * @return le separateur de champ utilis�.
+	 * @return le separateur de champ utilisé.
 	 */
 	public char getSeparateurChamp() {
 		return separateurChamp;
@@ -521,19 +521,19 @@ public class Schema implements INotifiable {
 
 	/**
 	 * @param separateurChamp
-	 *            le separateur de champ � utiliser.
+	 *            le separateur de champ à utiliser.
 	 */
 	public void setSeparateurChamp(char separateurChamp) {
 		this.separateurChamp = separateurChamp;
 	}
 
 	/**
-	 * Zip les fichier de log dans le fichier d�sign�.
+	 * Zip les fichier de log dans le fichier désigné.
 	 * 
 	 * @param outputZip
 	 *            le fichier destination.
 	 * @throws IOException
-	 *             si une erreur d'�criture a lieu.
+	 *             si une erreur d'écriture a lieu.
 	 */
 	public void zipLogFiles(File outputZip) throws IOException {
 		LogFilesZipper.zip(outputZip, listCheminFichiersLog);
@@ -584,17 +584,17 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * @return les cat�gories du sch�ma.
+	 * @return les catégories du schéma.
 	 */
 	public Categories getCategories() {
 		return categories;
 	}
 
 	/**
-	 * Retire le fichier du sch�ma.
+	 * Retire le fichier du schéma.
 	 * 
 	 * @param f
-	 *            le fichier � retirer.
+	 *            le fichier à retirer.
 	 */
 	public void removeFichier(Fichier f) {
 		fichiers.remove(f);
@@ -602,7 +602,7 @@ public class Schema implements INotifiable {
 	}
 
 	/**
-	 * @return le nombre total de fichiers dans le sch�ma.
+	 * @return le nombre total de fichiers dans le schéma.
 	 */
 	public int getNbFichiers() {
 		return fichiers.size();

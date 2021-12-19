@@ -5,18 +5,18 @@ import java.io.IOException;
 import java.io.Reader;
 
 /**
- * C'est une classe qui h�rite de {@link BufferedReader} et qui sert � compter pr�cisement les
- * caract�res qui sont lus par un {@link Reader}. <br><br>
- * A chaque appel � read, skip , cette classe calcule le nombre de caract�re lues et le stock.
- * On peut acc�der � ce nombre en appelant la fontion {@link #getNbCharactersRead()}.
+ * C'est une classe qui hérite de {@link BufferedReader} et qui sert à compter précisement les
+ * caractères qui sont lus par un {@link Reader}. <br><br>
+ * A chaque appel à read, skip , cette classe calcule le nombre de caractère lues et le stock.
+ * On peut accéder à ce nombre en appelant la fontion {@link #getNbCharactersRead()}.
  * <br><br>
- * Cette classe est utilis�e pour calculer le progr�s de v�rification d'un fichier.
+ * Cette classe est utilisée pour calculer le progrès de vérification d'un fichier.
  */
 public class CountingReader extends BufferedReader  {
 	protected long nbCharRead = 0;
 
 	/**
-	 * @param in le Reader dont on doit compter les caract�res lues.
+	 * @param in le Reader dont on doit compter les caractères lues.
 	 */
 	public CountingReader(Reader in) {
 		super(in);
@@ -63,7 +63,7 @@ public class CountingReader extends BufferedReader  {
 
 	
 	 /**
-	 * @return le nombre de caract�res lus par ce reader.
+	 * @return le nombre de caractères lus par ce reader.
 	  * 
 	 */
 	public long getNbCharactersRead() {

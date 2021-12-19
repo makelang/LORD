@@ -3,7 +3,6 @@ package com.kleegroup.lord.ui.utilisateur.model.listeErreurs;
 import java.util.List;
 
 import com.kleegroup.lord.moteur.IErreur;
-
 /**
  * Affiche une liste d'erreurs qui contient des colonnes de reference.
  */
@@ -12,7 +11,7 @@ public class ListeErreursWithRef extends ListeErreurs{
     private static final long serialVersionUID = 1L;
 
     /**
-     * @param listeErreurs la liste d'erreurs  � afficher.
+     * @param listeErreurs la liste d'erreurs  à afficher.
      */
     public ListeErreursWithRef(List<IErreur> listeErreurs) {
 	super(listeErreurs);

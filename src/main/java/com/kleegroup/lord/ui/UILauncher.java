@@ -10,13 +10,13 @@ import javax.swing.UIManager;
 import org.apache.log4j.PropertyConfigurator;
 
 /**
- * La classe qui d�marre l'application.
+ * La classe qui démarre l'application.
  */
 public abstract class UILauncher {
 	protected File execDir;
 
 	/**
-	 * D�marre le programme.
+	 * Démarre le programme.
 	 */
 	public final void run() {
 		//	    URL url = getClass().getClassLoader().getResource(getClass().getPackage().getName().replace('.', '/'));

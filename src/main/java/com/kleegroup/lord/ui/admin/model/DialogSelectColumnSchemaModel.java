@@ -120,7 +120,7 @@ public class DialogSelectColumnSchemaModel implements IColumnSeclect {
 		}
 
 		/**
-		 * filtre la liste des colonnes affich�s.
+		 * filtre la liste des colonnes affichés.
 		 * @param filter le filtre des colonnes.
 		 */
 
@@ -156,8 +156,8 @@ public class DialogSelectColumnSchemaModel implements IColumnSeclect {
 		}
 
 		/**
-		 * D�finit le nom de la colonne � exclure de la liste des colonnes.
-		 * @param columnName le nom de la colonne � exclure.
+		 * Définit le nom de la colonne à exclure de la liste des colonnes.
+		 * @param columnName le nom de la colonne à exclure.
 		 */
 		/*
 		public void setColonneExclue(String columnName) {
@@ -169,10 +169,10 @@ public class DialogSelectColumnSchemaModel implements IColumnSeclect {
 
 	/**
 	 * Construit un modele qui affiche les colonnes des fichier du schema
-	 * � l'exclusion d'une colonne d'un fichier particulier.
+	 * à l'exclusion d'une colonne d'un fichier particulier.
 	 * @param s le schema dont on affiche les colonnes
 	 * @param f le fichier en question
-	 * @param colonneExclue  le nom de la colonne � exclure
+	 * @param colonneExclue  le nom de la colonne à exclure
 	 */
 	public DialogSelectColumnSchemaModel(Schema s, Fichier f, String colonneExclue) {
 		stm = new SchemaTreeModel(s, f, colonneExclue);

@@ -7,7 +7,7 @@ import com.kleegroup.lord.moteur.ContrainteUniCol;
 import com.kleegroup.lord.moteur.util.SeparateurDecimales;
 
 /**
- * V�rifie que la valeur repr�sente un nombre d�cimal.
+ * Vérifie que la valeur représente un nombre décimal.
  * @author maazreibi
  *
  */
@@ -21,14 +21,14 @@ public class ContrainteTypeDecimal extends ContrainteUniCol {
 	private String PAS_D_ERREUR = "PAS_D_ERREUR", TROP_DE_CHIFFRES_AVANT_VIRG = "TROP_DE_CHIFFRES_AVANT_VIRG", TROP_DE_CHIFFRES_APRES_VIRG = "TROP_DE_CHIFFRES_APRES_VIRG", PAS_UN_CHIFFRE = "PAS_UN_CHIFFRE";
 
 	/**
-	 * Construit la contrainte avec les param�tres fournies.
+	 * Construit la contrainte avec les paramètres fournies.
 	 * <br><br>
-	 * Le param�ter s�parateur de d�cimal peut prendre 2 valeurs. Ces valeurs sont 
-	 * des constantes d�finie dans la classe:
+	 * Le paramèter séparateur de décimal peut prendre 2 valeurs. Ces valeurs sont 
+	 * des constantes définie dans la classe:
 	 * <code>SEPARATEUR_VIRGULE </code> et <code>SEPARATEUR_POINT</code>
 	 * @param avantVirgule nombre de chiffres avant la virgule
-	 * @param separateur constante indiquent le s�prateur de d�cimale d�sir�
-	 * @param apresVirgule nombre de chiffres apr�s la virgule
+	 * @param separateur constante indiquent le séprateur de décimale désiré
+	 * @param apresVirgule nombre de chiffres après la virgule
 	 */
 	public ContrainteTypeDecimal(int avantVirgule, SeparateurDecimales separateur, int apresVirgule) {
 		super();
@@ -112,23 +112,23 @@ public class ContrainteTypeDecimal extends ContrainteUniCol {
 	}
 
 	/**
-	 * Le format d'un nombre d�cimal est le nombre qui repr�sente les valeurs accept�es par cette 
-	 * contrainte. Le format set lors de l'affichage � l'�cran d'une r�pr�sentation de cette contrainte.
-	 * Le format est le suivant avantVirgule,apresVirgule  o� avantVirgule est
-	 * un nombre repr�sentant le nombre de chiffre accept�s avant la virgule, et
-	 * apresVirgule le nombre de chiffres apr�s.
+	 * Le format d'un nombre décimal est le nombre qui représente les valeurs acceptées par cette 
+	 * contrainte. Le format set lors de l'affichage à l'écran d'une réprésentation de cette contrainte.
+	 * Le format est le suivant avantVirgule,apresVirgule  où avantVirgule est
+	 * un nombre représentant le nombre de chiffre acceptés avant la virgule, et
+	 * apresVirgule le nombre de chiffres après.
 	 * 
-	 * @return le format de v�rification
+	 * @return le format de vérification
 	 * */
 	public String getFormat() {
 		return avantVirgule + "," + apresVirgule;
 	}
 
 	/**
-	 * Construit une ContrainteTypeDecimal � partir d'une chaine de caract�res repr�sentant 
+	 * Construit une ContrainteTypeDecimal à partir d'une chaine de caractères représentant 
 	 * le format. voir aussi {@link #getFormat()}.
 	 * @param format le format de la contrainte
-	 * @return une ContrainteTypeDecimal qui suit le format d�fini.
+	 * @return une ContrainteTypeDecimal qui suit le format défini.
 	 */
 	public static ContrainteTypeDecimal fromString(String format) {
 		String[] arr = format.split(",");

@@ -9,23 +9,23 @@ import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 
 
 /**
- * La classe ContrainteUniCol est la classe m�re de toutes les contraintes 
- * appliqu�es � une colonne. Elle se charge d'effectuer les v�rifications sur 
- * les valeurs de la colonne, � l'aide de ses classe 
- * d�riv�es. La v�rification se fait, ligne par ligne, une valeur � la fois.
+ * La classe ContrainteUniCol est la classe mère de toutes les contraintes 
+ * appliquées à une colonne. Elle se charge d'effectuer les vérifications sur 
+ * les valeurs de la colonne, à l'aide de ses classe 
+ * dérivées. La vérification se fait, ligne par ligne, une valeur à la fois.
  * <br><br>
- * Cette classe fournit les fonctionalit�s communes � toutes les classes Contraintes.
- * En particulier, elle se charger d'appeler la fonction de v�rification 
- * <code>({@link #estConforme})</code>, de cr�er une instance d'<code>Erreur</code>
+ * Cette classe fournit les fonctionalités communes à toutes les classes Contraintes.
+ * En particulier, elle se charger d'appeler la fonction de vérification 
+ * <code>({@link #estConforme})</code>, de créer une instance d'<code>Erreur</code>
  *  et de renseigner les informations d'erreur dans l'objet <code>Erreur</code> 
- *  cr�e si n�cessaire.
+ *  crée si nécessaire.
  * <br><br>
- * Les classes d�riv�es doivent impl�menter les deux m�thodes abstraites 
- * {@link #estConforme} et {@link #getMessageErreur()}.La v�rification se 
- * fait dans la m�thode estConforme. Si la valeur est correcte, la valeur de retour
- * doit �tre <code>true</code>. Dans le cas contraire, un objet Erreur est cr�e, et 
- * l'erreur est remont�e vers l'objet appelant (normalement un instance de 
- * {@link com.kleegroup.lord.moteur.Colonne}).   
+ * Les classes dérivées doivent implémenter les deux méthodes abstraites 
+ * {@link #estConforme} et {@link #getMessageErreur()}.La vérification se 
+ * fait dans la méthode estConforme. Si la valeur est correcte, la valeur de retour
+ * doit être <code>true</code>. Dans le cas contraire, un objet Erreur est crée, et 
+ * l'erreur est remontée vers l'objet appelant (normalement un instance de 
+ * {@link spark.reprise.outil.moteur.Colonne}).   
  *   
  * @author maazreibi
  *
@@ -43,22 +43,22 @@ public abstract class ContrainteUniCol  implements IContrainte,IHierarchieSchema
 
 	private String id=this.getClass().getSimpleName();
 	/**
-	 * Cette fonction effectue les v�rifications n�cessaires sur la valeur d'entr�e.
-	 * Si une erreur est detect�e, l'appel suivant � {@link #getMessageErreur()}
+	 * Cette fonction effectue les vérifications nécessaires sur la valeur d'entrée.
+	 * Si une erreur est detectée, l'appel suivant à {@link #getMessageErreur()}
 	 * doit renvoyer le message d'erreur correspondant.
-	 * @param valeur la valeur � v�rifier
-	 * @return <code>true</code> si aucune erreur n'est detect�e.
-	 * 			 <false> si une erreur est detect�e.
+	 * @param valeur la valeur à vérifier
+	 * @return <code>true</code> si aucune erreur n'est detectée.
+	 * 			 <false> si une erreur est detectée.
 	 * @throws ExceptionMoteur si la contrainte ne peut etre verifiee
 	 *  
 	 */
 	public abstract boolean estConforme(String valeur) throws ExceptionMoteur;
 	/**
-	 * Le message d'erreur renvoy� en cas d'erreur. Le m�canisme de v�rifaction 
-	 * fait en sorte que, si une erreur est detect�e, cette fonction est appel�e 
-	 * pour r�cup�rer le message d'erreur correspondant, avant de v�rifier
+	 * Le message d'erreur renvoyé en cas d'erreur. Le mécanisme de vérifaction 
+	 * fait en sorte que, si une erreur est detectée, cette fonction est appelée 
+	 * pour récupérer le message d'erreur correspondant, avant de vérifier
 	 * les valeurs suivante.  
-	 * @return le message d'erreur correspondant � la situation.
+	 * @return le message d'erreur correspondant à la situation.
 	 */
 	public String getMessageErreur(){
 		return msgErr;		
@@ -117,24 +117,24 @@ public abstract class ContrainteUniCol  implements IContrainte,IHierarchieSchema
 	}
 
 	/**
-	 * indique si une erreur detect�e nous force � abandonner le reste des 
-	 * v�rifications de la colonne.Par exemple, un champ obligatoire 
+	 * indique si une erreur detectée nous force à abandonner le reste des 
+	 * vérifications de la colonne.Par exemple, un champ obligatoire 
 	 * ne contient pas de valeur.
 	 * <br><br>
-	 * Cette m�thode est principalement utilis�e pour abandonner les v�rifications 
+	 * Cette méthode est principalement utilisée pour abandonner les vérifications 
 	 * quand un champ est vide.  
-	 * @return <code>true</code> s'il faut abandonner la v�rification de la colonne,
+	 * @return <code>true</code> s'il faut abandonner la vérification de la colonne,
 	 * <code>false</code> sinon
 	 */
 	public boolean abandonneVerifColonne(){
 		return false;
 	}
 	/**
-	 * indique s'il faut cr�er un objet erreur.
+	 * indique s'il faut créer un objet erreur.
 	 * <br><br>
-	 * Actuellement utilis�e uniquement dans le cas de <code>
+	 * Actuellement utilisée uniquement dans le cas de <code>
 	 * ContrainteFacultatif</code>
-	 * @return <code>true</code> s'il faut cr�er un objet erreur,
+	 * @return <code>true</code> s'il faut créer un objet erreur,
 	 * <code>false</code> sinon
 	 */
 	public boolean isErreurLoggable(){
@@ -188,8 +188,8 @@ public abstract class ContrainteUniCol  implements IContrainte,IHierarchieSchema
 	}
 	
 	/**nettoie l'objet.
-	 * Remet � zero les donn�es sp�cifique utilis�e lors de la derni�re v�rification
-	 * pour pouvoir  r�utiliser cet objet pour une nouvelle v�rification 
+	 * Remet à zero les données spécifique utilisée lors de la dernière vérification
+	 * pour pouvoir  réutiliser cet objet pour une nouvelle vérification 
 	 * */
 	@Override
 	public void clean(){

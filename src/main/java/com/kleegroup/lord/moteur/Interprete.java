@@ -54,8 +54,8 @@ public class Interprete {
 	}
 
 	/**
-	 * Construit un message d'erreur correspondant � la ligne actuelle.
-	 * @param numLigne le num�ro de la ligne d'erreur
+	 * Construit un message d'erreur correspondant à la ligne actuelle.
+	 * @param numLigne le numéro de la ligne d'erreur
 	 * @param val les valeur de la ligne d'erreur
 	 * @return le message d'erreur
 	 */
@@ -108,7 +108,7 @@ public class Interprete {
 				type.remove(i + 1);
 			}
 		}
-		logAppli.trace("apr�s compact \n" + this);
+		logAppli.trace("après compact \n" + this);
 
 	}
 
@@ -168,7 +168,7 @@ public class Interprete {
 
 	/**
 	 * Construit un interprete a partir d'un template d'erreur.
-	 * Le template contient des balises qui seront interpr�t�s pour g�n�rer les message d'erreur
+	 * Le template contient des balises qui seront interprétés pour générer les message d'erreur
 	 * @param template le template de l'erreur
 	 * @return un inteprete pour evaluer le template
 	 */
@@ -176,7 +176,7 @@ public class Interprete {
 		logAppli.trace("template interprete =" + template);
 		Interprete inft = new Interprete();
 		inft.separerExpression(template);
-		logAppli.trace("interprete g�n�r� \n" + inft);
+		logAppli.trace("interprete généré \n" + inft);
 
 		return inft;
 	}
@@ -193,7 +193,7 @@ public class Interprete {
 	}
 
 	/**
-	 * D�finit le nom de la contrainte.
+	 * Définit le nom de la contrainte.
 	 * @param idv le nom de la contrainte
 	 */
 	public void setIdVerif(final String idv) {
@@ -201,7 +201,7 @@ public class Interprete {
 	}
 
 	/**
-	 * D�finit le nom de la colonne de l'erreur.
+	 * Définit le nom de la colonne de l'erreur.
 	 * @param nomCol le nom de la contrainte
 	 */
 	public void setNomColonne(final String nomCol) {
@@ -209,7 +209,7 @@ public class Interprete {
 	}
 
 	/**
-	 * D�finit le nom du fichier de l'erreur.
+	 * Définit le nom du fichier de l'erreur.
 	 * @param nomFichier le nom du fichier
 	 */
 	public void setNomFichier(final String nomFichier) {
@@ -217,8 +217,8 @@ public class Interprete {
 	}
 
 	/**
-	 * D�finit la valeur qui a g�n�r� l'erreur.
-	 * @param val la valeur erron�e
+	 * Définit la valeur qui a généré l'erreur.
+	 * @param val la valeur erronée
 	 */
 
 	public void setValeur(final String val) {
@@ -226,7 +226,7 @@ public class Interprete {
 	}
 
 	/**
-	 * D�finit les nom des colonnes du fichier.
+	 * Définit les nom des colonnes du fichier.
 	 * @param val les noms des colonnes du fichier
 	 */
 	public void setNomColonne(final String val[]) {
@@ -243,7 +243,7 @@ public class Interprete {
 	}
 
 	/**
-	 * @param contrainteOrigine d�finit la contrainte qui utilise cet interprete.
+	 * @param contrainteOrigine définit la contrainte qui utilise cet interprete.
 	 */
 	public void setContrainteOrigine(IContrainte contrainteOrigine) {
 		this.contrainteOrigine = contrainteOrigine;

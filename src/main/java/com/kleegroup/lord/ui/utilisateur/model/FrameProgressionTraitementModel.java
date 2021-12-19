@@ -187,14 +187,14 @@ public class FrameProgressionTraitementModel extends Model {
     }
 
     /**
-         * remet le modele � 0.
+         * remet le modele à 0.
          */
     public void clean() {
 	tableModel.clean();
     }
 
     /**
-     * raffraichit les donn�es du modele.
+     * raffraichit les données du modele.
      */
     public void refresh() {
 	tableModel.fireTableDataChanged();

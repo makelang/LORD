@@ -47,7 +47,7 @@ public class DialogFileOptionsController {
 
 
     /**
-     * @return le separateur de d�cimales.
+     * @return le separateur de décimales.
      */
     public String getDecimalSeparator() {
 	return fpc.getDecimalSeparator();
@@ -63,7 +63,7 @@ public class DialogFileOptionsController {
 
 
     /**
-     * @param text le separateur de d�cimales.
+     * @param text le separateur de décimales.
      */
     public void setDecimalSeparator(String text) {
 	fpc.setDecimalSeparator(text);

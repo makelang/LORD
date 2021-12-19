@@ -95,7 +95,7 @@ public class DialogSelectColumn extends javax.swing.JDialog {
 
 	private final boolean singleSelectMode;
 
-	/** Cr�e une nouvelle fenetre de selection de colonnes. 
+	/** Crée une nouvelle fenetre de selection de colonnes. 
 	 * @param controller le controlleur de la fenetre
 	 * @param multiSelectMode true pour permettre la selection de plusieure colonne */
 	public DialogSelectColumn(DialogSelectColumnController controller, boolean multiSelectMode) {
@@ -168,12 +168,12 @@ public class DialogSelectColumn extends javax.swing.JDialog {
 	private void setText() {
 		jlblFiltre.setText("Filtre");
 		jlblListColonnes.setText("Liste des Colonne");
-		jlblColonnesSelectionnees.setText("Colonnes selectionn�es");
+		jlblColonnesSelectionnees.setText("Colonnes selectionnées");
 	}
 
 	/**
-	 * Active/d�sactive le bouton ok.
-	 * @param enabled true si le bouton doit �tre activ�
+	 * Active/désactive le bouton ok.
+	 * @param enabled true si le bouton doit être activé
 	 */
 	public void setOkEnabled(boolean enabled) {
 		jbtnOK.setEnabled(enabled);
@@ -280,7 +280,7 @@ public class DialogSelectColumn extends javax.swing.JDialog {
 	}
 
 	/**
-	 * @param text affiche les colonnes selectionn�es
+	 * @param text affiche les colonnes selectionnées
 	 */
 	public void setSelectedColumns(String text) {
 		jtxtSelected.setText(text);

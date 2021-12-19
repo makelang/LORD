@@ -1,14 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * NewJFrame.java
- *
- * Created on 27 mai 2009, 15:02:00
- */
-
 package com.kleegroup.lord.ui.utilisateur.view;
 
 import java.awt.CardLayout;
@@ -155,8 +144,8 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 	}
 
 	/**
-	 * ajoute une frame � afficher. Elle sera affich�e par {@link #showFrame(String)}
-	 * @param frame la frame � ajouter
+	 * ajoute une frame à afficher. Elle sera affichée par {@link #showFrame(String)}
+	 * @param frame la frame à ajouter
 	 * @param name le nom de la frame (doit eter unique)
 	 */
 	public void addFrame(Component frame, String name) {
@@ -172,7 +161,7 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 	}
 
 	/**
-	 * affiche la frame pr�c�dente.
+	 * affiche la frame précédente.
 	 */
 	public void previousFrame() {
 		contentPaneLayout.previous(jPnlContent);
@@ -354,14 +343,14 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 	}
 
 	/**
-	 * @param name le nom de la frame � afficher.
+	 * @param name le nom de la frame à afficher.
 	 */
 	public void showFrame(String name) {
 		contentPaneLayout.show(jPnlContent, name);
 	}
 
 	/**
-	 * @param i la position de l'�tape en mettre en bold.
+	 * @param i la position de l'étape en mettre en bold.
 	 */
 	public void setEtape(int i) {
 		if (i >= labelsEtapes.size() || i < 0) {

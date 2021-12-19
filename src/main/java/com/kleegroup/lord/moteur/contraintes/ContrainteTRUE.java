@@ -6,7 +6,7 @@ import java.util.List;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
- * Pseudo-contrainte qui n'effectue pas de v�rification. 
+ * Pseudo-contrainte qui n'effectue pas de vérification. 
  * 
  * @author maazreibi
  *

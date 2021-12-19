@@ -157,7 +157,7 @@ public class FrameProgressionTraitement extends javax.swing.JPanel {
     }
 
     /**
-     * @param tm le mod�le de la table (liste des fichiers+etat).
+     * @param tm le modèle de la table (liste des fichiers+etat).
      */
     public void setTableModel(TableModel tm) {
 	jTblEtatFichiers.setModel(tm);

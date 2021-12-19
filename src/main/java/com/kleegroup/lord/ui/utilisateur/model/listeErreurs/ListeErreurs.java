@@ -8,8 +8,9 @@ import java.util.ResourceBundle;
 
 import com.kleegroup.lord.moteur.IErreur;
 
+
 /**
- *Classe publique qui sert � afficher la liste des erreurs dans le FrameLogErreur.
+ *Classe publique qui sert à afficher la liste des erreurs dans le FrameLogErreur.
  *
  */
 public abstract class ListeErreurs extends javax.swing.table.AbstractTableModel {

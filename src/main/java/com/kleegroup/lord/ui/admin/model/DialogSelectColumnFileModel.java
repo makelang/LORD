@@ -91,7 +91,7 @@ public class DialogSelectColumnFileModel implements IColumnSeclect {
 		}
 
 		/**
-		 * filtre la liste des colonnes affich�s.
+		 * filtre la liste des colonnes affichés.
 		 * @param s le filtre des colonnes.
 		 */
 		public void setFilter(String s) {

@@ -9,9 +9,9 @@ import java.util.Locale;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
- * v�rifie que la valeur repr�sente une date, et qu'elle est au format d�fini.
+ * vérifie que la valeur représente une date, et qu'elle est au format défini.
  * <br><br>
- * Le format par d�faut est "dd/mm/yyyy"
+ * Le format par défaut est "dd/mm/yyyy"
  * @author maazreibi
  *
  */
@@ -20,16 +20,16 @@ public class ContrainteTypeDate extends ContrainteUniCol {
 	protected String format;
 
 	/**
-	 * Construit la contraite avec le format par d�faut "dd/mm/yyyy". 
+	 * Construit la contraite avec le format par défaut "dd/mm/yyyy". 
 	 */
 	public ContrainteTypeDate() {
 		this("dd/MM/yyyy");
 	}
 
 	/**
-	 * Construit la contrainte avec un format determin�
+	 * Construit la contrainte avec un format determiné
 	 * 
-	 *  le format doit �tre conforme aux formats accept�s par <code>
+	 *  le format doit être conforme aux formats acceptés par <code>
 	 *  java.text.SimpleDateFormat</code>,par exemple ("yyyy", "mm/dd/yy"). 
 	 * @param format le format de la date
 	 */

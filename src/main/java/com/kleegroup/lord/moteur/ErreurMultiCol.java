@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Repr�sentre une erreur rencntr�e. Contient toutes les informations n�cessaires sous 
+ * Représentre une erreur rencntrée. Contient toutes les informations nécessaires sous 
  * forme de string.
  * 
- * Cet objet est cr�e par une des classes contraintes, quand une erreur est detect�e.
+ * Cet objet est crée par une des classes contraintes, quand une erreur est detectée.
  */
 public class ErreurMultiCol extends Erreur {
 	/**
-	 * @param contrainteParent la contrainte qui a g�n�r�e l'erreur
-	 * @param numLigne num�ro de ligne de l'erreur
+	 * @param contrainteParent la contrainte qui a générée l'erreur
+	 * @param numLigne numéro de ligne de l'erreur
 	 * @param valeurs les valeurs de tous les champs de la ligne de l'erreurs
 	 */
 	public ErreurMultiCol(ContrainteMultiCol contrainteParent, long numLigne, String[] valeurs) {

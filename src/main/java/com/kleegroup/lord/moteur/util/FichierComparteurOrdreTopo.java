@@ -5,7 +5,7 @@ import java.util.Comparator;
 import com.kleegroup.lord.moteur.Fichier;
 
 /**Compare deux fichier par "groupe".
- *le groupe est d�fini par l'utilisateur lors de la cr�ation du fichier. 
+ *le groupe est défini par l'utilisateur lors de la création du fichier. 
  *  */
 public class FichierComparteurOrdreTopo implements Serializable , Comparator<Fichier>  {
 	/**

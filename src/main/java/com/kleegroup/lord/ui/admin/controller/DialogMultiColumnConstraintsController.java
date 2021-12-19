@@ -39,15 +39,15 @@ public class DialogMultiColumnConstraintsController {
     
     /**
      * cree une nouvelle commande contrainte. Une fois l'utilisateur clique sur Ok,
-     * les commandes sont v�rifi�es si elles sont valides et cr��es.
+     * les commandes sont vérifiées si elles sont valides et créées.
      */
     public void addConstraintCommand() {
 	model.addConstraintCommand();
     }
     /**
      * @param value la nouvelle valeur
-     * @param row la ligne de la valeur modifi�e
-     * @param col la colonne de la valeur modifi�e
+     * @param row la ligne de la valeur modifiée
+     * @param col la colonne de la valeur modifiée
      */
     public void changeFileValue(Object value, int row, int col) {
 	model.changeFileValue(value,row,col);
@@ -63,14 +63,14 @@ public class DialogMultiColumnConstraintsController {
     
     /**
      * le fichier en cours est le fichier auquel appartient les 
-     * contraintes en train d'etre modifi�es.
+     * contraintes en train d'etre modifiées.
      * @return le fichier en cours de modification.
      */
     public Fichier getCurrentFichier() {
 	return model.getCurrentFichier();
     }
     /**
-     * L'utilisateur a cliqu� sur Ok.
+     * L'utilisateur a cliqué sur Ok.
      * 
      */
     public void ok() {
@@ -84,7 +84,7 @@ public class DialogMultiColumnConstraintsController {
 	    
 	}else{//invalides: on indique la 1ere invalide
 	    JOptionPane.showMessageDialog(view, 
-		    "La contrainte qui est � la position "+(pos+1)+" est invalide");
+		    "La contrainte qui est à la position "+(pos+1)+" est invalide");
 	}
 	
     }

@@ -3,29 +3,29 @@ package com.kleegroup.lord.moteur.util;
 import com.kleegroup.lord.moteur.Fichier;
 
 /**
- * Cette interface sert � cr�er des �l�ments qui seront notifi�s de certains
- * �v�nements qui ont lieu lors de la v�rification. Cette notification est
- * n�cessaire pour mettre � jour les donn�es de l'interface graphique.
+ * Cette interface sert à créer des éléments qui seront notifiés de certains
+ * évènements qui ont lieu lors de la vérification. Cette notification est
+ * nécessaire pour mettre à jour les données de l'interface graphique.
  */
 public interface INotifiable {
     
     /**
-     * Indique le nombre de caract�res trait�s jusqu'� pr�sent.
-     * @param l le nombre de caract�res trait�s jusqu'� pr�sent.
+     * Indique le nombre de caractères traités jusqu'à présent.
+     * @param l le nombre de caractères traités jusqu'à présent.
      */
     void caractereTraites(long l);
 
     /**
-     * indique que la v�rification de ce fichier a commenc�e.
+     * indique que la vérification de ce fichier a commencée.
      * @param nomFichier le nom du fichier
      */
     void debutFichier(String nomFichier);
 
     /**
-     * indique que la v�rification de ce fichier est finie, et l'�tat de la verification.
+     * indique que la vérification de ce fichier est finie, et l'état de la verification.
      * voir aussi {@link Fichier.ETAT}
      * @param nomFichier le nom fichier dont la verif est terminee
-     * @param etat l'etat du fichier (verifi� sans erreur, avec erreurs, verif abandonn�e...)
+     * @param etat l'etat du fichier (verifié sans erreur, avec erreurs, verif abandonnée...)
      */
     void finFichier(String nomFichier , Fichier.ETAT etat);
 }

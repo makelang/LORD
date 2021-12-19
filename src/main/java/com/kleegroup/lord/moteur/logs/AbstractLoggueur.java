@@ -6,7 +6,7 @@ import com.kleegroup.lord.moteur.IErreur;
 
 /**
  * classe abstraite qui implemente l'interface <code>ILogger</code> . Elle
- * fournit une impl�mentation d'une m�thode qui permet de logguer une liste
+ * fournit une implémentation d'une méthode qui permet de logguer une liste
  * d'erreurs
  * 
  * @author maazreibi

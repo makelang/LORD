@@ -9,8 +9,8 @@ import com.kleegroup.lord.ui.utilisateur.model.Model;
 import com.kleegroup.lord.ui.utilisateur.view.FenetrePrincipaleUtilisateur;
 
 /**
- * Classe m�re des controlleur de frame.
- * @param <C> Controlleur de la frame � mettre dans la fenetre Principale
+ * Classe mère des controlleur de frame.
+ * @param <C> Controlleur de la frame à mettre dans la fenetre Principale
  * @param <M> le modele de la frame
  */
 public abstract class FrameController<C extends Component, M extends Model> extends Controller<C, M> {
@@ -37,7 +37,7 @@ public abstract class FrameController<C extends Component, M extends Model> exte
 	protected abstract C createView();
 
 	/**
-	 * Demande � lu'tilisateur s'il veut vraiment quitter, et si oui quitte le
+	 * Demande à lu'tilisateur s'il veut vraiment quitter, et si oui quitte le
 	 * programme.
 	 */
 	public void annuler() {
@@ -61,7 +61,7 @@ public abstract class FrameController<C extends Component, M extends Model> exte
 	}
 
 	/**
-	 * Pour faire des v�rifications de validit� des donn�es, il est conseill� de
+	 * Pour faire des vérifications de validité des données, il est conseillé de
 	 * surcharger cette fonction.
 	 * 
 	 * @return true s'il est permis d'avancer.
@@ -125,12 +125,12 @@ public abstract class FrameController<C extends Component, M extends Model> exte
 	abstract String getName();
 
 	protected void activate() {
-		// apppel� lorsque le frame correspondant est affiche dans la fenetre
+		// apppelé lorsque le frame correspondant est affiche dans la fenetre
 		// principale
 	}
 
 	protected void deactivate() {
-		// apppel� avant que le frame correspondant ne soit remplace par un
+		// apppelé avant que le frame correspondant ne soit remplace par un
 		// autre
 		// dans la fenetre principale
 	}

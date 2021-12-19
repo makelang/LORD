@@ -62,7 +62,7 @@ public class FrameLogErreurs extends javax.swing.JPanel implements
 
     private javax.swing.JTree jTreeFileList;
 
-    /** Cr�e une nouvelle frame.
+    /** Crée une nouvelle frame.
      * @param controller controlleur de la frame*/
     public FrameLogErreurs(FrameLogErreursController controller) {
 	super();
@@ -111,7 +111,7 @@ public class FrameLogErreurs extends javax.swing.JPanel implements
     }
 
     /**
-     * l'utilisateur a selectionn� un fichier diff�rent.
+     * l'utilisateur a selectionné un fichier différent.
      * @param arg0 l'evenement de selection
      */
     @Override
@@ -128,7 +128,7 @@ public class FrameLogErreurs extends javax.swing.JPanel implements
     }
 
     /**
-     * @param tm le mod�le de la table qui affiche la liste des erreurs
+     * @param tm le modèle de la table qui affiche la liste des erreurs
      */
     public void setTableModel(TableModel tm) {
 	jTblErrorList.setModel(tm);
@@ -146,7 +146,7 @@ public class FrameLogErreurs extends javax.swing.JPanel implements
 
 
     /**
-     * @param tm le mod�le de l'arbre qui affiche la liste des fichiers.
+     * @param tm le modèle de l'arbre qui affiche la liste des fichiers.
      */
     public void setTreeModel(TreeModel tm){
 	jTreeFileList.setModel(tm);

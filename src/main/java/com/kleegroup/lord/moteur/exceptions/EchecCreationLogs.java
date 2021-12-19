@@ -1,7 +1,7 @@
 package com.kleegroup.lord.moteur.exceptions;
 
 /**
- * Exception lanc�e si la cr�ation du repertoire et fichiers de logs echoue.
+ * Exception lancée si la création du repertoire et fichiers de logs echoue.
  * */
 public class EchecCreationLogs extends ExceptionMoteur {
 

@@ -6,7 +6,7 @@ import java.util.List;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
- * V�rifie que les valeurs du champ sont des entiers.
+ * Vérifie que les valeurs du champ sont des entiers.
  * @author maazreibi
  *
  */

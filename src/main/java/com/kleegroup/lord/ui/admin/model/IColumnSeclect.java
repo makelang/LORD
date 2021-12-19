@@ -8,43 +8,43 @@ import javax.swing.tree.TreePath;
 import com.kleegroup.lord.moteur.Colonne;
 
 /**
- * Interface que les mod�le de la boite de selection des colonnes doivent impl�menter.
+ * Interface que les modèle de la boite de selection des colonnes doivent implémenter.
  */
 public interface IColumnSeclect {
 
    /**
-     * @return le mod�le qu'affichera l'arbre des colonnes.
+     * @return le modèle qu'affichera l'arbre des colonnes.
      */
     TreeModel getTreeModel();
 
      /**
-     * filtrer la liste des colonnes affich�s.
+     * filtrer la liste des colonnes affichés.
      * @param text le filtre des colonnes.
      */
     void setFilter(String text);
 
       /**
-     * @param tp ajouter l'�l�ment dont le treepath est tp � la s�lection.
+     * @param tp ajouter l'élément dont le treepath est tp à la sélection.
      */
     void selectElement(TreePath tp);
 
       /**
-     * @return une chaine qui represente les elements selectionn�s.
+     * @return une chaine qui represente les elements selectionnés.
      */
     String getSelectedElements();
 
       /**
-     * @return la liste des colonnes selectionn�es.
+     * @return la liste des colonnes selectionnées.
      */
     List<Colonne> getSelectedEltsList();
 
       /**
-     * mettre � 0 la s�l�ction.
+     * mettre à 0 la séléction.
      */
     void clear();
 
       /**
-     * @param value la valeur initiale de la s�l�ction.
+     * @param value la valeur initiale de la séléction.
      */
     void setInitialValue(List<?> value);
 

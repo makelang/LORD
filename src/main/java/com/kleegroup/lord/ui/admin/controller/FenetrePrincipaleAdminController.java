@@ -31,10 +31,10 @@ public class FenetrePrincipaleAdminController {
 
     private String lastPath = ".";// le repertoire du dernier fichier
 
-    // s�l�ctionn�
+    // séléctionné
 
     /**
-     * Constructeur par d�faut du controlleur.
+     * Constructeur par défaut du controlleur.
      */
     public FenetrePrincipaleAdminController() {
 	view = new FenetrePrincipaleAdmin(this);
@@ -63,10 +63,10 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * Affiche les details du fichier selectionn�.
+     * Affiche les details du fichier selectionné.
      * 
      * @param node
-     *                le fichier selectionn�.
+     *                le fichier selectionné.
      */
     public void select(Fichier node) {
 	if (node != null) {
@@ -92,7 +92,7 @@ public class FenetrePrincipaleAdminController {
     //         * Deplace le fichier d'une position vers le haut.
     //         *
     //         * @param node
-    //         *                le fichier � deplacer
+    //         *                le fichier à deplacer
     //         */
     //    public void moveFileUp(Fichier node) {
     //	model.moveFileUp(node);
@@ -100,7 +100,7 @@ public class FenetrePrincipaleAdminController {
     //    }
 
     /**
-     * methode appel�e quand l'utilisateur demande de quitter l'application.
+     * methode appelée quand l'utilisateur demande de quitter l'application.
      */
     public void exit() {
 	if (model.isSchemaModified()){
@@ -122,7 +122,7 @@ public class FenetrePrincipaleAdminController {
      * Deplace la colonne d'une position vers le haut.
      * 
      * @param selectedRow
-     *                la position de la colonne � deplacer.
+     *                la position de la colonne à deplacer.
      */
     public void moveColUp(int selectedRow) {
 	model.moveColUp(selectedRow);
@@ -134,7 +134,7 @@ public class FenetrePrincipaleAdminController {
      * Deplace la colonne d'une position vers le bas.
      * 
      * @param selectedRow
-     *                la position de la colonne � deplacer.
+     *                la position de la colonne à deplacer.
      */
     public void moveColDn(int selectedRow) {
 	model.moveColDn(selectedRow);
@@ -146,7 +146,7 @@ public class FenetrePrincipaleAdminController {
      * Supprime la colonne a la position selectedRow.
      * 
      * @param selectedRow
-     *                la position de la colonne � supprimer.
+     *                la position de la colonne à supprimer.
      */
     public void deleteColonne(int selectedRow) {
 	model.deleteColonne(selectedRow);
@@ -161,9 +161,9 @@ public class FenetrePrincipaleAdminController {
      * @param value
      *                la nouvelle valeur.
      * @param row
-     *                la position de la colonne � modifier.
+     *                la position de la colonne à modifier.
      * @param col
-     *                la valeur � modifier.
+     *                la valeur à modifier.
      */
     public void changeFileValue(Object value, int row, int col) {
 	model.changeFileValue(value, row, col);
@@ -189,7 +189,7 @@ public class FenetrePrincipaleAdminController {
 
     /**
      * Affiche une fenetre d'ouverture d'un fichier, et essaie de charger le
-     * schema s�l�ctionn�.
+     * schema séléctionné.
      */
     public void openFile() {
 	final JFileChooser f = new JFileChooser(new File(lastPath));
@@ -213,7 +213,7 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * Sauvegarde le sch�ma actuel sous un autre nom.
+     * Sauvegarde le schéma actuel sous un autre nom.
      */
     public void saveAs() {
 	boolean ecraseFichierExistant = false, annuleExport = false, fichierEstUnique = false;
@@ -255,7 +255,7 @@ public class FenetrePrincipaleAdminController {
      * Supprime un fichier.
      * 
      * @param selection
-     *                le treepath du fichier � supprimer
+     *                le treepath du fichier à supprimer
      * @return le TreePath de l'objet a selectionner apres suppression
      */
     public TreePath deleteFile(TreePath selection) {
@@ -320,10 +320,10 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * modifie le nombre de lignes d'ent�te du fichier.
+     * modifie le nombre de lignes d'entête du fichier.
      * 
      * @param nb
-     *                le nombre de lignes d'ent�te du fichier.
+     *                le nombre de lignes d'entête du fichier.
      */
     public void setFileHeaderLinesCount(int nb) {
 	model.setCurrentFileHeaderLinesCount(nb);
@@ -342,10 +342,10 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * Rajoute une colonne � la position selectedRow.
+     * Rajoute une colonne à la position selectedRow.
      * 
      * @param selectedRow
-     *                la position de la colonne � rajouter
+     *                la position de la colonne à rajouter
      */
     public void addColonne(int selectedRow) {
 	model.addColonne(selectedRow);
@@ -354,10 +354,10 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * Rajoute une colonne � la position selectedRow.
+     * Rajoute une colonne à la position selectedRow.
      * 
      * @param position
-     *                la position du fichier � rajouter
+     *                la position du fichier à rajouter
      */
     public void addFichier(TreePath position) {
 	model.addFichier(position);
@@ -471,8 +471,8 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * @return le fichier s�l�ctionn� actuellement dans le treeview, et dont
-     *         les d�tails sont affich�s dans la table.
+     * @return le fichier séléctionné actuellement dans le treeview, et dont
+     *         les détails sont affichés dans la table.
      */
     public Fichier getCurrentFichier() {
 	return model.getCurrentFichier();
@@ -501,7 +501,7 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * sauvegarde les modifications effectu�es sur le sch�ma.
+     * sauvegarde les modifications effectuées sur le schéma.
      */
     public void save() {
 	if (model.isNewSchema()) {
@@ -511,7 +511,7 @@ public class FenetrePrincipaleAdminController {
 		model.saveFile();
 	    } catch (final IOException e) {
 		JOptionPane.showMessageDialog(view,
-			"Le fichier n'a pas été sauvegardé");
+			"Le fichier n'a pas peu être sauvegardé");
 	    }
 	}
 	view.refreshTitle();
@@ -526,7 +526,7 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * Duplique le fichier selectionn�.
+     * Duplique le fichier selectionné.
      * 
      * @param path
      *                la position du fichier à dupliquer
@@ -545,15 +545,15 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * Masque la partie "d�tail fichier".
+     * Masque la partie "détail fichier".
      */
     public void selectNothing() {
 	view.showFileDetails(false);
     }
 
     /**
-     * D�place le fichier vers le bas.
-     * @param selectionPath Le path du fichier � d�placer.
+     * Déplace le fichier vers le bas.
+     * @param selectionPath Le path du fichier à déplacer.
      * @return le nouveau path du fichier.
      */
     public TreePath moveFileDn(TreePath selectionPath) {
@@ -564,8 +564,8 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * D�place le fichier vers le haut.
-     * @param selectionPath Le path du fichier � d�placer.
+     * Déplace le fichier vers le haut.
+     * @param selectionPath Le path du fichier à déplacer.
      * @return le nouveau path du fichier.
      */
     public TreePath moveFileUp(TreePath selectionPath) {
@@ -575,7 +575,7 @@ public class FenetrePrincipaleAdminController {
     }
 
     /**
-     * Ajoute une cat�gorie au sch�ma.
+     * Ajoute une catégorie au schéma.
      */
     public void addCategorie() {
 	model.addCategorie();

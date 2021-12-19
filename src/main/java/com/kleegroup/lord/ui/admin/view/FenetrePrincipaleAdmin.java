@@ -611,10 +611,10 @@ public class FenetrePrincipaleAdmin extends JFrame {
 
     private void setText() {
 	setTitle(ORD_TITLE);
-	jlblNomFichier.setText("D�but du nom du fichier");
+	jlblNomFichier.setText("Début du nom du fichier");
 	jmbmExtensionFichier.setText("Extension");
 	jlblGroupeFichier.setText("N Groupe du fichier");
-	jlblEnteteFichier.setText("Nombre de ligne d'ent�te");
+	jlblEnteteFichier.setText("Nombre de ligne d'entête");
 	jlblSeuilErreurFichier.setText("Seuil d'erreurs");
     }
 
@@ -915,7 +915,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 
     private void adjustTableColumnSize() {
 	// Calcul des tailles optimales des colonnes
-	// on utilise unqiuement les donn�es du premier fichier (selectionn� par
+	// on utilise unqiuement les données du premier fichier (selectionné par
 	// defaut)
 	for (int i = 0; i < jtblFileDetails.getColumnCount(); i++) {
 	    final TableColumn column = jtblFileDetails.getColumnModel()
@@ -950,7 +950,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 
     /**
          * @param model
-         *                le mod�le de la table des colonnes.
+         *                le modèle de la table des colonnes.
          */
     public void setTableModel(TableModel model) {
 	jtblFileDetails.setModel(model);
@@ -1073,7 +1073,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
     }
 
     /**
-         * @return le num�ro du groupe du fichier que l'utilisateur a choisi
+         * @return le numéro du groupe du fichier que l'utilisateur a choisi
          */
     public int getFileGroup() {
 	return (Integer) jspnFileGroup.getValue();
@@ -1120,7 +1120,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 
     /**
          * synchronisre l'affichage avec le controlleur.<br>
-         * Utilis� suite � des modifications, pour r�fl�ter ces modifications
+         * Utilisé suite à des modifications, pour réfléter ces modifications
          * dans l'affichage. par exemple, lors de la selection d'un nouveau
          * fichier
          */
@@ -1153,12 +1153,12 @@ public class FenetrePrincipaleAdmin extends JFrame {
 
     /**
          * @param currentFileMultiColContraintesCount
-         *                le nombre de v�rifications � afficher � l'utilisateur
+         *                le nombre de vérifications à afficher à l'utilisateur
          */
     public void setFileContraintesMultiColCount(
 	    int currentFileMultiColContraintesCount) {
 	jLabel6.setText(currentFileMultiColContraintesCount
-		+ " V�rification(s) sp�cifique(s)");
+		+ " Vérification(s) spécifique(s)");
 
     }
 

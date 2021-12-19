@@ -8,14 +8,14 @@ import javax.xml.bind.JAXBException;
 import com.kleegroup.lord.moteur.Schema;
 
 /**
- * Mod�le de la fenetre principale de l'interface utilisateur.
+ * Modèle de la fenetre principale de l'interface utilisateur.
  */
 public class FenetrePrincipaleUtilisateurModel extends Model{
 	Schema schema;
 	/**
 	 * Essaie de charger le fichier "config.xml" dans le repertoire du programme.
 	 * @param execDir le repertoire du programme
-	 * @throws FileNotFoundException si le fichier n'est pas trouv�.
+	 * @throws FileNotFoundException si le fichier n'est pas trouvé.
 	 * @throws JAXBException Exception JAXB
 	 */
 	public FenetrePrincipaleUtilisateurModel (File execDir) throws FileNotFoundException, JAXBException{
@@ -45,13 +45,13 @@ public class FenetrePrincipaleUtilisateurModel extends Model{
 	}
 
 	/**
-	 * @param path le r�pertoire o� seront sauvegard�s les fichiers de logs
+	 * @param path le répertoire où seront sauvegardés les fichiers de logs
 	 */
 	public void setEmplacementLogs(String path){
 	    schema.setEmplacementFichiersLogs(path);
 	}
 	/**
-	 * @return le r�pertoire o� seront sauvegard�s les fichiers de logs
+	 * @return le répertoire où seront sauvegardés les fichiers de logs
 	 */
 	public String getEmplacementLogs(){
 	    return schema.getEmplacementFichiersLogs();

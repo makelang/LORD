@@ -3,12 +3,11 @@ package com.kleegroup.lord.moteur;
 import com.kleegroup.lord.moteur.exceptions.ExceptionMoteur;
 
 
-
 /**
- *Impl�ment� par  tout objet qui effectue des v�rifications.
- *Elle contient des fonctions qui permettent de lancer la v�rification sur sun String,
- *des fonctions qui r�cup�rent les messages d'erreurs.<br>
- *Elle d�finit aussi des constantes � utiliser pour identifier les erreurs	
+ *Implémenté par  tout objet qui effectue des vérifications.
+ *Elle contient des fonctions qui permettent de lancer la vérification sur sun String,
+ *des fonctions qui récupèrent les messages d'erreurs.<br>
+ *Elle définit aussi des constantes à utiliser pour identifier les erreurs	
  *
  * @author maazreibi
  *
@@ -17,11 +16,11 @@ import com.kleegroup.lord.moteur.exceptions.ExceptionMoteur;
 public interface IContrainte  {
 	
 	/**
-	 * V�rifie que la valeur est valide selon les contraintes pr�d�finies.
+	 * Vérifie que la valeur est valide selon les contraintes prédéfinies.
 	 * @param numLigne le numero de la ligne a verifier
-	 * @param valeurs les valeurs � v�rifier
-	 * @return NO_ERR si aucune erreur n'est d�t�ct�e <br>
-	 * Sinon, un objet Erreur contenant les informations n�cessaires.
+	 * @param valeurs les valeurs à vérifier
+	 * @return NO_ERR si aucune erreur n'est détéctée <br>
+	 * Sinon, un objet Erreur contenant les informations nécessaires.
 	 * @throws ExceptionMoteur si la verification detecte une anomalie 
 	 * bloquante(caractere interdit, trop d'erreurs,...)
 	 * 
@@ -50,16 +49,16 @@ public interface IContrainte  {
 	Fichier getFichier();
 
 	/**
-	 * renvoie une interpretation de la balise. voir {@link com.kleegroup.lord.moteur.Interprete}
-	 * @param balise la balise � interpreter 
-	 * @param indice l'indice (ignor� dans ce cas)
+	 * renvoie une interpretation de la balise. voir {@link spark.reprise.outil.moteur.Interprete}
+	 * @param balise la balise à interpreter 
+	 * @param indice l'indice (ignoré dans ce cas)
 	 * @return balise
 	 * */
 	String interprete(String balise, int indice);
 	
 	/**nettoie l'objet.
-	 * Remet � zero les donn�es sp�cifique utilis�e lors de la derni�re v�rification
-	 * pour pouvoir  r�utiliser cet objet pour une nouvelle v�rification 
+	 * Remet à zero les données spécifique utilisée lors de la dernière vérification
+	 * pour pouvoir  réutiliser cet objet pour une nouvelle vérification 
 	 * */
 	void clean();
 	

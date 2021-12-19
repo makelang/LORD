@@ -20,21 +20,21 @@ public class FrameLogErreursModel extends Model{
 	private Map<String,LoggueurRam> loggueurs;
 	
 	 /**
-	 * @return la liste des erreurs associ�e � chaque fichier.
+	 * @return la liste des erreurs associée à chaque fichier.
 	 */
 	public Map<String, LoggueurRam> getLoggueurs() {
 		return loggueurs;
 	}
 
 	/**
-	 * @param loggueurs la liste des erreurs associ�e � chaque fichier.
+	 * @param loggueurs la liste des erreurs associée à chaque fichier.
 	 */
 	public void setLoggueurs(Map<String, LoggueurRam> loggueurs) {
 		this.loggueurs = loggueurs;
 	}
 
 	/**
-	 * @param f le fichier concern�
+	 * @param f le fichier concerné
 	 * @return la liste des erreurs du fichier f
 	 */
 	public ListeErreurs getErreurs(Fichier f){
@@ -45,7 +45,7 @@ public class FrameLogErreursModel extends Model{
 	    return new ListeErreursNoRef(listeErrs);
 	}
 	/**
-	 * @param s le schema en utilis�.
+	 * @param s le schema en utilisé.
 	 * @return une liste des fichiers du schema.
 	 */
 	public FileTreeModel getListFichier(Schema s){

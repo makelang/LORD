@@ -42,7 +42,7 @@ public class FenetrePrincipaleAdminModel {
 		 */
 		private static final long serialVersionUID = 4157087119873576473L;
 
-		private final String nomColonne[] = new String[] { "Colonne", "Description", "O/F", "Ref", "Unique", "Type", "Format", "Taille Max", "Valeurs permises", "Champ de contr�le", };
+		private final String nomColonne[] = new String[] { "Colonne", "Description", "O/F", "Ref", "Unique", "Type", "Format", "Taille Max", "Valeurs permises", "Champ de contrôle", };
 
 		private Fichier f = new Fichier("", "");
 
@@ -85,7 +85,7 @@ public class FenetrePrincipaleAdminModel {
 		/**{@inheritDoc}*/
 		@Override
 		public Object getValueAt(int rowIndex, int columnIndex) {
-			//separ� en 2 methode pour eviter FanOutComplecity de CheckStyle
+			//separé en 2 methode pour eviter FanOutComplecity de CheckStyle
 			final Colonne c = f.getColonne(rowIndex);
 			switch (columnIndex) {
 				case 0://nom
@@ -106,7 +106,7 @@ public class FenetrePrincipaleAdminModel {
 		}
 
 		private Object returnPart2(int rowIndex, int columnIndex) {
-			//separ� en 2 methode pour eviter FanOutComplecity de CheckStyle
+			//separé en 2 methode pour eviter FanOutComplecity de CheckStyle
 			final Colonne c = f.getColonne(rowIndex);
 
 			switch (columnIndex) {
@@ -332,7 +332,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	* Cr�e un nouveau modele et lui ajoute un fichier.
+	* Crée un nouveau modele et lui ajoute un fichier.
 	*/
 	public FenetrePrincipaleAdminModel() {
 		//      addFichier(null);
@@ -340,7 +340,7 @@ public class FenetrePrincipaleAdminModel {
 
 	/**
 	 * Affiche les details d'un fichier.
-	 * @param f le fichier dont afficher les d�tails
+	 * @param f le fichier dont afficher les détails
 	 * @return un objet {@link javax.swing.table.TableModel} qui represente le fichier.
 	 */
 	public TableModel getTableModel(Fichier f) {
@@ -352,7 +352,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return les detail du fichier selectionn� par defaut (le premier fichier
+	 * @return les detail du fichier selectionné par defaut (le premier fichier
 	 *  du schema ou un fichier vide)
 	 */
 	public TableModel getTableModel() {
@@ -364,8 +364,8 @@ public class FenetrePrincipaleAdminModel {
 
 	/**
 	 * Charge un fichier de configuration.
-	 * @param path le chemin d'acc�s du fichier.
-	 * @throws FileNotFoundException Exception si le fichier n'est pas trouv�.
+	 * @param path le chemin d'accès du fichier.
+	 * @throws FileNotFoundException Exception si le fichier n'est pas trouvé.
 	 * @throws JAXBException Exception si le fichier est invalide.
 	 */
 	public void loadSchema(String path) throws FileNotFoundException, JAXBException {
@@ -387,8 +387,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	//    /**
-	//     * d�place le fichier selectionn� vers le haut.
-	//     * @param node le fichier � d�placer.
+	//     * déplace le fichier selectionné vers le haut.
+	//     * @param node le fichier à déplacer.
 	//     */
 	//    public void moveFileUp(Fichier node) {
 	//	setModified();
@@ -400,8 +400,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * d�place la colonne � la position selectedRow vers le bas.
-	 * @param selectedRow la posotion de la colonne � d�placer.
+	 * déplace la colonne à la position selectedRow vers le bas.
+	 * @param selectedRow la posotion de la colonne à déplacer.
 	 */
 	public void moveColDn(int selectedRow) {
 		if (currentFile != null) {
@@ -412,8 +412,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * d�place la colonne � la position selectedRow vers le haut.
-	 * @param selectedRow la posotion de la colonne � d�placer.
+	 * déplace la colonne à la position selectedRow vers le haut.
+	 * @param selectedRow la posotion de la colonne à déplacer.
 	 */
 	public void moveColUp(int selectedRow) {
 		if (currentFile != null) {
@@ -423,8 +423,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * supprime la colonne � la position selectedRow.
-	 * @param selectedRow la posotion de la colonne � supprimer.
+	 * supprime la colonne à la position selectedRow.
+	 * @param selectedRow la posotion de la colonne à supprimer.
 	 */
 	public void deleteColonne(int selectedRow) {
 		if (currentFile != null) {
@@ -434,10 +434,10 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * modifie les propri�t� de la colonne � la position row.
-	 * @param value la nouvelle valeur de la propri�t� � modifier.
-	 * @param row la colonne � modifier.
-	 * @param col la propri�t� � modifier.
+	 * modifie les propriété de la colonne à la position row.
+	 * @param value la nouvelle valeur de la propriété à modifier.
+	 * @param row la colonne à modifier.
+	 * @param col la propriété à modifier.
 	 */
 	public void changeFileValue(Object value, int row, int col) {
 		setModified();
@@ -446,7 +446,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return liste des valeurs � afficher pour la colonne pr�senceValeur.
+	 * @return liste des valeurs à afficher pour la colonne présenceValeur.
 	 */
 	public String[] getObFacValues() {
 		return new String[] { Colonne.PRESENCE.FACULTATIVE.toString(), Colonne.PRESENCE.OBLIGATOIRE.toString(), Colonne.PRESENCE.INTERDITE.toString(), };
@@ -463,7 +463,7 @@ public class FenetrePrincipaleAdminModel {
 	/**
 	 * sauvegarde le schema dans le fichier res.
 	 * @param res le fichier de configuration.
-	 * @throws IOException en cas d'erreur d'�criture.
+	 * @throws IOException en cas d'erreur d'écriture.
 	 */
 	public void saveFile(File res) throws IOException {
 		FileOutputStream fos = null;
@@ -483,9 +483,9 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * supprime un fichier du sch�ma.
-	 * @param selection le path du fichier � supprimer.
-	 * @return le path de la nouvelle s�l�ction.
+	 * supprime un fichier du schéma.
+	 * @param selection le path du fichier à supprimer.
+	 * @return le path de la nouvelle séléction.
 	 */
 	public TreePath deleteFile(TreePath selection) {
 		setModified();
@@ -494,7 +494,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return le prefixNom du fichier s�lectionn�.
+	 * @return le prefixNom du fichier sélectionné.
 	 */
 	public String getCurrentFileNamePrefix() {
 		if (currentFile == null) {
@@ -504,7 +504,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return l'extension du fichier s�lectionn�.
+	 * @return l'extension du fichier sélectionné.
 	 */
 	public String getCurrentFileExtension() {
 
@@ -515,7 +515,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @param prefixNom le prefixNom du fichier s�lectionn�.
+	 * @param prefixNom le prefixNom du fichier sélectionné.
 	 */
 	public void setCurrentFileNamePrefix(String prefixNom) {
 		if (!prefixNom.equals(getCurrentFileNamePrefix())) {
@@ -526,7 +526,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @param ext l'extension du fichier s�lectionn�.
+	 * @param ext l'extension du fichier sélectionné.
 	 */
 	public void setCurrentFileExtension(String ext) {
 		if (!ext.equals(getCurrentFileExtension())) {
@@ -537,28 +537,28 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return seuil d'erreur du fichier s�lectionn�.
+	 * @return seuil d'erreur du fichier sélectionné.
 	 */
 	public int getCurrentFileErrorLimit() {
 		return currentFile.getErrorLimit();
 	}
 
 	/**
-	 * @return num�ro de groupe du fichier s�lectionn�.
+	 * @return numéro de groupe du fichier sélectionné.
 	 */
 	public int getCurrentFileGroupNumber() {
 		return currentFile.getGroupNumber();
 	}
 
 	/**
-	 * @return nbre de lignes d'entete du fichier s�lectionn�.
+	 * @return nbre de lignes d'entete du fichier sélectionné.
 	 */
 	public int getCurrentFileHeaderLinesCount() {
 		return currentFile.getHeaderLinesCount();
 	}
 
 	/**
-	 * @param grp numero de groupe du fichier s�lectionn�.
+	 * @param grp numero de groupe du fichier sélectionné.
 	 */
 	public void setCurrentFileGroup(int grp) {
 		if (grp != getCurrentFileGroupNumber()) {
@@ -569,7 +569,7 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @param nb nbre de lignes d'entete du fichier s�lectionn�.
+	 * @param nb nbre de lignes d'entete du fichier sélectionné.
 	 */
 	public void setCurrentFileHeaderLinesCount(int nb) {
 		if (nb != getCurrentFileHeaderLinesCount()) {
@@ -579,14 +579,14 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return nbre de contraintes multicolonnes du fichier s�lectionn�.
+	 * @return nbre de contraintes multicolonnes du fichier sélectionné.
 	 */
 	public int getCurrentFileMultiColContraintesCount() {
 		return currentFile.getMultiColContraintesCount();
 	}
 
 	/**
-	 * @param nb le seuil d'erreur du fichier s�lectionn�.
+	 * @param nb le seuil d'erreur du fichier sélectionné.
 	 */
 	public void setCurrentFileErrorLimit(int nb) {
 		setModified();
@@ -594,8 +594,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * rajoute une colonne au fichier selectionn�.
-	 * @param selectedRow la position de la colonne � rajouter.
+	 * rajoute une colonne au fichier selectionné.
+	 * @param selectedRow la position de la colonne à rajouter.
 	 */
 	public void addColonne(int selectedRow) {
 		if (currentFile != null) {
@@ -605,8 +605,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * rajoute un fichier au sch�ma.
-	 * @param position la position du fichier dans le sch�ma.
+	 * rajoute un fichier au schéma.
+	 * @param position la position du fichier dans le schéma.
 	 */
 	public void addFichier(TreePath position) {
 		final String nom = getNewFileName("Nouveau Fichier");
@@ -679,21 +679,21 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * @return le fichier selectionn�, dont on affiche les dd�tails.
+	 * @return le fichier selectionné, dont on affiche les ddétails.
 	 */
 	public Fichier getCurrentFichier() {
 		return currentFile.getFichier();
 	}
 
 	/**
-	 * @return le sch�ma en cours de modifications.
+	 * @return le schéma en cours de modifications.
 	 */
 	public Schema getSchema() {
 		return schema;
 	}
 
 	/**
-	 * @return un String qui donne le nom du fichier de conf et son chemin d'acc�s.
+	 * @return un String qui donne le nom du fichier de conf et son chemin d'accès.
 	 */
 	public String getTitle() {
 		String isModified = "";
@@ -707,17 +707,17 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * sauvegarde la valeur variable qui indique que le sch�ma a �t� modifi�.
-	 * utilis� par le controlleur quand il effectue des affichages.
+	 * sauvegarde la valeur variable qui indique que le schéma a été modifié.
+	 * utilisé par le controlleur quand il effectue des affichages.
 	 *
-	 * Dans certains cas, le controlleur demande une donn�e au model, qu'il
+	 * Dans certains cas, le controlleur demande une donnée au model, qu'il
 	 * affiche dans le view. cela declanche un evenement de modif des
 	 * donnes dans le view qui fait un set dans le model.Le probleme est que
 	 * savedModif qui indique s'il l'utilisateur a fait des modifs sera faussement
-	 * modifi�e.
+	 * modifiée.
 	 *
-	 * Pour �viter ces situtions, le controlleur demande au model de
-	 * sauvegarder la valeur de saveModified avant ces demandes de donn�es.
+	 * Pour éviter ces situtions, le controlleur demande au model de
+	 * sauvegarder la valeur de saveModified avant ces demandes de données.
 	 *
 	 */
 	public void saveModified() {
@@ -725,15 +725,15 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	* sauvegarde la valeur variable qui indique que le sch�ma a �t� modifi�.
-	* utilis� par le controlleur quand il effectue des affichages
+	* sauvegarde la valeur variable qui indique que le schéma a été modifié.
+	* utilisé par le controlleur quand il effectue des affichages
 	*/
 	public void revertModified() {
 		isSchemaModified = savedModif;
 	}
 
 	/**
-	 * @return true si le schema est modifi�.
+	 * @return true si le schema est modifié.
 	 */
 	public boolean isSchemaModified() {
 		return isSchemaModified;
@@ -755,9 +755,9 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * v�rifie que le schema actuel est valide.
+	 * vérifie que le schema actuel est valide.
 	 * @return un message qui indique si le schema est valide , ou bien
-	 * la cause d'invalidit� du sch�ma.
+	 * la cause d'invalidité du schéma.
 	 */
 	public String verifySchema() {
 		for (final Fichier f : schema.getFichiers()) {
@@ -776,14 +776,14 @@ public class FenetrePrincipaleAdminModel {
 						final ContrainteReference cr = (ContrainteReference) cuc;
 						final Fichier fref = schema.getFichier(cr.getFichierRef());
 						if (fref == null) {
-							return "La colonne >" + c.getNom() + "< du fichier >" + f.getNom() + "< fait r�f�rence � un fichier inexsistant.";
+							return "La colonne >" + c.getNom() + "< du fichier >" + f.getNom() + "< fait référence à un fichier inexsistant.";
 						}
 						final Colonne cref = fref.getColonne(cr.getColonneRef());
 						if (cref == null) {
-							return "La colonne >" + c.getNom() + "< du fichier >" + f.getNom() + "< \n fait r�f�rence � une colonne inexsistante >" + cr.getColonneRef() + "< dans le fichier >" + fref.getNom() + "<.";
+							return "La colonne >" + c.getNom() + "< du fichier >" + f.getNom() + "< \n fait référence à une colonne inexsistante >" + cr.getColonneRef() + "< dans le fichier >" + fref.getNom() + "<.";
 						}
 						if (isIncompatible(c, cref)) {
-							return "La colonne >" + c.getNom() + "< du fichier >" + f.getNom() + "< \n fait r�f�rence � une colonne incompatible >" + cr.getColonneRef() + "< dans le fichier >" + fref.getNom() + "<.";
+							return "La colonne >" + c.getNom() + "< du fichier >" + f.getNom() + "< \n fait référence à une colonne incompatible >" + cr.getColonneRef() + "< dans le fichier >" + fref.getNom() + "<.";
 						}
 					}
 				}
@@ -799,9 +799,9 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * duplique le fichier � la position selectedRow.
-	 * @param selectedRow la position du fichier � dupliquer.
-	 * @return la nouvelle position � s�lectionner.
+	 * duplique le fichier à la position selectedRow.
+	 * @param selectedRow la position du fichier à dupliquer.
+	 * @return la nouvelle position à sélectionner.
 	 */
 	public TreePath duplicateFile(TreePath selectedRow) {
 		if (selectedRow == null) {
@@ -820,8 +820,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * doit �tre un toString() des enums de la classe {@link SeparateurDecimales}.
-	 * @param text un String qui d�finit le s�parateur de d�cimales
+	 * doit être un toString() des enums de la classe {@link SeparateurDecimales}.
+	 * @param text un String qui définit le séparateur de décimales
 	 */
 	public void setSchemaSeparateurDecimales(String text) {
 		schema.setSeparateurDecimales(text);
@@ -836,8 +836,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * D�place le fichier vers le bas.
-	 * @param selectionPath la path du fichier � d�placer.
+	 * Déplace le fichier vers le bas.
+	 * @param selectionPath la path du fichier à déplacer.
 	 * @return le nouveau path du fichier.
 	 */
 	public TreePath moveFileDn(TreePath selectionPath) {
@@ -850,8 +850,8 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * D�place le fichier vers le haut.
-	 * @param selectionPath la path du fichier � d�placer.
+	 * Déplace le fichier vers le haut.
+	 * @param selectionPath la path du fichier à déplacer.
 	 * @return le nouveau path du fichier.
 	 */
 	public TreePath moveFileUp(TreePath selectionPath) {
@@ -863,17 +863,17 @@ public class FenetrePrincipaleAdminModel {
 	}
 
 	/**
-	 * Supprime une cat�gorie.
-	 * @param selection le path de la cat�gorie.
-	 * @param conserverLesFichier true s'il faut conserver les fichiers. Ils seront rattach�s � root.
-	 * @return le path de la nouvelle s�l�ction.
+	 * Supprime une catégorie.
+	 * @param selection le path de la catégorie.
+	 * @param conserverLesFichier true s'il faut conserver les fichiers. Ils seront rattachés à root.
+	 * @return le path de la nouvelle séléction.
 	 */
 	public TreePath deleteCat(TreePath selection, boolean conserverLesFichier) {
 		return treeModel.deleteCat(selection, conserverLesFichier);
 	}
 
 	/**
-	 * Ajoute une nouvelle cat�gorie au sch�ma.
+	 * Ajoute une nouvelle catégorie au schéma.
 	 */
 	public void addCategorie() {
 		treeModel.addCategorie();

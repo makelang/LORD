@@ -8,7 +8,7 @@ import com.kleegroup.lord.moteur.IErreur;
 
 /**
  * @author maazreibi
- * L'interface Loggueur permet d'utiler diff�rentes sources pour signaler les erreurs rencontr�e
+ * L'interface Loggueur permet d'utiler différentes sources pour signaler les erreurs rencontrée
  * 
  */
 public interface ILogger {
@@ -17,21 +17,21 @@ public interface ILogger {
 	
 	/**
 	 * Inscrit dans le log la collection des messages d'erreur.
-	 * @param listeErreurs  - La collection d'erreurs � logger
+	 * @param listeErreurs  - La collection d'erreurs à logger
 	 */
 	void log(List<IErreur> listeErreurs);
 	/**
 	 * Inscrit l'erreur dans le log.
-	 * @param err l'erreur � inscrire
+	 * @param err l'erreur à inscrire
 	 */
 	void log(IErreur err);
 	/**
-	 * Instruit le loggueur � vider son buffer s'il en a.
+	 * Instruit le loggueur à vider son buffer s'il en a.
 	 */
 	void flushAndClose();
 	
 	/**
-	* D�finit le nom du fichier source des erreurs de ce loggeur.
+	* Définit le nom du fichier source des erreurs de ce loggeur.
 	* @param nomFichier le nom du fichier source des erreurs de ce loggeur
 	*/
 	void setNomFichier(String nomFichier);

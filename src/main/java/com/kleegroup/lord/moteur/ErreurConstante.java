@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Repr�sentre une erreur rencntr�e. Contient toutes les informations n�cessaires sous
+ * Représentre une erreur rencntrée. Contient toutes les informations nécessaires sous
  * forme de string.
  * 
- * Cet objet est cr�e par une des classes contraintes, quand une erreur est detect�e.
+ * Cet objet est crée par une des classes contraintes, quand une erreur est detectée.
  */
 public class ErreurConstante extends Erreur {
 
@@ -25,7 +25,7 @@ public class ErreurConstante extends Erreur {
 	 * @param numLigne numero de la ligne de l'erreur
 	 * @param errMessage le message d'erreur
 	 * @param errColonne la colonne de l'erreur
-	 * @param errValeur la valeur qui a cr�e l'erreur
+	 * @param errValeur la valeur qui a crée l'erreur
 	 * @param errFichier le fichier de l'erreur
 	 */
 	private ErreurConstante(long numLigne, String errMessage, String errColonne, String errValeur, String errFichier) {
@@ -41,7 +41,7 @@ public class ErreurConstante extends Erreur {
 	 * @param numLigne numero de la ligne de l'erreur
 	 * @param errMessage le message d'erreur
 	 * @param errColonne la colonne de l'erreur
-	 * @param errValeur la valeur qui a cr�e l'erreur
+	 * @param errValeur la valeur qui a crée l'erreur
 	 * @param errFichier le fichier de l'erreur
 	 * @param errReference reference d'erreur
 	 */
@@ -57,10 +57,10 @@ public class ErreurConstante extends Erreur {
 	}
 
 	/**
-	 * Construit une ErreurConstante � partir d'une autre erreur. Les valeurs de
-	 * l'autres erreurs sont �valu�es � ce moment et stock�es dans l'objet ErreurConstante
+	 * Construit une ErreurConstante à partir d'une autre erreur. Les valeurs de
+	 * l'autres erreurs sont évaluées à ce moment et stockées dans l'objet ErreurConstante
 	 *  actuel.
-	 * @param err l'erreur � convertir.
+	 * @param err l'erreur à convertir.
 	 */
 	public ErreurConstante(IErreur err) {
 		this.errLigne = err.getErrLigne();
@@ -75,7 +75,7 @@ public class ErreurConstante extends Erreur {
 	 * Si on rencontre un caractere interdit, on renvoie cette erreur.
 	 * @param numLigne la ligne d'erreur
 	 * @param errColonne la colonne de l'erreur
-	 * @param errValeur la valeur contenant le caract�re interdit
+	 * @param errValeur la valeur contenant le caractère interdit
 	 * @return un objet ErreurConstante
 	 */
 	public static ErreurConstante errCaractereInterdit(long numLigne, String errColonne, String errValeur) {
@@ -85,7 +85,7 @@ public class ErreurConstante extends Erreur {
 
 	/**
 	 * @param nomFichier le nom du fichier de l'erreur
-	 * @param numLigne le num�ro de la ligne de l'erreur
+	 * @param numLigne le numéro de la ligne de l'erreur
 	 * @return un objet ErreurConstante
 	 */
 	public static ErreurConstante errTropDErreurs(String nomFichier, long numLigne) {
@@ -94,7 +94,7 @@ public class ErreurConstante extends Erreur {
 	}
 
 	/**
-	 * @param numLigne num�ro de la ligne d'erreur
+	 * @param numLigne numéro de la ligne d'erreur
 	 * @param rencontre le nombre de colonnes rencontres
 	 * @param attendu le nombre de colonne attendu
 	 * @return un objet ErreurConstante
@@ -107,8 +107,8 @@ public class ErreurConstante extends Erreur {
 	}
 
 	/**
-	 * Cette erreur ne devrait pas etre rencontr�e. C'est un message d'erreur
-	 * lev� si une exception de type MoteurException n'a pas �t� capt�e.
+	 * Cette erreur ne devrait pas etre rencontrée. C'est un message d'erreur
+	 * levé si une exception de type MoteurException n'a pas été captée.
 	 * @param nomFichier nom du fichier de l'erreur
 	 * @return un objet ErreurConstante
 	 */
@@ -119,8 +119,8 @@ public class ErreurConstante extends Erreur {
 	}
 
 	/**
-	 * Cette erreur ne devrait pas etre rencontr�e. C'est un message d'erreur
-	 * lev� si une exception de type MoteurException n'a pas �t� capt�e.
+	 * Cette erreur ne devrait pas etre rencontrée. C'est un message d'erreur
+	 * levé si une exception de type MoteurException n'a pas été captée.
 	 * @param numLigne numero de ligbe
 	 * @param message message d'erreur
 	 * @param nomFichier nom du fichier de l'erreur
@@ -180,9 +180,9 @@ public class ErreurConstante extends Erreur {
 	}
 
 	/**
-	 * renvoie une erreur qui indique que le fichier n'a pas pu �tre lu.
+	 * renvoie une erreur qui indique que le fichier n'a pas pu être lu.
 	 * @param nomFichier le nom de fichier illisible.
-	 * @return une erreur qui indique que le fichier n'a pas pu �tre lu.
+	 * @return une erreur qui indique que le fichier n'a pas pu être lu.
 	 */
 	public static IErreur errLectureFicher(String nomFichier) {
 		String errMsg = RESOURCE_MAP.getString("errLectureFicher");

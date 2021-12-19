@@ -9,15 +9,15 @@ import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiques;
 
 /**
- * Cette classe sert � repr�senter, construire et d�truire les contraintes d'un fichier.<br>
+ * Cette classe sert à représenter, construire et détruire les contraintes d'un fichier.<br>
  * <br>
  * Comme l'utilisateur peut annuler ses modifications, et que la construction d'une contrainte
- * se fait par �tape, cette classe m�morise les choix de l'utilisateur, dans des objets
- * "commandes de contrainte" sans  r�ellement construire de contrainte.<br><br>
+ * se fait par étape, cette classe mémorise les choix de l'utilisateur, dans des objets
+ * "commandes de contrainte" sans  réellement construire de contrainte.<br><br>
  * 
  * <br>
  *  La construction des contraintes a lieu dans la fonction {@link #createConstraints()},
- *  qui est appel�e une fois que l'utilisateur a fini ses modifications et cliqu� sur OK.
+ *  qui est appelée une fois que l'utilisateur a fini ses modifications et cliqué sur OK.
  * 
  */
 public class DialogMultiColumnConstraintsModel {
@@ -179,7 +179,7 @@ public class DialogMultiColumnConstraintsModel {
 		}
 
 		/**
-		 * @return la position de la premi�re commande de contrainte invalide.
+		 * @return la position de la première commande de contrainte invalide.
 		 */
 		public int getFirstInvalideConstrainte() {
 			for (int j = 0; j < commandes.size(); j++) {
@@ -195,8 +195,8 @@ public class DialogMultiColumnConstraintsModel {
 		}
 
 		/**
-		 * supprime la commande de contrainte � la postion pos.
-		 * @param pos la position de la commande � supprimer.
+		 * supprime la commande de contrainte à la postion pos.
+		 * @param pos la position de la commande à supprimer.
 		 */
 		public void deleteConstraint(int pos) {
 			if (pos >= 0 && pos < commandes.size()) {
@@ -212,7 +212,7 @@ public class DialogMultiColumnConstraintsModel {
 	private final Fichier f;
 
 	/**
-	 * @param f le fichier mod�le
+	 * @param f le fichier modèle
 	 */
 	public DialogMultiColumnConstraintsModel(Fichier f) {
 		tableModel = new TableModel(f);
@@ -227,7 +227,7 @@ public class DialogMultiColumnConstraintsModel {
 	}
 
 	/**
-	 * Cr�e une nouvelle "Commande" de contrainte. la commande est initialement vide.
+	 * Crée une nouvelle "Commande" de contrainte. la commande est initialement vide.
 	 */
 	public void addConstraintCommand() {
 		tableModel.addConstraint();
@@ -235,11 +235,11 @@ public class DialogMultiColumnConstraintsModel {
 	}
 
 	/**
-	 * modifie la contrainte � la ligne row. le row d�termine la propri�t� de la contrainte qui sera
-	 * modifi�e( id, message d'erreur , nom de fonction, ...).
+	 * modifie la contrainte à la ligne row. le row détermine la propriété de la contrainte qui sera
+	 * modifiée( id, message d'erreur , nom de fonction, ...).
 	 * @param value la nouvelle valeur de la colonne.
-	 * @param row la position de la contrainte � modifier.
-	 * @param col la propri�t� de la contrainte � modifier.
+	 * @param row la position de la contrainte à modifier.
+	 * @param col la propriété de la contrainte à modifier.
 	 */
 	public void changeFileValue(Object value, int row, int col) {
 		tableModel.setValueAt(value, row, col);
@@ -247,7 +247,7 @@ public class DialogMultiColumnConstraintsModel {
 	}
 
 	/**
-	 * @return la liste des noms de m�thode disponibles.
+	 * @return la liste des noms de méthode disponibles.
 	 */
 	public String[] getPossibleMethodNames() {
 		final List<String> pmn = new ArrayList<>(ContrainteMultiColFonctionsSpecifiques.getMethods());
@@ -263,7 +263,7 @@ public class DialogMultiColumnConstraintsModel {
 	}
 
 	/**
-	 * L'utilisateur a cliqu� sur OK. on prend les "commandes" de l'utilisateur
+	 * L'utilisateur a cliqué sur OK. on prend les "commandes" de l'utilisateur
 	 * et on construit.
 	 */
 	public void createConstraints() {
@@ -272,7 +272,7 @@ public class DialogMultiColumnConstraintsModel {
 
 	/**
 	 * @return la ligne de la premiere contrainte invalide
-	 * (nbre de parametre incorrect, m�thode inexsitante, ...) ou -1 si
+	 * (nbre de parametre incorrect, méthode inexsitante, ...) ou -1 si
 	 * toutes les contraintes sont valides.
 	 */
 	public int getFirstInvalidConstraint() {
@@ -281,7 +281,7 @@ public class DialogMultiColumnConstraintsModel {
 
 	/**
 	 * supprime une contrainte.
-	 * @param selectedRow la position de la contrainte � supprimer.
+	 * @param selectedRow la position de la contrainte à supprimer.
 	 */
 	public void deleteConstraint(int selectedRow) {
 		tableModel.deleteConstraint(selectedRow);

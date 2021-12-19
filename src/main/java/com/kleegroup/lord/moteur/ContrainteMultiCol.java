@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiques;
 
 /**
- * Cr�e une contrainte sur plusieurs colonnes.
+ * Crée une contrainte sur plusieurs colonnes.
  *
  */
 public abstract class ContrainteMultiCol implements IContrainte {
@@ -66,9 +66,9 @@ public abstract class ContrainteMultiCol implements IContrainte {
 
 	/**
 	 * 
-	 * @param numLigne le num�ro de la ligne � v�rifier
-	 * @param valeurs les valeurs � v�rifier
-	 * @return un objet Erreur contenant les informations n�cessaires
+	 * @param numLigne le numéro de la ligne à vérifier
+	 * @param valeurs les valeurs à vérifier
+	 * @return un objet Erreur contenant les informations nécessaires
 	 */
 	@Override
 	public IErreur verifie(long numLigne, String[] valeurs) {
@@ -110,7 +110,7 @@ public abstract class ContrainteMultiCol implements IContrainte {
 
 	/**
 	 * renvoit l'identifiant de la contrainte. L'identifiant est 
-	 * une cha�ne de caract�re determin�e par l'utilisateur. 
+	 * une chaîne de caractère determinée par l'utilisateur. 
 	 * @return l'identifiant de la contrainte
 	 */
 	@Override
@@ -119,14 +119,14 @@ public abstract class ContrainteMultiCol implements IContrainte {
 	}
 
 	/**
-	 * @return renvoie le fichier auquel est attach� la contrainte
+	 * @return renvoie le fichier auquel est attaché la contrainte
 	 */
 	public Fichier getFichierParent() {
 		return fichierParent;
 	}
 
 	/**
-	 * @param fichierParent d�signe le fichier parent de la contrainte
+	 * @param fichierParent désigne le fichier parent de la contrainte
 	 */
 	public void setFichierParent(Fichier fichierParent) {
 		this.fichierParent = fichierParent;
@@ -154,8 +154,8 @@ public abstract class ContrainteMultiCol implements IContrainte {
 	}
 
 	/**
-	 * renvoie le template d'erreur utilis� pour generer le message d'erreur.
-	 * @return le template d'erreur utilis� pour generer le message d'erreur
+	 * renvoie le template d'erreur utilisé pour generer le message d'erreur.
+	 * @return le template d'erreur utilisé pour generer le message d'erreur
 	 */
 	public String getErrTemplate() {
 		return errTemplate;
@@ -188,8 +188,8 @@ public abstract class ContrainteMultiCol implements IContrainte {
 	}
 
 	/**nettoie l'objet.
-	 * Remet � zero les donn�es sp�cifique utilis�e lors de la derni�re v�rification
-	 * pour pouvoir  r�utiliser cet objet pour une nouvelle v�rification 
+	 * Remet à zero les données spécifique utilisée lors de la dernière vérification
+	 * pour pouvoir  réutiliser cet objet pour une nouvelle vérification 
 	 * */
 	@Override
 	public void clean() {
