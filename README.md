@@ -1,3 +1,5 @@
+![Project status](https://github.com/makelang/LORD/actions/workflows/github-actions-build.yml/badge.svg)
+
 # L'Outil de Reprise de Données (LORD)
 
 Ce programme a pour objectif de valider qu'un ensemble de fichiers CSV respecte un format défini par une spécification XML.
