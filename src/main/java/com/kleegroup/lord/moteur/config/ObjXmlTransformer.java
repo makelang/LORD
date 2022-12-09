@@ -1,6 +1,6 @@
 package com.kleegroup.lord.moteur.config;
 
-import javax.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBElement;
 
 import com.kleegroup.lord.config.xml.ObjectFactory;
 import com.kleegroup.lord.config.xml.TypeColonne;

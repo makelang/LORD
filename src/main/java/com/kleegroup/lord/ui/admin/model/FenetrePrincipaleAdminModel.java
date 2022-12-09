@@ -10,7 +10,7 @@ import java.util.List;
 
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 
 import com.kleegroup.lord.moteur.Colonne;
 import com.kleegroup.lord.moteur.ContrainteUniCol;

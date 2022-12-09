@@ -4,7 +4,7 @@ import java.awt.Component;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 
 import com.kleegroup.lord.ui.utilisateur.model.FenetrePrincipaleUtilisateurModel;
 import com.kleegroup.lord.ui.utilisateur.model.Model;
