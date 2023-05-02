@@ -3,7 +3,7 @@ package com.kleegroup.lord.ui.utilisateur.controller;
 import java.io.FileNotFoundException;
 
 import javax.swing.JOptionPane;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 
 import com.kleegroup.lord.ui.utilisateur.model.Model;
 import com.kleegroup.lord.ui.utilisateur.view.FrameBienvenue;

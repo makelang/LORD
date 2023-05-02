@@ -10,7 +10,7 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.table.TableModel;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
-import javax.xml.bind.JAXBException;
+import jakarta.xml.bind.JAXBException;
 
 import com.kleegroup.lord.moteur.Categories.Categorie;
 import com.kleegroup.lord.moteur.Fichier;
