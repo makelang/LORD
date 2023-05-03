@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
@@ -22,12 +21,8 @@ import java.util.TreeMap;
 
 import org.apache.log4j.Logger;
 
-import com.kleegroup.lord.config.xml.ObjectFactory;
-import com.kleegroup.lord.config.xml.TypeSchema;
 import com.kleegroup.lord.moteur.Fichier.ETAT;
-import com.kleegroup.lord.moteur.config.XmlObjTransformer;
 import com.kleegroup.lord.moteur.exceptions.EchecCreationLogs;
-import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 import com.kleegroup.lord.moteur.logs.ILogger;
 import com.kleegroup.lord.moteur.logs.LoggueurFichierCSV;
 import com.kleegroup.lord.moteur.logs.LoggueurMultiple;

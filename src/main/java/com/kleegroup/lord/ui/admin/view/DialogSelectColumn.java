@@ -2,7 +2,6 @@ package com.kleegroup.lord.ui.admin.view;
 
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ResourceBundle;
@@ -304,7 +303,7 @@ public class DialogSelectColumn extends javax.swing.JDialog {
 	}
 
 	void addSelectedElement(MouseEvent e) {
-		if (!singleSelectMode && (e.getClickCount() == 2 || (e.getModifiers() & InputEvent.CTRL_MASK) != 0) || singleSelectMode) {
+		if (!singleSelectMode && (e.getClickCount() == 2 || e.isControlDown()) || singleSelectMode) {
 			final TreePath tp = jtreeCols.getPathForLocation(e.getX(), e.getY());
 			controller.addElement(tp);
 		}

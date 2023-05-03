@@ -92,7 +92,6 @@ public class LoggueurFichierCSV extends AbstractLoggueur {
 	}
 
 	this.out = new PrintStream(new BufferedOutputStream(fos));
-	//FIXME
 	if (hasReferenceColonne()) {
 	    out.format(formatAvecRef, nomFichier, position, reference,
 		    nomColonne, valeur, erreur);

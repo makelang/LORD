@@ -89,16 +89,6 @@ public class FrameSelectionCheminsFichiersController extends FrameController<Fra
 		}
 	}
 
-	private void creerListeCheminsSansCategories(FrameSelectionCheminsFichiers temp) {
-		for (final String nomCategorie : model.getNomsCategories()) {
-			for (final Fichier f : model.getFichiers(nomCategorie)) {
-				final String nom = f.getNom();
-				temp.addFichier(nom, model.getExtension(nom), nomCategorie);
-				temp.setChemin(nom, model.getChemin(nom));
-			}
-		}
-	}
-
 	/**
 	 * Change le chemin du fichier.
 	 * @param nom le nom du fichier.
