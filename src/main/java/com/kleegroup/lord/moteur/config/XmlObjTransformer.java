@@ -1,8 +1,11 @@
 package com.kleegroup.lord.moteur.config;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kleegroup.lord.config.xml.ObjectFactory;
 import com.kleegroup.lord.config.xml.TypeColonne;
 import com.kleegroup.lord.config.xml.TypeContrainte;
 import com.kleegroup.lord.config.xml.TypeContrainteMultiColonne;
@@ -24,23 +27,53 @@ import com.kleegroup.lord.moteur.contraintes.ContrainteTypeDate;
 import com.kleegroup.lord.moteur.contraintes.ContrainteTypeDecimal;
 import com.kleegroup.lord.moteur.contraintes.ContrainteTypeEntier;
 import com.kleegroup.lord.moteur.contraintes.ContrainteUnique;
+import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 import com.kleegroup.lord.moteur.util.SeparateurChamps;
 import com.kleegroup.lord.moteur.util.SeparateurDecimales;
+
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 
 /**
  * Sert à tranformer un schéma XML (JAXB) en schéma de moteur.
  */
 public class XmlObjTransformer {
-	Schema schemaEquiv = new Schema();
+	
+	private Schema schemaEquiv = new Schema();
+	private List<Colonne> colonnesPrinc = new ArrayList<>();
+	private List<String> fichierRef = new ArrayList<>();
+	private List<String> colonneRef = new ArrayList<>();
+	private SeparateurChamps sepChamps = null;
+	private SeparateurDecimales sepDecimal = null;
+	
+	
+	/**
+	 * Construit un schema a partir d'un XML lu dans inputStream.
+	 * 
+	 * @param inputStream
+	 *            sert a lire le fichier
+	 * @return le schema XML
+	 * @throws SchemaInvalideException
+	 *             si la conversion à partir du XML échoue
+	 */
+	public static Schema fromXML(InputStream inputStream) throws SchemaInvalideException {
 
-	List<Colonne> colonnesPrinc = new ArrayList<>();
+		JAXBContext jc;
+		try (InputStream is = inputStream){
+			jc = JAXBContext.newInstance(ObjectFactory.class.getPackage().getName());
+			final Unmarshaller u = jc.createUnmarshaller();
+			final JAXBElement<?> schemaXML = (JAXBElement<?>) u.unmarshal(is);
+			final XmlObjTransformer trans = new XmlObjTransformer();
+			
+			return trans.transform((TypeSchema) schemaXML.getValue());
+		} catch (IOException | JAXBException e) {
+			throw new SchemaInvalideException(e);
+		}
 
-	List<String> fichierRef = new ArrayList<>();
 
-	List<String> colonneRef = new ArrayList<>();
-
-	SeparateurChamps sepChamps = null;
-	SeparateurDecimales sepDecimal = null;
+	}
 
 	/**
 	 * @param schemaOriginal	le schema extrait du XML

@@ -2,7 +2,6 @@ package com.kleegroup.lord.ui.admin.model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,14 +9,16 @@ import java.util.List;
 
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
-import jakarta.xml.bind.JAXBException;
 
 import com.kleegroup.lord.moteur.Colonne;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.Schema;
+import com.kleegroup.lord.moteur.config.ObjXmlTransformer;
+import com.kleegroup.lord.moteur.config.XmlObjTransformer;
 import com.kleegroup.lord.moteur.contraintes.ContrainteReference;
 import com.kleegroup.lord.moteur.contraintes.ContrainteTypeChaineDeCaractere;
+import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 import com.kleegroup.lord.moteur.util.SeparateurChamps;
 import com.kleegroup.lord.moteur.util.SeparateurDecimales;
@@ -370,10 +371,10 @@ public class FenetrePrincipaleAdminModel {
 	 * @throws FileNotFoundException Exception si le fichier n'est pas trouvé.
 	 * @throws JAXBException Exception si le fichier est invalide.
 	 */
-	public void loadSchema(String path) throws FileNotFoundException, JAXBException {
+	public void loadSchema(String path) throws FileNotFoundException, SchemaInvalideException {
 		final File in = new File(path);
 		fullSchemaPath = in.getAbsolutePath();
-		schema = Schema.fromXML(new java.io.FileInputStream(in));
+		schema = XmlObjTransformer.fromXML(new java.io.FileInputStream(in));
 		treeModel = new FileTreeModel(schema);
 		tmlist.clear();
 		getTableModel();
@@ -468,20 +469,12 @@ public class FenetrePrincipaleAdminModel {
 	 * @throws IOException en cas d'erreur d'écriture.
 	 */
 	public void saveFile(File res) throws IOException {
-		FileOutputStream fos = null;
 		try {
-			fos = new FileOutputStream(res);
-			schema.toXml(fos);
+			ObjXmlTransformer.toXml(res, schema);
+			fullSchemaPath = res.getAbsolutePath();
 			isSchemaModified = false;
-		} catch (final JAXBException e) {
-			/**Ne fais rien*/
-		} finally {
-			if (fos != null) {
-				fullSchemaPath = res.getAbsolutePath();
-				fos.close();
-			}
+		} catch (Exception e) {
 		}
-
 	}
 
 	/**

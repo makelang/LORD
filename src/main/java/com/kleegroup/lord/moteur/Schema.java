@@ -20,20 +20,14 @@ import java.util.NoSuchElementException;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
-import jakarta.xml.bind.Unmarshaller;
-
 import org.apache.log4j.Logger;
 
 import com.kleegroup.lord.config.xml.ObjectFactory;
 import com.kleegroup.lord.config.xml.TypeSchema;
 import com.kleegroup.lord.moteur.Fichier.ETAT;
-import com.kleegroup.lord.moteur.config.ObjXmlTransformer;
 import com.kleegroup.lord.moteur.config.XmlObjTransformer;
 import com.kleegroup.lord.moteur.exceptions.EchecCreationLogs;
+import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 import com.kleegroup.lord.moteur.logs.ILogger;
 import com.kleegroup.lord.moteur.logs.LoggueurFichierCSV;
 import com.kleegroup.lord.moteur.logs.LoggueurMultiple;
@@ -46,6 +40,7 @@ import com.kleegroup.lord.moteur.util.INotifiable;
 import com.kleegroup.lord.moteur.util.LogFilesZipper;
 import com.kleegroup.lord.moteur.util.SeparateurChamps;
 import com.kleegroup.lord.moteur.util.SeparateurDecimales;
+
 
 /**
  * Sert a ordonner les fichier selon leur dependeances.<br>
@@ -308,22 +303,6 @@ public class Schema implements INotifiable {
 		return fichiers;
 	}
 
-	/**
-	 * Ecrit le schema dans un fichier XML.
-	 * 
-	 * @param path
-	 *            le chemin d'acces du fichier XML
-	 * @throws JAXBException
-	 *             si la conversion de l'XML en schema objet en XML
-	 */
-	public void toXml(FileOutputStream path) throws JAXBException {
-
-		final JAXBContext context = JAXBContext.newInstance(ObjectFactory.class.getPackage().getName());
-		final Marshaller m = context.createMarshaller();
-		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-		m.marshal((new ObjXmlTransformer()).transform(this), path);
-
-	}
 
 	/**
 	 * renvoie le fichier identifie par ce nom.
@@ -339,31 +318,6 @@ public class Schema implements INotifiable {
 			}
 		}
 		return null;
-	}
-
-	/**
-	 * Construit un schema a partir d'un XML lu dans inputStream.
-	 * 
-	 * @param inputStream
-	 *            sert a lire le fichier
-	 * @return le schema XML
-	 * @throws JAXBException
-	 *             si la conversion à partir du XML échoue
-	 */
-	public static Schema fromXML(InputStream inputStream) throws JAXBException {
-
-		final JAXBContext jc = JAXBContext.newInstance(ObjectFactory.class.getPackage().getName());
-		final Unmarshaller u = jc.createUnmarshaller();
-		final JAXBElement<?> schemaXML = (JAXBElement<?>) u.unmarshal(inputStream);
-
-		final XmlObjTransformer trans = new XmlObjTransformer();
-		try {
-			inputStream.close();
-		} catch (final IOException e) {
-			logAppli.error(e);
-		}
-		return trans.transform((TypeSchema) schemaXML.getValue());
-
 	}
 
 	/**

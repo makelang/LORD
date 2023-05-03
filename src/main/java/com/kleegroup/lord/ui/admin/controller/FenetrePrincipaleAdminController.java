@@ -10,11 +10,11 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.table.TableModel;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
-import jakarta.xml.bind.JAXBException;
 
 import com.kleegroup.lord.moteur.Categories.Categorie;
 import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.Schema;
+import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 import com.kleegroup.lord.moteur.util.SeparateurChamps;
 import com.kleegroup.lord.moteur.util.SeparateurDecimales;
@@ -42,7 +42,7 @@ public class FenetrePrincipaleAdminController {
 	    model.loadSchema("config.xml");
 	} catch (final FileNotFoundException e) {
 	    model = new FenetrePrincipaleAdminModel();
-	} catch (final JAXBException e) {
+	} catch (final SchemaInvalideException e) {
 	    model = new FenetrePrincipaleAdminModel();
 	}
     }
@@ -203,7 +203,7 @@ public class FenetrePrincipaleAdminController {
 		JOptionPane
 		.showMessageDialog(view,
 			"Fichier non trouvé.");
-	    } catch (final JAXBException e) {
+	    } catch (final SchemaInvalideException e) {
 		JOptionPane
 			.showMessageDialog(view,
 				"Le fichier ne suit pas le format d'un fichier de configuration");

@@ -3,9 +3,9 @@ package com.kleegroup.lord.ui.utilisateur.model;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import jakarta.xml.bind.JAXBException;
-
 import com.kleegroup.lord.moteur.Schema;
+import com.kleegroup.lord.moteur.config.XmlObjTransformer;
+import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 
 /**
  * Modèle de la fenetre principale de l'interface utilisateur.
@@ -18,10 +18,8 @@ public class FenetrePrincipaleUtilisateurModel extends Model{
 	 * @throws FileNotFoundException si le fichier n'est pas trouvé.
 	 * @throws JAXBException Exception JAXB
 	 */
-	public FenetrePrincipaleUtilisateurModel (File execDir) throws FileNotFoundException, JAXBException{
-			
-	    
-	    schema= Schema.fromXML(new java.io.FileInputStream(
+	public FenetrePrincipaleUtilisateurModel (File execDir) throws FileNotFoundException, SchemaInvalideException {
+	    schema =  XmlObjTransformer.fromXML(new java.io.FileInputStream(
 					getFichierConf(execDir)));
 	}
 	

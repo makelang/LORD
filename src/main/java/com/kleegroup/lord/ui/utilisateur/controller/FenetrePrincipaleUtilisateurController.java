@@ -4,8 +4,7 @@ import java.awt.Component;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-import jakarta.xml.bind.JAXBException;
-
+import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 import com.kleegroup.lord.ui.utilisateur.model.FenetrePrincipaleUtilisateurModel;
 import com.kleegroup.lord.ui.utilisateur.model.Model;
 import com.kleegroup.lord.ui.utilisateur.view.FenetrePrincipaleUtilisateur;
@@ -39,7 +38,7 @@ public class FenetrePrincipaleUtilisateurController extends Controller<FenetrePr
 	 *             si le fichier n'est pas trouvé.
 	 * @throws JAXBException Exception JAXB
 	 */
-	public void chargerFichierConf() throws FileNotFoundException, JAXBException {
+	public void chargerFichierConf() throws FileNotFoundException, SchemaInvalideException {
 		view.setWait(true);
 		model = new FenetrePrincipaleUtilisateurModel(execDir);
 		view.setWait(false);

@@ -1,6 +1,7 @@
 package com.kleegroup.lord.moteur.config;
 
-import jakarta.xml.bind.JAXBElement;
+import java.io.File;
+import java.io.IOException;
 
 import com.kleegroup.lord.config.xml.ObjectFactory;
 import com.kleegroup.lord.config.xml.TypeColonne;
@@ -15,12 +16,40 @@ import com.kleegroup.lord.moteur.ContrainteUniCol;
 import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.Schema;
 
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+
 /**
  * Sert à convertir un schéma de moteur en document XML.
  * 
  */
 public class ObjXmlTransformer {
 	private final ObjectFactory localOF = new ObjectFactory();
+	
+	
+	/**
+	 * Ecrit le schema dans un fichier XML.
+	 * 
+	 * @param res
+	 *            le chemin d'acces du fichier XML
+	 *            
+	 * @param schema le schema a sauvegarder
+	 *            
+	 * @throws JAXBException
+	 *             si la conversion de l'XML en schema objet en XML
+	 */
+	public static void toXml(File res, Schema schema) throws IOException {
+		try {
+			JAXBContext context = JAXBContext.newInstance(ObjectFactory.class.getPackage().getName());
+			final Marshaller m = context.createMarshaller();
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+			m.marshal((new ObjXmlTransformer()).transform(schema), res);
+		} catch (JAXBException e) {
+			throw new IOException(e);
+		}
+	}
 
 	/**
 	 * effectue la transformation Objet<-> ObjetsJAXB.
@@ -29,7 +58,7 @@ public class ObjXmlTransformer {
 	 *            le shema a transformer
 	 * @return le schema JAXB equivalent
 	 */
-	public JAXBElement<TypeSchema> transform(final Schema schemaObjOriginal) {
+	private JAXBElement<TypeSchema> transform(final Schema schemaObjOriginal) {
 		final TypeSchema schemaEquiv = localOF.createTypeSchema();
 
 		schemaEquiv.setAfficherExportLogs(schemaObjOriginal.isAfficherExportLogs());

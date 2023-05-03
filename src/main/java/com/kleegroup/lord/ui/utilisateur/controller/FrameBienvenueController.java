@@ -2,9 +2,11 @@ package com.kleegroup.lord.ui.utilisateur.controller;
 
 import java.io.FileNotFoundException;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import jakarta.xml.bind.JAXBException;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
+import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
 import com.kleegroup.lord.ui.utilisateur.model.Model;
 import com.kleegroup.lord.ui.utilisateur.view.FrameBienvenue;
 
@@ -36,13 +38,24 @@ public class FrameBienvenueController extends FrameController<FrameBienvenue,Mod
 		
 		}catch (FileNotFoundException e) {
 		    
-		    JOptionPane.showMessageDialog(null, resourceMap.getString("ErreurChargementConf")+" " +e.getMessage());
+		    JOptionPane.showInputDialog(null, resourceMap.getString("ErreurChargementConf")+" " +e.getMessage());
+
+            JFileChooser chooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                "JPG & GIF Images", "jpg", "gif");
+            chooser.setFileFilter(filter);
+            int returnVal = chooser.showOpenDialog(null);
+            if(returnVal == JFileChooser.APPROVE_OPTION) {
+               System.out.println("You chose to open this file: " +
+                    chooser.getSelectedFile().getName());
+            }
+
 		    java.awt.EventQueue.invokeLater(new Runnable() {
 			    @Override
 				public void run() {
 		    fenetrePrincipaleController.quitter();
 			    }});
-		} catch (JAXBException e) {
+		} catch (SchemaInvalideException e) {
 		    JOptionPane.showMessageDialog(null, resourceMap.getString("ErreurConfInvalide") +e.getMessage());
 		}
 		return true;
@@ -67,7 +80,7 @@ public class FrameBienvenueController extends FrameController<FrameBienvenue,Mod
 		fenetrePrincipale.setEtape(0);
     }
 
-    private void rechargerFichierConf() throws FileNotFoundException, JAXBException {
+    private void rechargerFichierConf() throws FileNotFoundException, SchemaInvalideException {
 	    fenetrePrincipaleController.chargerFichierConf();
 	    fenetrePrincipale.clear();
 	    fenetrePrincipale.addFrame(getFrame(), getName());
