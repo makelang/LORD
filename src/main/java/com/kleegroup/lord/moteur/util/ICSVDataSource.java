@@ -20,17 +20,7 @@ public interface ICSVDataSource  {
 	 * @return le nombre de caractères lues par la source.
 	 */
 	long getNbCharactersRead();
-	/**
-	 * Définit le séparateur de champ de la source.
-	 * @param separator le séparateur de champ de la source.
-	 */
-	void setFieldSeparator(char separator);
-	/**
-	 * @return true si la source contient encore des données , false sinon.
-	 * @throws IOException si la source est illisible.
-	 * @throws CaractereInterdit si un caractère interdit est rencontré
-	 */
-	boolean hasNext() throws IOException,CaractereInterdit;
+
 	/**
 	 * @return la position dans la source (la ligne actuelle)
 	 */

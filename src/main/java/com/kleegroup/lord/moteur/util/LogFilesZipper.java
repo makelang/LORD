@@ -1,11 +1,9 @@
 package com.kleegroup.lord.moteur.util;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -24,31 +22,17 @@ public class LogFilesZipper {
 	private static org.apache.log4j.Logger logAppli = Logger.getLogger(CsvReaderAdapter.class);
 
 	/**
-	 * @param zipFilePath le path désiré du fichier de log
-	 * @param filenames les fichiers à zipper
-	 * @throws IOException si une erreur de lecture a lieu
-	 */
-	public static void zip(String zipFilePath, List<String> filenames) throws IOException {
-		zip(new File(zipFilePath), filenames);
-	}
-
-	/**
 	 * @param outputZip le File qui représente le fichier de zip
 	 * @param filenames les fichiers à zipper
 	 * @throws IOException si une erreur de lecture a lieu
 	 */
 	public static void zip(File outputZip, List<String> filenames) throws IOException {
-		// Create a buffer for reading the files
-		byte[] buf = new byte[1024];
-
 		// Create the ZIP file
-		ZipOutputStream out = null;
 		List<String> fileList = getValidFiles(filenames);
 		if (fileList.isEmpty()) {
 			return;
 		}
-		try {
-			out = new ZipOutputStream(new FileOutputStream(outputZip));
+		try (ZipOutputStream out = new ZipOutputStream(new FileOutputStream(outputZip))){
 
 			// Compress the files
 			for (String filename : fileList) {
@@ -59,10 +43,7 @@ public class LogFilesZipper {
 					out.putNextEntry(new ZipEntry(f.getName()));
 
 					// Transfer bytes from the file to the ZIP file
-					int len;
-					while ((len = in.read(buf)) > 0) {
-						out.write(buf, 0, len);
-					}
+					in.transferTo(out);
 
 					// Complete the entry
 					out.closeEntry();
@@ -72,23 +53,18 @@ public class LogFilesZipper {
 			}
 		} catch (IOException ex) {
 			logAppli.error(ex);
-		} finally {
-
-			// Complete the ZIP file
-			if (out != null) {
-				out.close();
-			}
 		}
 	}
 
 	private static List<String> getValidFiles(List<String> filenames) {
-		List<String> res = new ArrayList<>();
-		for (int i = 0; i < filenames.size(); i++) {
-			File aTester = new File(filenames.get(i));
-			if (aTester.exists() && aTester.canRead()) {
-				res.add(aTester.getAbsolutePath());
-			}
-		}
-		return res;
+		return filenames.stream()
+				.map(File::new)
+				.filter(LogFilesZipper::canReadFile)
+				.map(File::getAbsolutePath)
+				.collect(Collectors.toList());
+	}
+
+	private static boolean canReadFile(File aTester) {
+		return aTester.exists() && aTester.canRead();
 	}
 }

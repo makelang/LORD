@@ -13,13 +13,15 @@ import com.kleegroup.lord.moteur.IErreur;
  */
 public interface ILogger {
 
-
-	
 	/**
 	 * Inscrit dans le log la collection des messages d'erreur.
 	 * @param listeErreurs  - La collection d'erreurs à logger
 	 */
-	void log(List<IErreur> listeErreurs);
+	default void log(final List<IErreur> listeErreurs) {
+		for (IErreur s : listeErreurs) {
+			log(s);
+		}
+	}
 	/**
 	 * Inscrit l'erreur dans le log.
 	 * @param err l'erreur à inscrire
@@ -49,5 +51,7 @@ public interface ILogger {
 	 * @param val true si les erreurs contiendront le champ reference, false sinon.
 	 */
 	void setReferenceColonne(boolean val);
+
+
 
 }

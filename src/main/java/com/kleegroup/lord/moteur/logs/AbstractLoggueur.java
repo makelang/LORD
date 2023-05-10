@@ -16,13 +16,7 @@ public abstract class AbstractLoggueur implements ILogger {
     private String nomFichier;
     private boolean refColonne=false;
 
-    /** {@inheritDoc} */
-    @Override
-	public void log(final List<IErreur> listeErreurs) {
-	for (IErreur s : listeErreurs) {
-	    log(s);
-	}
-    }
+
 
    /**{@inheritDoc}*/
     @Override

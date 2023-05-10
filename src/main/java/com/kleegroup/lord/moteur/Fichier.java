@@ -382,10 +382,7 @@ public class Fichier implements IHierarchieSchema {
 		}
 
 		try {
-			sauterLignesEntete();
-
 			verifieLigne();
-
 		} catch (final CaractereInterdit err) {
 			final long posErrColonne = err.getErrColonne();
 			String nomCol = "";
@@ -429,8 +426,6 @@ public class Fichier implements IHierarchieSchema {
 			logger.flushAndClose();
 			finFichier();
 		}
-
-		return;
 	}
 
 	private void finFichier() {
@@ -455,9 +450,9 @@ public class Fichier implements IHierarchieSchema {
 		long num_ligne = 0;
 		String[] input;
 		// int res = 0;
-		while (!abandonneVerifFichier && source.hasNext()) {
+		while (!abandonneVerifFichier && (input = source.next()) != null ) {
 			verifieSiUtilisateurVeutAbandonner();
-			input = source.next();
+
 			num_ligne = source.getPosition();
 			// res = 0;
 			// for (int i = 0; i < input.length; i++) {
@@ -554,13 +549,6 @@ public class Fichier implements IHierarchieSchema {
 		}
 	}
 
-	private void sauterLignesEntete() throws IOException, CaractereInterdit {
-		int temp = nbLignesEntete;
-		while (source.hasNext() && temp > 0) {
-			source.next();
-			temp--;
-		}
-	}
 
 	/**
 	 * Renvoie la liste des colonnes du fichier.

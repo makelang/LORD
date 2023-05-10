@@ -55,12 +55,6 @@ public class Schema implements INotifiable {
 
 	protected String encoding;
 
-	protected String separateurLignes;
-
-	protected String charEchapGuillemets;
-
-	protected boolean ignorerGuillemets;
-
 	protected boolean afficherExportLogs;
 
 	protected Categories categories = new Categories();
@@ -153,8 +147,7 @@ public class Schema implements INotifiable {
 	}
 
 	private void creerSourceDonnee(Fichier f) {
-		final ICSVDataSource source = new CsvReaderAdapter(f.getChemin(), encoding);
-		source.setFieldSeparator(separateurChamp.value());
+		final ICSVDataSource source = new CsvReaderAdapter(f.getChemin(), encoding, separateurChamp.value(), f.getNbLignesEntete());
 		f.setSource(source);
 	}
 
