@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -28,8 +29,6 @@ import com.kleegroup.lord.moteur.logs.LoggueurFichierCSV;
 import com.kleegroup.lord.moteur.logs.LoggueurMultiple;
 import com.kleegroup.lord.moteur.logs.LoggueurRam;
 import com.kleegroup.lord.moteur.reader.CsvReaderAdapter;
-import com.kleegroup.lord.moteur.util.FichierComparteurGroupe;
-import com.kleegroup.lord.moteur.util.FichierComparteurOrdreTopo;
 import com.kleegroup.lord.moteur.util.ICSVDataSource;
 import com.kleegroup.lord.moteur.util.INotifiable;
 import com.kleegroup.lord.moteur.util.LogFilesZipper;
@@ -277,10 +276,10 @@ public class Schema implements INotifiable {
 
 		// trier par ordre de dependance (ordre "topologique")
 		/* voir Fichier#getNiveauTopo */
-		Collections.sort(fichiers, new FichierComparteurOrdreTopo());
+		Collections.sort(fichiers, Comparator.comparingInt(Fichier::getNiveauTopo));
 
 		// trier les fichiers par ordre de groupe(défini dans les specs)
-		Collections.sort(fichiers, new FichierComparteurGroupe());
+		Collections.sort(fichiers, Comparator.comparingInt(Fichier::getGroupe));
 		niveauActuel = fichiers.get(0).getGroupe();
 	}
 

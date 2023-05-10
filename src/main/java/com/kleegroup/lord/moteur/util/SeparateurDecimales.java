@@ -28,10 +28,7 @@ public enum SeparateurDecimales {
 	
 	@Override
 	public String toString() {
-		if (label != null) {
-			return label;
-		}
-		return super.toString();
+		return label;
 	}
 	
 }

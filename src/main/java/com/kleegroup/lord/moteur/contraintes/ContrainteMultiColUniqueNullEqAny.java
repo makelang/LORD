@@ -1,5 +1,6 @@
 package com.kleegroup.lord.moteur.contraintes;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,16 +16,11 @@ import com.kleegroup.lord.moteur.ContrainteMultiCol;
  */
 public class ContrainteMultiColUniqueNullEqAny extends ContrainteMultiCol {
 
-	// private static org.apache.log4j.Logger logAppli = Logger.getLogger(ContrainteMultiColUniqueNullEqAny.class);
-
 	private class Value {
 		private String[] values;
 		
 		public Value(String[] values) {
-			this.values = new String[values.length];
-			for (int i = 0; i < values.length; i++) {
-				this.values[i] = values[i];
-			}
+			this.values = Arrays.copyOf(values, values.length);
 		}
 		
 		public String[] getValues() {

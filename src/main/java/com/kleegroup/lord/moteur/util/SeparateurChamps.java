@@ -32,10 +32,7 @@ public enum SeparateurChamps {
 
 	@Override
 	public String toString() {
-		if (label != null) {
-			return label;
-		}
-		return super.toString();
+		return label;
 	}
 	
 }

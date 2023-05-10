@@ -1,9 +1,5 @@
 package com.kleegroup.lord.moteur.logs;
 
-import java.util.List;
-
-import com.kleegroup.lord.moteur.IErreur;
-
 /**
  * classe abstraite qui implemente l'interface <code>ILogger</code> . Elle
  * fournit une implémentation d'une méthode qui permet de logguer une liste

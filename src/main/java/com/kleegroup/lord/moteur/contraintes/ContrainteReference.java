@@ -10,7 +10,7 @@ import com.kleegroup.lord.moteur.ContrainteUniCol;
  * incluses dans l'ensemble des valeurs du champ de référence.
  * <br><br>
  *  Elle utilise une contrainte ContrainteReferenceLookup pour obtenir les valeurs
- *   de rÃ©fÃ©rence.
+ *   de référence.
  * @author maazreibi
  *
  */
@@ -59,14 +59,14 @@ public class ContrainteReference extends ContrainteUniCol {
 	}
 
 	/**
-	 * @return le nom du fichier rÃ©fÃ©rencÃ© par cette contrainte.
+	 * @return le nom du fichier référencé par cette contrainte.
 	 */
 	public String getFichierRef() {
 		return dict.getNomFichier();
 	}
 
 	/**
-	 * @return le nom de la colonne rÃ©fÃ©rencÃ©e par cette contrainte.
+	 * @return le nom de la colonne référencée par cette contrainte.
 	 */
 	public String getColonneRef() {
 		return dict.getColonneParent().getNom();

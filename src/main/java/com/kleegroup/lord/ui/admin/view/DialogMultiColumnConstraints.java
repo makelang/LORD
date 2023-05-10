@@ -244,7 +244,7 @@ public class DialogMultiColumnConstraints extends JDialog {
 
     private void adjustTableColumnSize() {
 	//Calcul des tailles optimales des colonnes
-	//on utilise unqiuement les donnÃ©es du premier fichier (selectionnÃ© par defaut)
+	//on utilise unqiuement les données du premier fichier (selectionné par defaut)
 	for (int i = 0; i < jtblContraintes.getColumnCount(); i++) {
 	    final TableColumn column = jtblContraintes.getColumnModel().getColumn(i);
 

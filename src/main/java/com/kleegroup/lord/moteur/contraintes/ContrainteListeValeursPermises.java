@@ -6,8 +6,8 @@ import java.util.List;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
- * Cette contrainte vÃ©rifie que la valeur est parmi une liste prÃ©dÃ©terminÃ©e.
- * Elle lÃ¨ve une erreur si ce n'est pas le cas.
+ * Cette contrainte vérifie que la valeur est parmi une liste prédéterminée.
+ * Elle lève une erreur si ce n'est pas le cas.
  * @author maazreibi
  */
 public class ContrainteListeValeursPermises extends ContrainteUniCol {
@@ -18,10 +18,10 @@ public class ContrainteListeValeursPermises extends ContrainteUniCol {
 	/**
 	 * Constructeur de la contrainte
 	 * <br><br>
-	 * La liste de valeurs permises peut Ãªtre un array de String (<code> String[]</code>)
-	 * ou bien les valeurs sÃ©parÃ©es par une virgule.
+	 * La liste de valeurs permises peut être un array de String (<code> String[]</code>)
+	 * ou bien les valeurs séparées par une virgule.
 	 * <br><br>
-	 * Les deux exemples suivants sont corrects et Ã©quivalents:<br>
+	 * Les deux exemples suivants sont corrects et équivalents:<br>
 	 * 1
 	 * <code> String a[]=new String(){"1","2","3"}; <br>
 	 * new ContrainteListeValeursPermises(a);<br></code>
@@ -59,8 +59,8 @@ public class ContrainteListeValeursPermises extends ContrainteUniCol {
 	@Override
 	public  boolean estConforme(final String valeur) {
 		/* utilisation d'une boucle au lieu d'une recherche par dichotomie
-		 * parce que c'est plus simple et aussi efficace, Ã©tant donnÃ© que la liste de valeur permises
-		 * contient peu d'Ã©lÃ©ments (moins de 5 en gÃ©nÃ©ral)
+		 * parce que c'est plus simple et aussi efficace, étant donné que la liste de valeur permises
+		 * contient peu d'éléments (moins de 5 en général)
 		 */
 
 	/*	if (Arrays.binarySearch(valeur_permise, valeur)<0){					
