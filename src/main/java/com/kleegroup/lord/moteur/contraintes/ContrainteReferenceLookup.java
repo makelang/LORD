@@ -1,6 +1,6 @@
 package com.kleegroup.lord.moteur.contraintes;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -39,17 +39,10 @@ public class ContrainteReferenceLookup extends ContrainteUniCol {
 		return dict.contains(valeur);
 	}
 
-	/**
-	 * {@inheritDoc}	  
-	 */
-	//	@Override
-	//	public String getMessageErreur(){
-	//		return "Pas d'erreur";		
-	//	}
 	/**{@inheritDoc}*/
 	@Override
 	public List<String> getListeParam() {
-		return new ArrayList<>();
+		return Collections.emptyList();
 	}
 
 	/**{@inheritDoc}*/

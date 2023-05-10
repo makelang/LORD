@@ -1,6 +1,6 @@
 package com.kleegroup.lord.moteur.contraintes;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.kleegroup.lord.moteur.ContrainteUniCol;
@@ -28,7 +28,7 @@ public class ContrainteTypeEntier extends ContrainteUniCol {
 	/**{@inheritDoc}*/
 	@Override
 	public List<String> getListeParam() {
-		return new ArrayList<>();
+		return Collections.emptyList();
 	}
 
 	/**{@inheritDoc}*/

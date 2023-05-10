@@ -3,6 +3,9 @@ package com.kleegroup.lord.moteur.contraintes;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
@@ -33,12 +36,8 @@ public class ContrainteListeValeursPermises extends ContrainteUniCol {
 	 * @param valeursPermises liste des valeurs permises
 	 */
 	public ContrainteListeValeursPermises(String ... valeursPermises){
-		super();
-		this.valeursPermises=valeursPermises.clone();
-		listeValeurs=valeursPermises[0];
-		for(int i =1;i<valeursPermises.length;i++){
-			listeValeurs+=SEPARATEUR+valeursPermises[i];
-		}
+		this.valeursPermises = valeursPermises;
+		this.listeValeurs = StringUtils.join(valeursPermises, SEPARATEUR);
 		Arrays.sort(this.valeursPermises);
 		
 	}
@@ -62,18 +61,7 @@ public class ContrainteListeValeursPermises extends ContrainteUniCol {
 		 * parce que c'est plus simple et aussi efficace, étant donné que la liste de valeur permises
 		 * contient peu d'éléments (moins de 5 en général)
 		 */
-
-	/*	if (Arrays.binarySearch(valeur_permise, valeur)<0){					
-			return false;
-		}	
-		return true;
-		*/	
-		for(int i=0;i<valeursPermises.length;i++){
-			if (valeursPermises[i].equals(valeur)){
-				return true;
-			}
-		}
-		return false;
+		return ArrayUtils.contains(valeursPermises, valeur);
 	}
 	/**{@inheritDoc}*/
 	@Override

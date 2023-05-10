@@ -1,6 +1,5 @@
 package com.kleegroup.lord.moteur.contraintes;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.kleegroup.lord.moteur.ContrainteUniCol;
@@ -105,10 +104,7 @@ public class ContrainteTypeDecimal extends ContrainteUniCol {
 	/**{@inheritDoc}*/
 	@Override
 	public List<String> getListeParam() {
-		List<String> params = new ArrayList<>();
-		params.add(Integer.toString(avantVirgule));
-		params.add(Integer.toString(apresVirgule));
-		return params;
+		return List.of(Integer.toString(avantVirgule), Integer.toString(apresVirgule));
 	}
 
 	/**

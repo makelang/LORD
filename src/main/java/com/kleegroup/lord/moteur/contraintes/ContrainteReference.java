@@ -1,8 +1,8 @@
 package com.kleegroup.lord.moteur.contraintes;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import com.kleegroup.lord.moteur.Colonne;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
@@ -52,10 +52,8 @@ public class ContrainteReference extends ContrainteUniCol {
 	/**{@inheritDoc}*/
 	@Override
 	public List<String> getListeParam() {
-		List<String> params = new ArrayList<>();
-		params.add(dict.getColonneParent().getFichierParent().getNom());
-		params.add(dict.getColonneParent().getNom());
-		return params;
+		Colonne colonneParent = dict.getColonneParent();
+		return List.of(colonneParent.getFichierParent().getNom() , colonneParent.getNom());
 	}
 
 	/**

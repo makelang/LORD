@@ -2,8 +2,9 @@ package com.kleegroup.lord.moteur.contraintes;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Objects;
 
 import com.kleegroup.lord.moteur.ContrainteMultiCol;
 
@@ -22,11 +23,9 @@ public class ContrainteMultiColFonctionsSpecifiques extends ContrainteMultiCol {
 	 */
 	public ContrainteMultiColFonctionsSpecifiques(String id, String errTemplate, String nomFonction, String... cols) {
 		super(id, errTemplate, cols);
-		Class<?>[] paramTypes = new Class[cols.length];
-		for (int i = 0; i < paramTypes.length; i++) {
-			paramTypes[i] = String.class;
-		}
-
+		Class<?>[] paramTypes =  new Class[cols.length];
+		Arrays.fill(paramTypes, String.class);
+		
 		try {
 			method = FonctionsSpecifiques.class.getMethod(nomFonction, paramTypes);
 		} catch (SecurityException e) {
@@ -46,13 +45,13 @@ public class ContrainteMultiColFonctionsSpecifiques extends ContrainteMultiCol {
 	 * @param cols les colonnes désignées paramètres de la fonction
 	 * @return True si la fonction est valide, false sinon.
 	 */
-	public static boolean isValide(String nomFonction, String... cols) {
-		for (Method m : FonctionsSpecifiques.class.getMethods()) {
-			if (m.getName().equals(nomFonction) && isAllParmsString(m) && m.getParameterTypes().length == cols.length) {
-				return true;
-			}
-		}
-		return false;
+	public static boolean isValide(final String nomFonction,final String... cols) {
+		
+		return Arrays.stream(FonctionsSpecifiques.class.getMethods())
+				.anyMatch(m -> ( Objects.equals(nomFonction, m.getName()) 
+									&& isAllParmsString(m)
+									&& m.getParameterTypes().length == cols.length));
+		
 	}
 
 	@Override
@@ -89,23 +88,14 @@ public class ContrainteMultiColFonctionsSpecifiques extends ContrainteMultiCol {
 	 * @return la liste des noms des fontions disponibles 
 	 */
 	public static Collection<String> getMethods() {
-		Collection<String> f = new ArrayList<>();
-		for (Method m : FonctionsSpecifiques.class.getMethods()) {
-			if (Modifier.isStatic(m.getModifiers()) && Modifier.isPublic(m.getModifiers()) && isAllParmsString(m)) {
-				//les fonctions doivent ête statiques et publiques
-				f.add(m.getName());
-			}
-		}
-		return f;
+		return Arrays.stream(FonctionsSpecifiques.class.getMethods())
+				.filter(ContrainteMultiColFonctionsSpecifiques::isAllParmsString)
+				.filter(m -> Modifier.isStatic(m.getModifiers()) && Modifier.isPublic(m.getModifiers()))
+				.map(Method::getName).toList();
 	}
 
 	private static boolean isAllParmsString(Method m) {
-		for (Class<?> c : m.getParameterTypes()) {
-			if (c != String.class) {
-				return false;
-			}
-		}
-		return true;
+		return Arrays.stream(m.getParameterTypes()).allMatch(String.class::equals);
 	}
 
 	/**

@@ -1,6 +1,5 @@
 package com.kleegroup.lord.moteur.contraintes;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.kleegroup.lord.moteur.ContrainteUniCol;
@@ -43,9 +42,7 @@ public class ContrainteTaille extends ContrainteUniCol {
 	/**{@inheritDoc}*/
 	@Override
 	public List<String> getListeParam() {
-		List<String> params = new ArrayList<>();
-		params.add(Integer.toString(tailleMax));
-		return params;
+		return List.of(Integer.toString(tailleMax));
 	}
 
 	/**

@@ -2,7 +2,6 @@ package com.kleegroup.lord.moteur.contraintes;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -54,9 +53,7 @@ public class ContrainteTypeDate extends ContrainteUniCol {
 	/**{@inheritDoc}*/
 	@Override
 	public List<String> getListeParam() {
-		List<String> params = new ArrayList<>();
-		params.add(format);
-		return params;
+		return List.of(format);
 	}
 
 	/**
