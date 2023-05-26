@@ -30,8 +30,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 
-import org.apache.log4j.Logger;
-
 import com.kleegroup.lord.ui.utilisateur.controller.FrameSelectionCheminsFichiersController;
 
 /**
@@ -39,8 +37,6 @@ import com.kleegroup.lord.ui.utilisateur.controller.FrameSelectionCheminsFichier
  * activer/déscativer.
  */
 public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
-
-	private static org.apache.log4j.Logger logger = Logger.getLogger(FrameSelectionCheminsFichiers.class);
 
 	private static final long serialVersionUID = -3028875209077812559L;
 
@@ -127,7 +123,6 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 	}
 
 	private void categorieSelection(final String categorie, boolean enable) {
-		logger.info(((enable)?"Sélectionner ":"Désélectionner ") + "les fichiers de la catégorie \"" + categorie + "\"");
 		// Traitement
 		for (TreeCellLineEditor fic : editeursFichier) {
 			if (fic.hasCategorie(categorie)) {
@@ -609,7 +604,6 @@ public class FrameSelectionCheminsFichiers extends javax.swing.JPanel {
 		}
 
 		void setFichierEnabled(boolean etat) {
-			logger.trace("Modification de " + nom + " ("+etat+")");
 			jChckFichierActif.setSelected(etat);
 			disableLine(!etat);
 		}

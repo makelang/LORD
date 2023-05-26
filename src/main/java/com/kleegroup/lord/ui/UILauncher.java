@@ -7,8 +7,6 @@ import java.net.URL;
 
 import javax.swing.UIManager;
 
-import org.apache.log4j.PropertyConfigurator;
-
 /**
  * La classe qui démarre l'application.
  */
@@ -19,14 +17,6 @@ public abstract class UILauncher {
 	 * Démarre le programme.
 	 */
 	public final void run() {
-		//	    URL url = getClass().getClassLoader().getResource(getClass().getPackage().getName().replace('.', '/'));
-		//	    String file = url.getFile();
-		//	    if ("jar".equals(url.getProtocol())) {
-		//		url = new URL(file.substring(0, file.lastIndexOf('!')));
-		//		execDir = new File(url.getFile()).getParentFile();
-		//	    }
-		//	    
-		configureLog4j();
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -43,17 +33,6 @@ public abstract class UILauncher {
 		});
 	}
 
-	private void configureLog4j() {
-		final File log4j = new File(getExecDir(), "log4j.properties");
-		if (log4j.exists()) {
-			PropertyConfigurator.configure(log4j.getAbsolutePath());
-		} else {
-			URL locConfDefault = ClassLoader.getSystemClassLoader().getResource("log4j.default.properties");
-			if (locConfDefault != null) {
-				PropertyConfigurator.configure(locConfDefault);
-			}
-		}
-	}
 
 	protected abstract void montrerFenetrePrincipale();
 
