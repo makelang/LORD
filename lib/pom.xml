@@ -26,6 +26,7 @@
 		<module>model</module>
 		<module>schema</module>
 		<module>../</module>
+		<module>package</module>
 	</modules>
 
 </project>

@@ -4,7 +4,10 @@
 
 package com.kleegroup.lord.ui.utilisateur;
 
+import java.util.Arrays;
+
 import com.kleegroup.lord.ui.UILauncher;
+import com.kleegroup.lord.ui.admin.AdminUI;
 import com.kleegroup.lord.ui.utilisateur.controller.FenetrePrincipaleUtilisateurController;
 
 /**
@@ -22,6 +25,15 @@ public class UserUI extends UILauncher {
 	 * @param args paramètres du programme
 	 */
 	public static void main(String[] args) {
-		new UserUI().run();
+		boolean admin = Arrays.asList(args).contains("--admin");
+		
+		UILauncher ui;
+		if (admin) {
+			ui = new AdminUI();
+		} else {
+			ui = new UserUI();
+		}
+		
+		ui.run();
 	}
 }
