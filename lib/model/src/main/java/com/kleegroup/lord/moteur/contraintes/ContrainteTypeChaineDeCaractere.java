@@ -1,9 +1,8 @@
 package com.kleegroup.lord.moteur.contraintes;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
-import org.apache.commons.lang3.ArrayUtils;
 
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
@@ -19,7 +18,7 @@ public class ContrainteTypeChaineDeCaractere extends ContrainteUniCol {
 	/** {@inheritDoc}*/
 	@Override
 	public boolean estConforme(final String valeur) {
-		return !ArrayUtils.contains(caracteresInterdits, valeur);
+		return !Arrays.asList(valeur).contains(valeur);
 	}
 
 	/**{@inheritDoc}*/

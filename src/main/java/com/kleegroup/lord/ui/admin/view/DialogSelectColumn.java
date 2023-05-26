@@ -61,7 +61,7 @@ public class DialogSelectColumn extends javax.swing.JDialog {
 		private static final long serialVersionUID = 1L;
 
 		ActnClear() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/clear.png")));
+			super("", new ImageIcon(ActnClear.class.getResource("/resources/images/clear.png")));
 		}
 
 		/**{@inheritDoc}*/

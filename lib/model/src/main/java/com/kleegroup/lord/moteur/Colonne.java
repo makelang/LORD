@@ -37,7 +37,7 @@ import com.kleegroup.lord.moteur.util.SeparateurDecimales;
  * 
  */
 public class Colonne implements IHierarchieSchema {
-	protected final ResourceBundle resourceMap = ResourceBundle.getBundle("resources.ContraintesMessagesErreur");
+	protected final ResourceBundle resourceMap = ResourceBundle.getBundle("i18n.ContraintesMessagesErreur");
 
 	private String nom = "";
 	private String description = "";

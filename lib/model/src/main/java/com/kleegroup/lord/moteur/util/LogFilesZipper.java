@@ -11,8 +11,6 @@ import java.util.zip.ZipOutputStream;
 
 import org.apache.log4j.Logger;
 
-import com.kleegroup.lord.moteur.reader.CsvReaderAdapter;
-
 /**
  *Zip les fichier de log dauns un fichier désigné.
  *
@@ -21,7 +19,7 @@ import com.kleegroup.lord.moteur.reader.CsvReaderAdapter;
  *
  */
 public class LogFilesZipper {
-	private static org.apache.log4j.Logger logAppli = Logger.getLogger(CsvReaderAdapter.class);
+	private static org.apache.log4j.Logger logAppli = Logger.getLogger(LogFilesZipper.class);
 
 	/**
 	 * @param outputZip le File qui représente le fichier de zip

@@ -27,7 +27,7 @@ import com.kleegroup.lord.moteur.util.INotifiable;
 public class Fichier implements IHierarchieSchema {
 
 	static final ResourceBundle RESOURCEMAP = ResourceBundle
-			.getBundle("resources.GeneralUIMessages");
+			.getBundle("i18n.GeneralUIMessages");
 
 	private static String nomRefLookup = ContrainteReferenceLookup.class
 			.getSimpleName().substring("Contrainte".length());

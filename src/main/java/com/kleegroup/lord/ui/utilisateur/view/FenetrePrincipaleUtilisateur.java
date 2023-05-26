@@ -170,7 +170,7 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 		createComponents();
 		createLayout();
 
-		setIconImage((new ImageIcon(ClassLoader.getSystemResource("resources/images/logo_appli.png"))).getImage());
+		setIconImage((new ImageIcon(getClass().getResource("/resources/images/logo_appli.png"))).getImage());
 
 		setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
@@ -195,7 +195,7 @@ public class FenetrePrincipaleUtilisateur extends javax.swing.JFrame {
 		jPnlTop.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 		jPnlTop.setName("jPnlTop");
 
-		jLblLogoSPARK.setIcon(new javax.swing.ImageIcon(ClassLoader.getSystemClassLoader().getResource("resources/images/logo_lord.png")));
+		jLblLogoSPARK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/logo_lord.png")));
 		jLblLogoSPARK.setName("jLabel6");
 
 		jPnlBottom.setMinimumSize(new java.awt.Dimension(331, 60));

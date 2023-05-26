@@ -3,9 +3,6 @@ package com.kleegroup.lord.moteur.contraintes;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.StringUtils;
-
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 
 /**
@@ -37,7 +34,7 @@ public class ContrainteListeValeursPermises extends ContrainteUniCol {
 	 */
 	public ContrainteListeValeursPermises(String ... valeursPermises){
 		this.valeursPermises = valeursPermises;
-		this.listeValeurs = StringUtils.join(valeursPermises, SEPARATEUR);
+		this.listeValeurs = String.join(SEPARATEUR,Arrays.asList(valeursPermises));
 		Arrays.sort(this.valeursPermises);
 		
 	}
@@ -61,7 +58,7 @@ public class ContrainteListeValeursPermises extends ContrainteUniCol {
 		 * parce que c'est plus simple et aussi efficace, étant donné que la liste de valeur permises
 		 * contient peu d'éléments (moins de 5 en général)
 		 */
-		return ArrayUtils.contains(valeursPermises, valeur);
+		return Arrays.asList(valeursPermises).contains(valeur);
 	}
 	/**{@inheritDoc}*/
 	@Override

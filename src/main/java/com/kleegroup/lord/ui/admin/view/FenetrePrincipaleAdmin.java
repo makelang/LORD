@@ -62,7 +62,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnMoveFileUp extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnMoveFileUp() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/go-up.png")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/go-up.png")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.filecat.up"));
 		}
 
@@ -77,7 +77,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnMoveFileDn extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnMoveFileDn() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/go-down.png")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/go-down.png")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.filecat.down"));
 		}
 
@@ -92,7 +92,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnDelFileCat extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnDelFileCat() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/delete.gif")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/delete.gif")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.filecat.delete"));
 		}
 
@@ -107,7 +107,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnNewFile extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnNewFile() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/add.gif")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/add.gif")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.file.insert"));
 		}
 
@@ -122,7 +122,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnNewCat extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnNewCat() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/add_cat.gif")));
+			super("", new ImageIcon(ActnNewCat.class.getResource("/resources/images/add_cat.gif")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.category.insert"));
 		}
 
@@ -137,7 +137,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnDuplicateFile extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnDuplicateFile() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/duplicate-file.png")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/duplicate-file.png")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.file.duplicate"));
 		}
 
@@ -156,7 +156,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnMoveColDn extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnMoveColDn() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/go-down.png")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/go-down.png")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.column.move.right"));
 		}
 
@@ -171,7 +171,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnMoveColUp extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnMoveColUp() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/go-up.png")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/go-up.png")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.column.move.left"));
 		}
 
@@ -186,7 +186,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnDeleteCol extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnDeleteCol() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/delete.gif")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/delete.gif")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.column.delete"));
 		}
 
@@ -201,7 +201,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnNewCol extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnNewCol() {
-			super("", new ImageIcon(ClassLoader.getSystemResource("resources/images/add.gif")));
+			super("", new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/add.gif")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("action.column.insert"));
 		}
 
@@ -267,7 +267,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnVerifSchema extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnVerifSchema() {
-			super(resourceMap.getString("menu.options.schema"), new ImageIcon(ClassLoader.getSystemClassLoader().getResource("resources/images/validate.gif")));
+			super(resourceMap.getString("menu.options.schema"), new ImageIcon(ActnVerifSchema.class.getResource("/resources/images/validate.gif")));
 			putValue(MNEMONIC_KEY, KeyEvent.VK_V);
 			putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke("F5"));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("menu.options.schema.tip"));
@@ -288,7 +288,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnOpen extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnOpen() {
-			super(resourceMap.getString("menu.file.open"), new ImageIcon(ClassLoader.getSystemResource("resources/images/document-open.png")));
+			super(resourceMap.getString("menu.file.open"), new ImageIcon(ActnOpen.class.getResource("/resources/images/document-open.png")));
 			putValue(MNEMONIC_KEY, KeyEvent.VK_O);
 			putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(resourceMap.getString("menu.file.open.shortcut")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("menu.file.open.tip"));
@@ -305,7 +305,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnExit extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnExit() {
-			super(resourceMap.getString("menu.file.exit"), new ImageIcon(ClassLoader.getSystemResource("resources/images/exit.png")));
+			super(resourceMap.getString("menu.file.exit"), new ImageIcon(ActnExit.class.getResource("/resources/images/exit.png")));
 			putValue(MNEMONIC_KEY, KeyEvent.VK_Q);
 			putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(resourceMap.getString("menu.file.exit.shortcut")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("menu.file.exit.tip"));
@@ -322,7 +322,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnSave extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnSave() {
-			super(resourceMap.getString("menu.file.save"), new ImageIcon(ClassLoader.getSystemClassLoader().getResource("resources/images/document-save.png")));
+			super(resourceMap.getString("menu.file.save"), new ImageIcon(ActnSave.class.getResource("/resources/images/document-save.png")));
 			putValue(MNEMONIC_KEY, KeyEvent.VK_S);
 			putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(resourceMap.getString("menu.file.save.shortcut")));
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("menu.file.save.tip"));
@@ -339,7 +339,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnSaveAs extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnSaveAs() {
-			super(resourceMap.getString("menu.file.saveas"), new ImageIcon(ClassLoader.getSystemClassLoader().getResource("resources/images/document-save-as.png")));
+			super(resourceMap.getString("menu.file.saveas"), new ImageIcon(ActnSaveAs.class.getResource("/resources/images/document-save-as.png")));
 			putValue(MNEMONIC_KEY, KeyEvent.VK_A);
 			putValue(SHORT_DESCRIPTION, resourceMap.getString("menu.file.saveas.tip"));
 		}
@@ -355,7 +355,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 	private class ActnNewSchema extends AbstractAction {
 		private static final long serialVersionUID = -2551078572811820430L;
 		ActnNewSchema() {
-			super(resourceMap.getString("menu.file.new"), new ImageIcon(ClassLoader.getSystemClassLoader().getResource("resources/images/document-new.png")));
+			super(resourceMap.getString("menu.file.new"), new ImageIcon(ActnNewSchema.class.getResource("/resources/images/document-new.png")));
 			putValue(MNEMONIC_KEY, KeyEvent.VK_N);
 			// putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(Character.valueOf('n'), java.awt.event.InputEvent.CTRL_MASK));
 			putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(resourceMap.getString("menu.file.new.shortcut")));
@@ -457,7 +457,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 
 	private void initComponents() {
 		createComponents();
-		setIconImage((new ImageIcon(ClassLoader.getSystemResource("resources/images/logo-admin.png"))).getImage());
+		setIconImage((new ImageIcon(getClass().getResource("/resources/images/logo-admin.png"))).getImage());
 
 		jpnlTree.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -469,7 +469,7 @@ public class FenetrePrincipaleAdmin extends JFrame {
 		jtxtExtension.setPreferredSize(new java.awt.Dimension(50, 20));
 
 		final DefaultTreeCellRenderer dtcr = new DefaultTreeCellRenderer();
-		dtcr.setLeafIcon(new ImageIcon(ClassLoader.getSystemResource("resources/images/text.png")));
+	//	dtcr.setLeafIcon(new ImageIcon(FenetrePrincipaleAdmin.class.getResource("/resources/images/text.png")));
 		jtreeFileList.setCellRenderer(dtcr);
 		jtreeFileList.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 

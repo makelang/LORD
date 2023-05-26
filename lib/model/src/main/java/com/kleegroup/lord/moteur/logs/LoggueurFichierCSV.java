@@ -16,7 +16,7 @@ import com.kleegroup.lord.moteur.IErreur;
  */
 public class LoggueurFichierCSV extends AbstractLoggueur {
     protected static final ResourceBundle RESOURCEMAP = ResourceBundle
-	    .getBundle("resources.GeneralUIMessages");
+	    .getBundle("i18n.GeneralUIMessages");
 
     protected String
     nomFichier = RESOURCEMAP.getString("TableModel.Fichier"),

@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
  */
 public class ErreurConstante extends Erreur {
 
-	private static final ResourceBundle RESOURCE_MAP = ResourceBundle.getBundle("resources.ContraintesMessagesErreur");
+	private static final ResourceBundle RESOURCE_MAP = ResourceBundle.getBundle("i18n.ContraintesMessagesErreur");
 
 	private String errColonne = "", errValeur = "", errFichier = "";
 
