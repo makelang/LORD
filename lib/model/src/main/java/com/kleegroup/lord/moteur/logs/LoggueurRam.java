@@ -5,12 +5,13 @@ import java.util.List;
 
 import com.kleegroup.lord.moteur.ErreurConstante;
 import com.kleegroup.lord.moteur.IErreur;
+import com.kleegroup.lord.moteur.IHasError;
 
 /**
  * Un loggueur qui affiche les messages d'erreur sur la console.
  * @author maazreibi
  */
-public class LoggueurRam extends AbstractLoggueur {
+public class LoggueurRam extends AbstractLoggueur  implements IHasError {
 	protected List<IErreur> listeErreurs = new ArrayList<>();
 
 	/**

@@ -44,7 +44,7 @@ public class Schema implements INotifiable {
 
 	protected int niveauActuel = -1;
 
-	protected Map<String, ILogger> loggeurs = new HashMap<>();
+	protected Map<String, IHasError> loggeurs = new HashMap<>();
 
 	protected INotifiable eltANotifier = null;
 
@@ -213,7 +213,7 @@ public class Schema implements INotifiable {
 			final ILogger logCSV = new LoggueurFichierCSV(chemin);
 			logCSV.setNomFichier(f.getNom());
 
-			final ILogger logRam = new LoggueurRam();
+			final LoggueurRam logRam = new LoggueurRam();
 			logRam.setNomFichier(f.getNom());
 
 			lm.addLogger(logRam);
@@ -307,7 +307,7 @@ public class Schema implements INotifiable {
 	 * @return une map contenant les logueurs(la liste des erreurs) de chaque
 	 *         fichier
 	 */
-	public Map<String, ILogger> getLoggeurs() {
+	public Map<String, IHasError> getLoggeurs() {
 		return loggeurs;
 	}
 

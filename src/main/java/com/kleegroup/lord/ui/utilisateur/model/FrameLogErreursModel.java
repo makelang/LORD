@@ -5,8 +5,8 @@ import java.util.Map;
 
 import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.IErreur;
+import com.kleegroup.lord.moteur.IHasError;
 import com.kleegroup.lord.moteur.Schema;
-import com.kleegroup.lord.moteur.logs.LoggueurRam;
 import com.kleegroup.lord.ui.common.model.FileTreeModel;
 import com.kleegroup.lord.ui.utilisateur.model.listeErreurs.ListeErreurs;
 import com.kleegroup.lord.ui.utilisateur.model.listeErreurs.ListeErreursNoRef;
@@ -17,19 +17,19 @@ import com.kleegroup.lord.ui.utilisateur.model.listeErreurs.ListeErreursWithRef;
  */
 public class FrameLogErreursModel extends Model{
 
-	private Map<String,LoggueurRam> loggueurs;
+	private Map<String,IHasError> loggueurs;
 	
 	 /**
 	 * @return la liste des erreurs associée à chaque fichier.
 	 */
-	public Map<String, LoggueurRam> getLoggueurs() {
+	public Map<String, IHasError> getLoggueurs() {
 		return loggueurs;
 	}
 
 	/**
 	 * @param loggueurs la liste des erreurs associée à chaque fichier.
 	 */
-	public void setLoggueurs(Map<String, LoggueurRam> loggueurs) {
+	public void setLoggueurs(Map<String, IHasError> loggueurs) {
 		this.loggueurs = loggueurs;
 	}
 

@@ -4,6 +4,4 @@ module model {
 	exports com.kleegroup.lord.moteur;
 	exports com.kleegroup.lord.moteur.contraintes;
 	exports com.kleegroup.lord.moteur.exceptions;
-	exports com.kleegroup.lord.moteur.logs;
-	
 }

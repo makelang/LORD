@@ -3,7 +3,6 @@ package com.kleegroup.lord.ui.utilisateur.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import javax.swing.JFileChooser;
@@ -12,7 +11,6 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.table.DefaultTableModel;
 
 import com.kleegroup.lord.moteur.Fichier;
-import com.kleegroup.lord.moteur.logs.LoggueurRam;
 import com.kleegroup.lord.ui.utilisateur.model.FrameLogErreursModel;
 import com.kleegroup.lord.ui.utilisateur.view.FrameLogErreurs;
 
@@ -39,11 +37,7 @@ public class FrameLogErreursController extends FrameController<FrameLogErreurs, 
 	public void activate() {
 
 		fenetrePrincipale.setEtape(4);
-		final Map<String, LoggueurRam> mapErrs = new HashMap<>();
-		for (final String nom : fenetrePrincipaleController.model.getSchema().getLoggeurs().keySet()) {
-			mapErrs.put(nom, (LoggueurRam) fenetrePrincipaleController.model.getSchema().getLoggeurs().get(nom));
-		}
-		model.setLoggueurs(mapErrs);
+		model.setLoggueurs(new HashMap<>(fenetrePrincipaleController.model.getSchema().getLoggeurs()));
 		view.setTableModel(new DefaultTableModel());
 		view.setTreeModel(model.getListFichier(fenetrePrincipaleController.model.getSchema()));
 		fenetrePrincipale.setEnabledSuivant(false);
