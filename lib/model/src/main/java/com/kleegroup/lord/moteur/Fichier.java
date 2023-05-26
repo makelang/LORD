@@ -238,7 +238,7 @@ public class Fichier implements IHierarchieSchema {
 	 * @param log
 	 *            Objet responsable de logguer les erreurs
 	 */
-	public Fichier(String nom, String chemin, ICSVDataSource source, ILogger log) {
+	Fichier(String nom, String chemin, ICSVDataSource source, ILogger log) {
 		this(nom, chemin);
 		this.logger = log;
 		this.source = source;
@@ -308,7 +308,7 @@ public class Fichier implements IHierarchieSchema {
 	 * @param source
 	 *            source des ligne du fichier
 	 */
-	public void setSource(ICSVDataSource source) {
+	void setSource(ICSVDataSource source) {
 		this.source = source;
 	}
 
