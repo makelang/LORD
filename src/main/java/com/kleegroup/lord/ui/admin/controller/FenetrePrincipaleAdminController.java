@@ -13,11 +13,11 @@ import javax.swing.tree.TreePath;
 
 import com.kleegroup.lord.moteur.Categories.Categorie;
 import com.kleegroup.lord.moteur.Fichier;
+import com.kleegroup.lord.moteur.IHierarchieSchema;
 import com.kleegroup.lord.moteur.Schema;
+import com.kleegroup.lord.moteur.SeparateurChamps;
+import com.kleegroup.lord.moteur.SeparateurDecimales;
 import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
-import com.kleegroup.lord.moteur.util.SeparateurChamps;
-import com.kleegroup.lord.moteur.util.SeparateurDecimales;
 import com.kleegroup.lord.ui.admin.model.FenetrePrincipaleAdminModel;
 import com.kleegroup.lord.ui.admin.view.FenetrePrincipaleAdmin;
 

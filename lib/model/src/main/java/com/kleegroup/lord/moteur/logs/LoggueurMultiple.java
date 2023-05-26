@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kleegroup.lord.moteur.IErreur;
+import com.kleegroup.lord.moteur.ILogger;
 
 /**
  * Un loggueur qui affiche les messages d'erreur sur la console.

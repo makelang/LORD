@@ -6,9 +6,9 @@ import java.beans.PropertyChangeListener;
 import javax.swing.JOptionPane;
 
 import com.kleegroup.lord.moteur.Fichier;
+import com.kleegroup.lord.moteur.INotifiable;
 import com.kleegroup.lord.moteur.Schema;
 import com.kleegroup.lord.moteur.Fichier.ETAT;
-import com.kleegroup.lord.moteur.util.INotifiable;
 import com.kleegroup.lord.ui.utilisateur.model.FrameProgressionTraitementModel;
 import com.kleegroup.lord.ui.utilisateur.view.FrameProgressionTraitement;
 

@@ -12,9 +12,9 @@ import javax.swing.tree.TreePath;
 
 import com.kleegroup.lord.moteur.Colonne;
 import com.kleegroup.lord.moteur.Fichier;
+import com.kleegroup.lord.moteur.IHierarchieSchema;
 import com.kleegroup.lord.moteur.Schema;
 import com.kleegroup.lord.moteur.contraintes.ContrainteReference;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 
 /**
  * Modele pour la fenetre de selection des colonnes, dans le mode schema.

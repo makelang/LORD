@@ -19,8 +19,6 @@ import com.kleegroup.lord.moteur.contraintes.ContrainteTypeDecimal;
 import com.kleegroup.lord.moteur.contraintes.ContrainteTypeEntier;
 import com.kleegroup.lord.moteur.contraintes.ContrainteUnique;
 import com.kleegroup.lord.moteur.exceptions.ExceptionMoteur;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
-import com.kleegroup.lord.moteur.util.SeparateurDecimales;
 
 /**
  * Represente une colonne du fichier.<br>

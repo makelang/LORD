@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import com.kleegroup.lord.moteur.exceptions.ExceptionMoteur;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 
 
 

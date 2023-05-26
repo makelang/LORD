@@ -9,9 +9,9 @@ import javax.swing.tree.TreePath;
 
 import com.kleegroup.lord.moteur.Categories;
 import com.kleegroup.lord.moteur.Fichier;
+import com.kleegroup.lord.moteur.IHierarchieSchema;
 import com.kleegroup.lord.moteur.Schema;
 import com.kleegroup.lord.moteur.Categories.Categorie;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 
 /**
  * Constuit un modèle d'un schéma utilisable par un {@link javax.swing.JTree}.

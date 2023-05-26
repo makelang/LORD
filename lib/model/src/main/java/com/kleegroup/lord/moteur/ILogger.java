@@ -1,8 +1,6 @@
-package com.kleegroup.lord.moteur.logs;
+package com.kleegroup.lord.moteur;
 
 import java.util.List;
-
-import com.kleegroup.lord.moteur.IErreur;
 
 
 

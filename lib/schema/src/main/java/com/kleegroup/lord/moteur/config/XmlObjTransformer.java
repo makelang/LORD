@@ -18,6 +18,8 @@ import com.kleegroup.lord.moteur.ContrainteRegistry;
 import com.kleegroup.lord.moteur.ContrainteUniCol;
 import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.Schema;
+import com.kleegroup.lord.moteur.SeparateurChamps;
+import com.kleegroup.lord.moteur.SeparateurDecimales;
 import com.kleegroup.lord.moteur.contraintes.ContrainteListeValeursPermises;
 import com.kleegroup.lord.moteur.contraintes.ContrainteRegex;
 import com.kleegroup.lord.moteur.contraintes.ContrainteTRUE;
@@ -28,8 +30,6 @@ import com.kleegroup.lord.moteur.contraintes.ContrainteTypeDecimal;
 import com.kleegroup.lord.moteur.contraintes.ContrainteTypeEntier;
 import com.kleegroup.lord.moteur.contraintes.ContrainteUnique;
 import com.kleegroup.lord.moteur.exceptions.SchemaInvalideException;
-import com.kleegroup.lord.moteur.util.SeparateurChamps;
-import com.kleegroup.lord.moteur.util.SeparateurDecimales;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;

@@ -10,10 +10,8 @@ import javax.swing.Box;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JDialog;
 
-//import org.apache.log4j.Logger;
-
-import com.kleegroup.lord.moteur.util.SeparateurChamps;
-import com.kleegroup.lord.moteur.util.SeparateurDecimales;
+import com.kleegroup.lord.moteur.SeparateurChamps;
+import com.kleegroup.lord.moteur.SeparateurDecimales;
 import com.kleegroup.lord.ui.admin.controller.DialogFileOptionsController;
 
 /**

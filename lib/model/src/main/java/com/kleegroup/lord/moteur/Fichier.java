@@ -16,10 +16,7 @@ import com.kleegroup.lord.moteur.exceptions.CaractereInterdit;
 import com.kleegroup.lord.moteur.exceptions.ExceptionMoteur;
 import com.kleegroup.lord.moteur.exceptions.NbreColonnesInsuffisant;
 import com.kleegroup.lord.moteur.exceptions.TropDErreurs;
-import com.kleegroup.lord.moteur.logs.ILogger;
 import com.kleegroup.lord.moteur.util.ICSVDataSource;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
-import com.kleegroup.lord.moteur.util.INotifiable;
 
 /**
  * Représente un fichier à vérifier.

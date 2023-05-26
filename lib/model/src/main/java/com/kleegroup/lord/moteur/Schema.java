@@ -24,16 +24,12 @@ import org.apache.log4j.Logger;
 
 import com.kleegroup.lord.moteur.Fichier.ETAT;
 import com.kleegroup.lord.moteur.exceptions.EchecCreationLogs;
-import com.kleegroup.lord.moteur.logs.ILogger;
 import com.kleegroup.lord.moteur.logs.LoggueurFichierCSV;
 import com.kleegroup.lord.moteur.logs.LoggueurMultiple;
 import com.kleegroup.lord.moteur.logs.LoggueurRam;
 import com.kleegroup.lord.moteur.reader.CsvReaderAdapter;
 import com.kleegroup.lord.moteur.util.ICSVDataSource;
-import com.kleegroup.lord.moteur.util.INotifiable;
 import com.kleegroup.lord.moteur.util.LogFilesZipper;
-import com.kleegroup.lord.moteur.util.SeparateurChamps;
-import com.kleegroup.lord.moteur.util.SeparateurDecimales;
 
 
 /**

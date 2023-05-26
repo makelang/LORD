@@ -30,8 +30,8 @@ import javax.swing.tree.ExpandVetoException;
 import javax.swing.tree.TreeModel;
 
 import com.kleegroup.lord.moteur.Fichier;
+import com.kleegroup.lord.moteur.IHierarchieSchema;
 import com.kleegroup.lord.moteur.Schema;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
 import com.kleegroup.lord.ui.common.model.FileTreeModel;
 import com.kleegroup.lord.ui.utilisateur.controller.FrameLogErreursController;
 

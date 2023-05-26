@@ -35,7 +35,7 @@ import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
 import com.kleegroup.lord.moteur.Fichier;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
+import com.kleegroup.lord.moteur.IHierarchieSchema;
 import com.kleegroup.lord.ui.admin.common.view.ColonneChooser;
 import com.kleegroup.lord.ui.admin.controller.FenetrePrincipaleAdminController;
 

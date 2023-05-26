@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur.util;
+package com.kleegroup.lord.moteur;
 
 /**
  * Enumération simple pour indiquer quel est le séparateur de champs.

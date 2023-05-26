@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
-
 /**
  * Représente les catégories du schéma. <br>
  * <br>

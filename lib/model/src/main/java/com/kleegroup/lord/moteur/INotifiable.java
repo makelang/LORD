@@ -1,6 +1,4 @@
-package com.kleegroup.lord.moteur.util;
-
-import com.kleegroup.lord.moteur.Fichier;
+package com.kleegroup.lord.moteur;
 
 /**
  * Cette interface sert à créer des éléments qui seront notifiés de certains

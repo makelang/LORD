@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur.util;
+package com.kleegroup.lord.moteur;
 
 /**
  * Definit la hierarchie du schema de donnees.<br>

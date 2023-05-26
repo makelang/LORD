@@ -3,7 +3,7 @@ package com.kleegroup.lord.moteur.contraintes;
 import java.util.List;
 
 import com.kleegroup.lord.moteur.ContrainteUniCol;
-import com.kleegroup.lord.moteur.util.SeparateurDecimales;
+import com.kleegroup.lord.moteur.SeparateurDecimales;
 
 /**
  * Vérifie que la valeur représente un nombre décimal.

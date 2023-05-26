@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableModel;
 
 import com.kleegroup.lord.moteur.Fichier;
-import com.kleegroup.lord.moteur.util.IHierarchieSchema;
+import com.kleegroup.lord.moteur.IHierarchieSchema;
 
 
 /**

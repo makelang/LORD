@@ -1,5 +1,7 @@
 package com.kleegroup.lord.moteur.logs;
 
+import com.kleegroup.lord.moteur.ILogger;
+
 /**
  * classe abstraite qui implemente l'interface <code>ILogger</code> . Elle
  * fournit une implémentation d'une méthode qui permet de logguer une liste
