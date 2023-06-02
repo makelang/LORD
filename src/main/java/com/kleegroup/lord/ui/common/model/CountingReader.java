@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur.util;
+package com.kleegroup.lord.ui.common.model;
 
 import java.io.BufferedReader;
 import java.io.IOException;

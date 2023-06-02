@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur.util;
+package com.kleegroup.lord.moteur;
 
 import java.io.IOException;
 

@@ -9,6 +9,8 @@ import com.kleegroup.lord.moteur.Fichier;
 import com.kleegroup.lord.moteur.INotifiable;
 import com.kleegroup.lord.moteur.Schema;
 import com.kleegroup.lord.moteur.Fichier.ETAT;
+import com.kleegroup.lord.moteur.ICSVDataSource;
+import com.kleegroup.lord.ui.common.model.CsvReaderAdapter;
 import com.kleegroup.lord.ui.utilisateur.model.FrameProgressionTraitementModel;
 import com.kleegroup.lord.ui.utilisateur.view.FrameProgressionTraitement;
 
@@ -137,6 +139,11 @@ public class FrameProgressionTraitementController extends FrameController<FrameP
 	Task(){
 	    super();
 	}
+	
+	private ICSVDataSource readCSV (Fichier f) {
+		return new CsvReaderAdapter(f.getChemin(), s.getEncoding(), s.getSeparateurChamp().value(), f.getNbLignesEntete());
+	}
+	
 	/**{@inheritDoc}*/
 	@Override
 	public Void doInBackground() {
@@ -144,7 +151,7 @@ public class FrameProgressionTraitementController extends FrameController<FrameP
 	    //Initialize progress property.
 	    setProgress(0);
 	    s.setEltANotifier(this);
-	    s.verifie();
+	    s.verifie( this::readCSV );
 	    return null;
 	}
 /**{@inheritDoc}*/

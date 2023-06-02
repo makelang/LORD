@@ -1,4 +1,4 @@
-package com.kleegroup.lord.moteur.reader;
+package com.kleegroup.lord.ui.common.model;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,9 +11,8 @@ import java.io.UnsupportedEncodingException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.kleegroup.lord.moteur.ICSVDataSource;
 import com.kleegroup.lord.moteur.exceptions.CaractereInterdit;
-import com.kleegroup.lord.moteur.util.CountingReader;
-import com.kleegroup.lord.moteur.util.ICSVDataSource;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;

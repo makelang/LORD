@@ -13,7 +13,6 @@
 		<groupId>com.kleegroup</groupId>
 	</parent>
 
-
 	<dependencies>
 
 		<dependency>
@@ -22,21 +21,6 @@
 			<version>2.0.7</version>
 		</dependency>
 
-
-		<dependency>
-			<groupId>com.opencsv</groupId>
-			<artifactId>opencsv</artifactId>
-			<version>5.7.1</version>
-			<exclusions>
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		
-		
 	</dependencies>
-
 
 </project>

@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.SortedMap;
 import java.util.TreeMap;
+import java.util.function.Function;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -28,8 +29,6 @@ import com.kleegroup.lord.moteur.exceptions.EchecCreationLogs;
 import com.kleegroup.lord.moteur.logs.LoggueurFichierCSV;
 import com.kleegroup.lord.moteur.logs.LoggueurMultiple;
 import com.kleegroup.lord.moteur.logs.LoggueurRam;
-import com.kleegroup.lord.moteur.reader.CsvReaderAdapter;
-import com.kleegroup.lord.moteur.util.ICSVDataSource;
 import com.kleegroup.lord.moteur.util.LogFilesZipper;
 
 
@@ -104,7 +103,7 @@ public class Schema implements INotifiable {
 	/**
 	 * Lance la vérification du schéma.
 	 */
-	public void verifie() {
+	public void verifie(Function<Fichier,ICSVDataSource> csvReader) {
 		logAppli.info("debut de la verification du schema");
 
 		clean();
@@ -113,7 +112,7 @@ public class Schema implements INotifiable {
 
 			if (f.getGroupe() <= niveauActuel && f.isPretVerif()) {
 
-				creerSourceDonnee(f);// ouvre le fichier CSV en lecture
+				creerSourceDonnee(f, csvReader);// ouvre le fichier CSV en lecture
 				fichierEnCours = f;
 				f.verifie();
 				marquerFichierVerifie(f);
@@ -142,8 +141,8 @@ public class Schema implements INotifiable {
 		logAppli.info("fin de la verification du schema");
 	}
 
-	private void creerSourceDonnee(Fichier f) {
-		final ICSVDataSource source = new CsvReaderAdapter(f.getChemin(), encoding, separateurChamp.value(), f.getNbLignesEntete());
+	private void creerSourceDonnee(Fichier f, Function< Fichier , ICSVDataSource> csvReader) {
+		final ICSVDataSource source = csvReader.apply(f);			
 		f.setSource(source);
 	}
 
