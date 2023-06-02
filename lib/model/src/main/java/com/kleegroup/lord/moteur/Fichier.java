@@ -6,7 +6,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import com.kleegroup.lord.moteur.Categories.Categorie;
 import com.kleegroup.lord.moteur.contraintes.ContrainteReference;
@@ -29,8 +30,8 @@ public class Fichier implements IHierarchieSchema {
 	private static String nomRefLookup = ContrainteReferenceLookup.class
 			.getSimpleName().substring("Contrainte".length());
 
-	private static org.apache.log4j.Logger logAppli = Logger
-			.getLogger(Fichier.class);
+	private static Log logAppli = LogFactory
+			.getLog(Fichier.class);
 
 	protected INotifiable eltAnotifier = null;
 

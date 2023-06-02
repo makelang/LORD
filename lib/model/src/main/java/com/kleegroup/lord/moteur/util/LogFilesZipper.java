@@ -9,7 +9,8 @@ import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *Zip les fichier de log dauns un fichier désigné.
@@ -19,7 +20,7 @@ import org.apache.log4j.Logger;
  *
  */
 public class LogFilesZipper {
-	private static org.apache.log4j.Logger logAppli = Logger.getLogger(LogFilesZipper.class);
+	private static Log logAppli = LogFactory.getLog(LogFilesZipper.class);
 
 	/**
 	 * @param outputZip le File qui représente le fichier de zip

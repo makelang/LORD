@@ -20,7 +20,8 @@ import java.util.NoSuchElementException;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import com.kleegroup.lord.moteur.Fichier.ETAT;
 import com.kleegroup.lord.moteur.exceptions.EchecCreationLogs;
@@ -38,7 +39,7 @@ import com.kleegroup.lord.moteur.util.LogFilesZipper;
  */
 public class Schema implements INotifiable {
 
-	private static org.apache.log4j.Logger logAppli = Logger.getLogger(Schema.class);
+	private static Log logAppli = LogFactory.getLog(Schema.class);
 
 	protected List<Fichier> fichiers = new ArrayList<>();
 

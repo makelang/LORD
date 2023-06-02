@@ -5,11 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /** */
 public class Interprete {
-	private static org.apache.log4j.Logger logAppli = Logger.getLogger(Interprete.class);
+	private static Log logAppli = LogFactory.getLog(Interprete.class);
 	boolean isCompact = false;
 	List<ENUM_TYPE_BALISE> type = new ArrayList<>();
 	List<String> balises = new ArrayList<>();

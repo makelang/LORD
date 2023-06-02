@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiques;
 
@@ -14,8 +15,8 @@ import com.kleegroup.lord.moteur.contraintes.ContrainteMultiColFonctionsSpecifiq
  */
 public abstract class ContrainteMultiCol implements IContrainte {
 
-	protected static final org.apache.log4j.Logger LOGAPPLI = Logger
-			.getLogger(ContrainteMultiColFonctionsSpecifiques.class);
+	protected static final Log LOGAPPLI = LogFactory
+			.getLog(ContrainteMultiColFonctionsSpecifiques.class);
 
 	protected Fichier fichierParent;
 	protected Interprete interpreteMsg = null;

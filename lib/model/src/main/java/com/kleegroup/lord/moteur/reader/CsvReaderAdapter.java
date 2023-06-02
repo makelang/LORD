@@ -1,25 +1,31 @@
 package com.kleegroup.lord.moteur.reader;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.UnsupportedEncodingException;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
+import com.kleegroup.lord.moteur.exceptions.CaractereInterdit;
+import com.kleegroup.lord.moteur.util.CountingReader;
+import com.kleegroup.lord.moteur.util.ICSVDataSource;
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
-import org.apache.log4j.Logger;
-
-import com.kleegroup.lord.moteur.exceptions.CaractereInterdit;
-import com.kleegroup.lord.moteur.util.CountingReader;
-import com.kleegroup.lord.moteur.util.ICSVDataSource;
 
 /**
  * Cette classe sert comme adaptateur pour la classe CsvReader.
  * Elle permet au moteur de l'utiliser comme source de donnée.
  */
 public class CsvReaderAdapter implements ICSVDataSource {
-	private static final org.apache.log4j.Logger logAppli = Logger.getLogger(CsvReaderAdapter.class);
+	private static final Log logAppli = LogFactory.getLog(CsvReaderAdapter.class);
 
 	protected CSVReader reader;
 	protected CountingReader counter;
