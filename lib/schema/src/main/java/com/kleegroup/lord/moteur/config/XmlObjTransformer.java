@@ -79,7 +79,7 @@ public class XmlObjTransformer {
 	 * @param schemaOriginal	le schema extrait du XML
 	 * @return 					le schema de moteur
 	 */
-	public Schema transform(TypeSchema schemaOriginal) {
+	private Schema transform(TypeSchema schemaOriginal) {
 		// En cas d'absence de configuration (nouveau fichier)
 		if (schemaOriginal == null) {
 			return new Schema();
